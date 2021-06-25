@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLDongHo" Class="DBDongHoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-R6I7AE4\SQLEXPRESS;Initial Catalog=QLDongHo;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QLDongHoConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CHITIETDONHANG" Member="CHITIETDONHANGs">
+    <Type Name="CHITIETDONHANG">
+      <Column Name="MaDonHang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaSanPham" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DonGia" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Association Name="DONDATHANG_CHITIETDONHANG" Member="DONDATHANG" ThisKey="MaDonHang" OtherKey="MaDonHang" Type="DONDATHANG" IsForeignKey="true" />
+      <Association Name="SanPham_CHITIETDONHANG" Member="SanPham" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="SanPham" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="MaKH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TaiKhoan" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MatKhau" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="NhomQuyen" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="User_DONDATHANG" Member="DONDATHANGs" ThisKey="MaKH" OtherKey="MaKH" Type="DONDATHANG" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DanhMucSanPham" Member="DanhMucSanPhams">
+    <Type Name="DanhMucSanPham">
+      <Column Name="MaDanhMuc" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenDanhMuc" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="DanhMucSanPham_SanPham" Member="SanPhams" ThisKey="MaDanhMuc" OtherKey="MaDanhMuc" Type="SanPham" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DONDATHANG" Member="DONDATHANGs">
+    <Type Name="DONDATHANG">
+      <Column Name="MaDonHang" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NgayDat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NgayGiao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TinhTrangGiaoHang" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MaKH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DONDATHANG_CHITIETDONHANG" Member="CHITIETDONHANGs" ThisKey="MaDonHang" OtherKey="MaDonHang" Type="CHITIETDONHANG" />
+      <Association Name="User_DONDATHANG" Member="User" ThisKey="MaKH" OtherKey="MaKH" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LienHe" Member="LienHes">
+    <Type Name="LienHe">
+      <Column Name="MaLienHe" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ChuDe" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NoiDung" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SanPham" Member="SanPhams">
+    <Type Name="SanPham">
+      <Column Name="MaSanPham" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaDanhMuc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TenSanPham" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="GiaGoc" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="KhuyenMai" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ImgUrl" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="NgayCapNhap" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MoTaNgan" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="MoTaChiTiet" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="SanPham_CHITIETDONHANG" Member="CHITIETDONHANGs" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="CHITIETDONHANG" />
+      <Association Name="DanhMucSanPham_SanPham" Member="DanhMucSanPham" ThisKey="MaDanhMuc" OtherKey="MaDanhMuc" Type="DanhMucSanPham" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TinTuc" Member="TinTucs">
+    <Type Name="TinTuc">
+      <Column Name="MaTinTic" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TieuDe" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="NoiDung" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+</Database>

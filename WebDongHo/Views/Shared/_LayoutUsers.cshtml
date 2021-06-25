@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/Content/base.css">
+    <link rel="stylesheet" href="~/Content/style.css">
+    
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href=""><img src="./images/logo-hai-trieu3.png" width="200px" ; height="55px" alt=""></a>
+                </div>
+                <nav>
+                    <ul class="menuItems">
+                        <li>
+                            <a href="">Thương hiệu</a>
+                            <ul class="subnav ">
+                                <li><a href="">Hublot</a></li>
+                                <li><a href="">Rolex</a></li>
+                                <li><a href="">Versace</a></li>
+                                <li><a href="">Michael Kors</a></li>
+                                <li><a href="">Citizen</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">Nam</a></li>
+                        <li><a href="">Nữ</a></li>
+                        <li><a href="">Tin tức</a></li>
+                        <li><a href="">Liên hệ</a></li>
+                        <li><a href="">Khuyến mãi</a></li>
+                        <li><a href="">Đăng Nhập</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header__search">
+                <input type="text" class="header__input" placeholder="Nhập để tìm kiếm">
+                <button class="search-icon">
+                    <i class="search-icon-item fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div>
+        @RenderBody()
+    </div>
+    <div class="container">
+        <div class="row" style="background-color: #fff;">
+            <h2 class="social__page">Social page:</h2>
+            <div class="social__icon">
+                <a href=""><i class="fa fa-facebook-square"></i></a>
+                <a href=""><i class="fa fa-twitter-square"></i></a>
+                <a href=""><i class="fa fa-youtube-square"></i></a>
+                <a href=""><i class="fa fa-instagram-square"></i></a>
+            </div>
+        </div>
+        <hr>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h1>Hotline 1900.1008</h1>
+                    <p>Nhóm thực hiện: Nhóm bốn anh em </p>
+                    <p> 475A Điện Biên Phủ, P.25, Q.Bình Thạnh, TP.HCM</p>
+                    <p>Số điện thoại: +84 582547177</p>
+                    <p>Địa chỉ email: ptl171000@gmail.com</p>
+                </div>
+                <div class="footer-col-2">
+                    <h2 class="footer__title">Hướng Dẫn</h2>
+                    <p>Thông Tin Liên Hệ</p>
+                    <p>Hỏi Đáp - Góp Ý</p>
+                    <p>Chính Sách Đổi Hàng</p>
+                    <p>Chính Sách Bảo Hành</p>
+                </div>
+                <div class="footer-col-3">
+                    <h2 class="footer__title">Tham Khảo</h2>
+                    <p>Sản Phẩm Mới</p>
+                    <p>Bài Viết Mới </p>
+                    <p>Thông Tin Khuyến Mãi</p>
+                    <!--<p>Ngưng Hiện Quảng Cáo</p>-->
+                    <img src="./images/thong-bao-bo-cong-thuong.png" alt="" height="55x">
+                </div>
+                <div class="footer-col-4">
+                    <h2 class="footer__title">Chứng Nhận</h2>
+                    <a href=""><img src="./images/dai-ly-chinh-hang.png" alt=""></a>
+                    <a href=""><img src="./images/khac-hang-noi-ve-chung-toi.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-5">
+                    <h3>Copyright by Nhóm 4 anh em ® Since 2021</h3>
+                    <p>Góp ý & Khiếu nại: ptl171000@gmail.com</p>
+                </div>
+                <div class="footer-col-6">
+                    <p>Phương thức thanh toán: </p>
+                    <img src="./images/tien-mat.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- messager -->
+    <a href="" class="icon__mess"><i class="fa fa-facebook-messenger"></i></a>
+
+
+
+    <script src="~/Scripts/slides.js"></script>
+</body>
+</html>
