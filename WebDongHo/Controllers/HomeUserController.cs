@@ -25,6 +25,7 @@ namespace WebDongHo.Controllers
             var danhmuc = from dm in data.DanhMucSanPhams select dm;
             return View();
         }
+
         public ActionResult Detail(int id)
         {
             var sp = from s in data.SanPhams
