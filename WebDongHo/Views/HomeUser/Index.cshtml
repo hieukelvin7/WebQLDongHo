@@ -60,25 +60,10 @@
 </div>
 
 <!-- Sản phẩm nam -->
-<div class="container">
-    <h2 class="title">Đồng hồ nam bán chạy</h2>
-    <div class="row">
-        @foreach (var item in Model)
-        {
-            <div class="col-4">
-                <a href="@Url.Action("Detail","HomeUser",new{ id=item.MaSanPham  })">
-                    <img src="@item.ImgUrl" width="200" alt="@item.TenSanPham">
-                    <h4>@item.TenSanPham</h4>
-                    <p class="price">@item.GiaGoc VND</p>
-                </a>
-            </div>
-        }
-
-    </div>
-</div>
+@Html.Action("SPNam", "HomeUser")
 
 
-    @Html.Action("IndexSPNU", "HomeUser")
+@Html.Action("SPNu", "HomeUser")
 
 
 <!-- Thương hiệu nổi tiếng -->
@@ -112,38 +97,18 @@
 <div class="container">
     <h2 class="title">New watches</h2>
     <div class="row">
+        @foreach (var item in Model)
+        {
         <div class="col-4">
-            <a href="">
-                <img src="./images/spmoi-1.jpg" alt="">
-                <a href="">Casio Nam – Quartz (Pin) – Dây Da (MTP-1375L-7AVDF)</a>
-
-                <p class="price">1.999.000VND</p>
-            </a>
+            <a href="@Url.Action("Detail","HomeUser",new{ id=item.MaSanPham  })">             
+                    <img src="@item.ImgUrl" alt="@item.TenSanPham">
+                    <h4>@item.TenSanPham</h4>
+                    <p class="price">@item.GiaGoc VND</p>
+                </a>
         </div>
-        <div class="col-4">
-            <a href="">
-                <img src="./images/spmoi-2.jpg" alt="">
-                <a href="">Tissot T109.410.16.033.01 – Nam – Kính Sapphire – Quartz (Pin) – Dây Da</a>
+        }
 
-                <p class="price">5.920.000VND</p>
-            </a>
-        </div>
-        <div class="col-4">
-            <a href="">
-                <img src="./images/spmoi-3.jpg" alt="">
-                <a href="">Doxa D205RWL – Nam – Kính Sapphire – Automatic (Tự Động) – Dây Da</a>
 
-                <p class="price">28.000.000VND</p>
-            </a>
-        </div>
-        <div class="col-4">
-            <a href="">
-                <img src="./images/spmoi-4.jpg" alt="">
-                <a href="">Casio MTP-V300L-1AUDF – Nam – Quartz (Pin) – Dây Da</a>
-
-                <p class="price">1.530.000VND</p>
-            </a>
-        </div>
 
     </div>
 </div>
