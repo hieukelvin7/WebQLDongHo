@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<WebDongHo.Models.SanPham>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutUsers.cshtml";
@@ -63,32 +63,16 @@
 <div class="container">
     <h2 class="title">Đồng hồ nam bán chạy</h2>
     <div class="row">
-        <div class="col-4">
-            <img src="./images/spnam-1.jpg" alt="">
-            <a href="">Casio AE-1200WHD-1AVDF – Nam – Kính Nhựa – Quartz (Pin) – Dây Kim Loại</a>
-
-            <p class="price">1.308.000VND</p>
-        </div>
-
-        <div class="col-4">
-            <img src="./images/spnam-2.jpg" alt="">
-            <a href="">Citizen BI5006-81P – Nam – Quartz (Pin) – Dây Kim Loại</a>
-
-            <p class="price">2.900.000VND</p>
-        </div>
-        <div class="col-4">
-            <img src="./images/spnam-3.jpg" alt="">
-            <a href="">Citizen NH8350-59A – Nam – Automatic (Tự Động) – Dây Kim Loại</a>
-
-            <p class="price">5.250.000VND</p>
-        </div>
-
-        <div class="col-4">
-            <img src="./images/spnam-4.jpg" alt="">
-            <a href="">Doxa 131.60.022.02 – Nam – Kính Sapphire – Quartz (Pin) – Dây Da</a>
-
-            <p class="price">19.480.000VND</p>
-        </div>
+        @foreach (var item in Model)
+        {
+            <div class="col-4">
+                <a href="@Url.Action("Detail","HomeUser",new{ id=item.MaSanPham  })">
+                    <img src="@item.ImgUrl" width="200" alt="@item.TenSanPham">
+                    <h4>@item.TenSanPham</h4>
+                    <p class="price">@item.GiaGoc VND</p>
+                </a>               
+            </div>
+        }
 
     </div>
 </div>

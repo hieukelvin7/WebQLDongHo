@@ -1,0 +1,23 @@
+﻿
+
+@model WebDongHo.Models.SanPham
+
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_LayoutUsers.cshtml";
+}
+
+<h2>Chi tiết sản phẩm</h2>
+
+    <div style="padding-left:center;color:#fff">
+        <img src="@Model.ImgUrl" alt="" />
+        @Model.TenSanPham
+        @Model.GiaGoc
+        @Model.MoTaNgan
+        @Model.MoTaChiTiet
+    </div>
+
+
+
+
