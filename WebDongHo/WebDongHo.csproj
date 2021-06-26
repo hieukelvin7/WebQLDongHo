@@ -278,6 +278,7 @@
     <Content Include="Views\Shared\_LayoutUsers.cshtml" />
     <Content Include="Views\HomeUser\Index.cshtml" />
     <Content Include="Views\HomeUser\Detail.cshtml" />
+    <Content Include="Views\HomeUser\IndexSPNU.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

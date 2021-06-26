@@ -20,6 +20,15 @@ namespace WebDongHo.Controllers
             var spmoi = SanPhamMoi(4);
             return View(spmoi);
         }
+        public List<SanPham> SPNuBanChay(int count)
+        {
+            return data.SanPhams.OrderBy(a => a.NgayCapNhap).Take(count).ToList();
+        }
+        public ActionResult IndexSPNU()
+        {
+            var spnu = SPNuBanChay(4);
+            return PartialView(spnu);
+        }
         public ActionResult DanhMucSanPham()
         {
             var danhmuc = from dm in data.DanhMucSanPhams select dm;
