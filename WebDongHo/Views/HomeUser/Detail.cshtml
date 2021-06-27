@@ -7,9 +7,41 @@
     ViewBag.Title = "Detail";
     Layout = "~/Views/Shared/_LayoutUsers.cshtml";
 }
+<style type="text/css">
+    #datmua{
+        margin-left:400px;
+        padding-top:98px}
+    #datmua a{
+        clear:both; background-color:red;
+        color:white; width:120px; height:35px;
+        display:block; text-align:center;
+        padding-top:10px; text-decoration:none; font-weight:bold;
+        
+    }
+    #datmua a:hover{
+        background-color:grey;
+        color:red
+    }
+</style>
+<h2 style="color:white;padding-left:134px">Chi tiết sản phẩm</h2>
+<div style="padding-left:134px">
+    <img src="@Model.ImgUrl" style= alt="" />
 
-<h2>Chi tiết sản phẩm</h2>
+    <div class="col-0" style="color:white;float:right ">
+        <p style="font-weight:bold; font-size:26px">@Model.TenSanPham</p>
+        @Model.MoTaNgan<br>
+        <textarea style="width:500px; height:140px">@Model.MoTaChiTiet</textarea>
+        <h2 style="color:red">@Model.GiaGoc VND</h2>
+        <div id="datmua">
+            <a href="@Url.Action()" class="list-group-item">ĐẶT MUA</a>
+        </div>
+    </div>
+    
+</div>
 
+
+<<<<<<< HEAD
+=======
     <div>
         <img src="@Model.ImgUrl" height="300" width="300" alt="@Model.TenSanPham" />
         @Model.TenSanPham
@@ -17,6 +49,7 @@
         @Model.MoTaNgan
         @Model.MoTaChiTiet
     </div>
+>>>>>>> d0fb2cdd0b1bee98bc8a9869d3b189f204aedc5c
 
 
 
