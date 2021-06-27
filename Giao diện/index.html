@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./Fonts/fontawesome-free-5.15.3-web/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <title>DongHo4AE</title>
+</head>
+<body>  
+    <!-- logo and menu -->
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                   <a href=""><img src="./images/logo-hai-trieu3.png" width="200px"; height="55px" alt=""></a> 
+                </div>
+                <div class="menu__bars hide-on-pc">
+                    <div class="header__search ">
+                        <input type="text" class="header__input" placeholder="Nhập để tìm kiếm">
+                        <button class="search-icon">
+                            <i class="search-icon-item fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="bars">
+                        <label for="check" class="checkbtn">
+                            <i class="fas fa-bars"></i>
+                        </label>
+
+                        <input type="checkbox" hidden name="" class="check__input" id="check">
+                        
+                        <label for="check" class="nav__overlay"></label>
+                        <nav class="nav__mobile">
+                            <ul class="nav__mobile-list">
+                                <li><a href="" >Trang Chủ</a></li>
+                                <li><a href="">Tin Tức</a></li>
+                                <li><a href="">Liên Hệ</a></li>
+                                <li><a href="">Khuyến Mãi</a></li>
+                                <li><a href="">Giở Hàng</a></li>
+                                <li><a href="">Đăng Nhập</a></li>
+                                <li><a href="">Đăng Ký</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="header__cart">
+                        <a href="" class="cart-icon" ><i class="fas fa-shopping-cart"></i></a>
+                    </div>  
+                </div>             
+                <nav>
+                    <ul class="menuItems hide-on-tablet">
+                        <li>
+                            <a href="">Thương hiệu</a>
+                            <ul class="subnav ">
+                                <li><a href="">Hublot</a></li>
+                                <li><a href="">Rolex</a></li>
+                                <li><a href="">Versace</a></li>
+                                <li><a href="">Michael Kors</a></li>
+                                <li><a href="">Citizen</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">Nam</a></li>
+                        <li><a href="">Nữ</a></li>
+                        <li><a href="">Tin tức</a></li>
+                        <li><a href="">Liên hệ</a></li>
+                        <li><a href="">Khuyến mãi</a></li>
+                        <li><a href="">Đăng Nhập</a></li>
+
+                    </ul>
+                </nav>
+            </div>
+            <div class="header__cart hide-on-tablet">
+                <a href="" class="cart-icon" ><i class="fas fa-shopping-cart"></i></a>
+            </div>
+            <div class="header__search hide-on-tablet">
+                <input type="text" class="header__input" placeholder="Nhập để tìm kiếm">
+                <button class="search-icon">
+                    <i class="search-icon-item fas fa-search"></i>
+                </button>
+            </div>   
+        </div>
+    </div>
+    <!-- Quảng cáo -->
+    <div class="slider">
+        <div class="slides">
+            <input type="radio" name="radio" id="radio1">
+            <input type="radio" name="radio" id="radio2">
+            <input type="radio" name="radio" id="radio3">
+            <div class="slide first">
+                <a href=""><img src="./images/slider-gsock.jpg" alt="" class="logo__advertise"></a> 
+            </div>
+            <div class="slide">
+                <a href=""><img src="./images/slider-casino.jpg" alt="" class="logo__advertise" ></a>
+            </div>
+            <div class="slide">
+                <a href=""><img src="./images/slider-senko.jpg" alt="" class="logo__advertise"></a>
+            </div>
+            <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+            </div>                       
+        </div>
+        <div class="navigation-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+        </div>
+    </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <div class="advertises">
+                        <a href=""><img src="./images/banner-dong-ho-nam.png" alt="" class="logo__banner"></a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="advertises">             
+                        <a href=""><img src="./images/banner-dong-ho-nu.png" alt="" class="logo__banner"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Banner -->
+    <div class="container">
+        <div class="row">
+           <div class="col-3">
+               <a href=""><img src="./images/bst-dong-ho-nam-hot.jpg" alt=""></a>
+           </div>
+           <div class="col-3">
+               <a href=""><img src="./images/button-hang-moi-ve.jpg" alt=""></a>
+           </div>
+           <div class="col-3">
+               <a href=""><img src="./images/bst-dong-ho-nu-hot.jpg" alt=""></a>
+           </div>
+        </div>
+    </div>
+
+    <!-- Sản phẩm nam -->
+    <div class="container">
+        <h2 class="title">Đồng hồ nam bán chạy</h2>
+        <div class="row">   
+            <div class="col-4">
+                <img src="./images/spnam-1.jpg" alt="">
+                <a href="">Casio AE-1200WHD-1AVDF – Nam – Kính Nhựa – Quartz (Pin) – Dây Kim Loại</a>
+                
+                <p class="price">1.308.000VND</p>
+            </div> 
+
+            <div class="col-4">
+                <img src="./images/spnam-2.jpg" alt="">
+                <a href="">Citizen BI5006-81P – Nam – Quartz (Pin) – Dây Kim Loại</a>
+                
+                <p class="price">2.900.000VND</p>
+            </div> 
+            <div class="col-4">
+                <img src="./images/spnam-3.jpg" alt="">
+                <a href="">Citizen NH8350-59A – Nam – Automatic (Tự Động) – Dây Kim Loại</a>
+                
+                <p class="price">5.250.000VND</p>
+            </div> 
+
+            <div class="col-4">
+                <img src="./images/spnam-4.jpg" alt="">
+                <a href="">Doxa 131.60.022.02 – Nam – Kính Sapphire – Quartz (Pin) – Dây Da</a>
+                
+                <p class="price">19.480.000VND</p>
+            </div> 
+            
+        </div>
+    </div>
+
+    <!-- Sản phẩm nữ -->
+    <div class="container">
+        <h2 class="title">Đồng hồ nữ bán chạy</h2>
+        <div class="row">
+            <div class="col-4">
+                <img src="./images/spnu-1.jpg" alt="">
+                <a href="">Casio B640WC-5ADF – Nữ – Kính Nhựa – Quartz (Pin) – Dây Kim Loại</a>
+                
+                <p class="price">1.826.000VND</p>
+            </div> 
+            <div class="col-4">
+                <img src="./images/spnu-2.jpg" alt="">
+                <a href="">Daniel Wellington DW00100163 – Nữ – Quartz (Pin) – Dây Kim Loại – Mặt Số 32MM</a>
+    
+                <p class="price">4.100.000VND</p>
+            </div> 
+            <div class="col-4">
+                <img src="./images/spnu-3.jpg" alt="">
+                <a href="">Daniel Wellington DW00100220 – Nữ – Quartz (Pin) – Dây Kim Loại – Mặt Số 28MM</a>
+              
+                <p class="price">3.700.000VND</p>
+            </div> 
+            <div class="col-4">
+                <img src="./images/spnu-4.jpg" alt="">
+                <a href="">Doxa D158RWH – Nữ – Kính Sapphire – Quartz (Pin) – Dây Da</a>
+                
+                <p class="price">15.800.000VND</p>
+            </div> 
+            
+        </div>
+    </div>
+
+    <!-- Thương hiệu nổi tiếng -->
+    <div class="container">
+        <h2 class="title">Thương hiệu nổi tiếng</h2>
+        <div class="row">
+
+        <div class="col-5">
+            <img src="./images/brand1.png" alt="" class="famous__brand">
+            
+        </div>
+        <div class="col-5">
+            <img src="./images/brand2.png"alt="" class="famous__brand">
+        </div>
+         <div class="col-5">
+            <img src="./images/brand6.png" alt="" class="famous__brand">
+            
+        </div>
+        <div class="col-5">
+            <img src="./images/brand9.png" alt="" class="famous__brand">
+            
+        </div>
+        <div class="col-5">
+            <img src="./images/brand3.png" alt="" class="famous__brand">
+            
+        </div>
+        </div>
+    </div>
+
+    <!-- Sản phẩm mới -->
+    <div class="container">
+        <h2 class="title">New watches</h2>
+        <div class="row">
+            <div class="col-4">
+                <a href="">
+                    <img src="./images/spmoi-1.jpg" alt="">
+                    <a href="">Casio Nam – Quartz (Pin) – Dây Da (MTP-1375L-7AVDF)</a>
+                   
+                    <p class="price">1.999.000VND</p>
+                </a>
+            </div> 
+            <div class="col-4">
+                <a href="">
+                    <img src="./images/spmoi-2.jpg" alt="">
+                    <a href="">Tissot T109.410.16.033.01 – Nam – Kính Sapphire – Quartz (Pin) – Dây Da</a>
+        
+                    <p class="price">5.920.000VND</p>
+                </a>
+            </div> 
+            <div class="col-4">
+                <a href="">
+                    <img src="./images/spmoi-3.jpg" alt="">
+                    <a href="">Doxa D205RWL – Nam – Kính Sapphire – Automatic (Tự Động) – Dây Da</a>
+                   
+                    <p class="price">28.000.000VND</p>
+                </a>
+            </div> 
+            <div class="col-4">
+                <a href="">
+                    <img src="./images/spmoi-4.jpg" alt="">
+                    <a href="">Casio MTP-V300L-1AUDF – Nam – Quartz (Pin) – Dây Da</a>
+                   
+                    <p class="price">1.530.000VND</p>
+                </a>
+            </div> 
+           
+        </div>
+    </div>
+
+    <!-- Bài viết -->
+    <div class="container">        
+        <h2 class="title">Bài viết</h2>
+        <div class="row">
+            <div class="col-3-1 ">
+                <a href=""><img src="./images/post1.jpg" alt="" class="page__post"></a>
+            </div>
+            <div class="col-3-1">
+                <div class="post">
+                    <a href="">Hoạt động xã hội tháng 5: Đồng hồ 4AE lan tỏa yêu thương đến người nghèo</a>
+                    <p>Posted on 11/06/2021 at 10:59 sáng by Đồng Hồ 4AE </p>
+                    <p>Bên cạnh yếu tố lợi nhuận, Đồng Hồ Hải Triều là doanh nghiệp tiên phong thực hiện các hoạt động xã hội tích cực hướng tới cộng đồng, đặc biệt là trong mùa dịch Covid. Mới đây nhất, Hải Triều đã tổ chức chương trình phát quà cho rất nhiều hoàn cảnh khó khăn tại TPHCM. Từ những ngày đầu tháng 5/2021, Đồng Hồ Hải…</p>
+                    <br>
+                    <a href=""><h2>Read more</h2></a>
+                </div>
+            </div>
+            <div class="col-3-1">
+                <a href=""><img src="./images/nhan-khuyen-mai.png" alt="" class="discount"></a>
+            </div>
+            
+        </div>  
+    </div>
+
+    <!-- Nhãn hàng tài trợ -->
+    <div class="container">
+        <h2 class="title">Khách hàng của chúng tôi</h2>
+        <div class="row">
+            <div class="col-1">
+                <img src="./images/UNILEVER-1.jpg" alt="" class="logo__customer">
+                <img src="./images/NESTLE-1.jpg" alt="" class="logo__customer">
+                <img src="./images/NUMBER-1-1.jpg" alt="" class="logo__customer">
+                <img src="./images/PETRO-1.jpg" alt="" class="logo__customer">
+                <img src="./images/LAVIE-1.jpg" alt="" class="logo__customer">
+                <img src="./images/EVN-1.jpg" alt="" class="logo__customer">
+                <img src="./images/Bosch_logo-1.jpg" alt="" class="logo__customer">
+                <img src="./images/POCA-1.jpg" alt="" class="logo__customer">
+            </div>
+        </div>
+        <hr>
+    </div>
+
+    <!-- social page -->
+    <div class="container">
+        <div class="row" style="background-color: #fff;">
+            <h2 class="social__page">Social page:</h2>
+            <div class="social__icon">
+                <a href=""><i class="fab fa-facebook-square"></i></a>
+                <a href=""><i class="fab fa-twitter-square"></i></a>
+                <a href=""><i class="fab fa-youtube-square"></i></a>
+                <a href=""><i class="fab fa-instagram-square"></i></a>
+            </div>
+        </div>
+        <hr>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h1>Hotline 1900.1008</h1>
+                    <p>Nhóm thực hiện: Nhóm bốn anh em </p>
+                    <p> 475A Điện Biên Phủ, P.25, Q.Bình Thạnh, TP.HCM</p>
+                    <p>Số điện thoại: +84 582547177</p>
+                    <p>Địa chỉ email: ptl171000@gmail.com</p>
+                </div>
+                <div class="footer-col-2">
+                    <h2 class="footer__title">Hướng Dẫn</h2>
+                    <p>Thông Tin Liên Hệ</p>
+                    <p>Hỏi Đáp - Góp Ý</p>
+                    <p>Chính Sách Đổi Hàng</p>
+                    <p>Chính Sách Bảo Hành</p>
+                </div>
+                <div class="footer-col-3">
+                    <h2 class="footer__title">Tham Khảo</h2>
+                    <p>Sản Phẩm Mới</p>
+                    <p>Bài Viết Mới </p>
+                    <p>Thông Tin Khuyến Mãi</p>
+                    <!--<p>Ngưng Hiện Quảng Cáo</p>-->
+                    <img src="./images/thong-bao-bo-cong-thuong.png" alt="" height="55x">
+                </div>
+                <div class="footer-col-4">
+                    <h2 class="footer__title">Chứng Nhận</h2>
+                    <a href=""><img src="./images/dai-ly-chinh-hang.png" alt=""></a>
+                    <a href=""><img src="./images/khac-hang-noi-ve-chung-toi.png" alt=""></a>
+                </div>
+            </div>        
+        </div>
+        <hr>
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <h3>Copyright by Nhóm 4 anh em ® Since 2021</h3>
+                    <p>Góp ý & Khiếu nại: ptl171000@gmail.com</p>
+                </div>
+                <div class="col-3"></div>
+                <div class="col-3">
+                    <div class="pay">
+                        <p>Phương thức thanh toán: </p>
+                        <img src="./images/tien-mat.png" alt="" class="palpay">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- messager -->
+    <a href="" class="icon__mess"><i class="fab fa-facebook-messenger"></i></a>
+
+
+
+
+
+    <script src="./JS/slides.js"></script>
+
+</body>
+</html>
