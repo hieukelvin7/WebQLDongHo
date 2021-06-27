@@ -48,7 +48,7 @@ namespace WebDongHo.Models
     #endregion
 		
 		public DBDongHoDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["QLDongHoConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["QLDongHoConnectionString1"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -75,6 +75,14 @@ namespace WebDongHo.Models
 				base(connection, mappingSource)
 		{
 			OnCreated();
+		}
+		
+		public System.Data.Linq.Table<TinTuc> TinTucs
+		{
+			get
+			{
+				return this.GetTable<TinTuc>();
+			}
 		}
 		
 		public System.Data.Linq.Table<CHITIETDONHANG> CHITIETDONHANGs
@@ -125,11 +133,74 @@ namespace WebDongHo.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<TinTuc> TinTucs
+		public System.Data.Linq.Table<TinTuc1> TinTuc1s
 		{
 			get
 			{
-				return this.GetTable<TinTuc>();
+				return this.GetTable<TinTuc1>();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TinTuc")]
+	public partial class TinTuc
+	{
+		
+		private int _MaTinTic;
+		
+		private string _TieuDe;
+		
+		private string _NoiDung;
+		
+		public TinTuc()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTinTic", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int MaTinTic
+		{
+			get
+			{
+				return this._MaTinTic;
+			}
+			set
+			{
+				if ((this._MaTinTic != value))
+				{
+					this._MaTinTic = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TieuDe", DbType="NVarChar(200)")]
+		public string TieuDe
+		{
+			get
+			{
+				return this._TieuDe;
+			}
+			set
+			{
+				if ((this._TieuDe != value))
+				{
+					this._TieuDe = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NoiDung", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string NoiDung
+		{
+			get
+			{
+				return this._NoiDung;
+			}
+			set
+			{
+				if ((this._NoiDung != value))
+				{
+					this._NoiDung = value;
+				}
 			}
 		}
 	}
@@ -1420,7 +1491,7 @@ namespace WebDongHo.Models
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TinTuc")]
-	public partial class TinTuc
+	public partial class TinTuc1
 	{
 		
 		private int _MaTinTic;
@@ -1429,7 +1500,7 @@ namespace WebDongHo.Models
 		
 		private string _NoiDung;
 		
-		public TinTuc()
+		public TinTuc1()
 		{
 		}
 		
