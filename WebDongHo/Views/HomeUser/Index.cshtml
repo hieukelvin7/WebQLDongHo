@@ -4,40 +4,43 @@
     Layout = "~/Views/Shared/_LayoutUsers.cshtml";
 }
 
+
+<!-- Quảng cáo -->
+<div class="slider">
+    <div class="slides">
+        <input type="radio" name="radio" id="radio1">
+        <input type="radio" name="radio" id="radio2">
+        <input type="radio" name="radio" id="radio3">
+        <div class="slide first">
+            <a href=""><img src="./images/slider-gsock.jpg" alt="" class="logo__advertise"></a>
+        </div>
+        <div class="slide">
+            <a href=""><img src="./images/slider-casino.jpg" alt="" class="logo__advertise"></a>
+        </div>
+        <div class="slide">
+            <a href=""><img src="./images/slider-senko.jpg" alt="" class="logo__advertise"></a>
+        </div>
+        <div class="navigation-auto">
+            <div class="auto-btn1"></div>
+            <div class="auto-btn2"></div>
+            <div class="auto-btn3"></div>
+        </div>
+    </div>
+    <div class="navigation-manual">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+    </div>
+</div>
 <div class="container">
     <div class="row">
-        <div class="col-0">
-            <div class="slider">
-                <div class="slides">
-                    <input type="radio" name="radio" id="radio1">
-                    <input type="radio" name="radio" id="radio2">
-                    <input type="radio" name="radio" id="radio3">
-                    <div class="slide first">
-                        <a href=""><img src="./images/logo_advertises.jpg" alt="" class="logo__advertise"></a>
-                    </div>
-                    <div class="slide">
-                        <a href=""><img src="./images/logo_advertise2.jpg" alt="" class="logo__advertise"></a>
-                    </div>
-                    <div class="slide">
-                        <a href=""><img src="./images/logo_advertise3.jpg" alt="" class="logo__advertise"></a>
-                    </div>
-                    <div class="navigation-auto">
-                        <div class="auto-btn1"></div>
-                        <div class="auto-btn2"></div>
-                        <div class="auto-btn3"></div>
-                    </div>
-                </div>
-                <div class="navigation-manual">
-                    <label for="radio1" class="manual-btn"></label>
-                    <label for="radio2" class="manual-btn"></label>
-                    <label for="radio3" class="manual-btn"></label>
-                </div>
-            </div>
-
-        </div>
-        <div class="col-1">
+        <div class="col-2">
             <div class="advertises">
                 <a href=""><img src="./images/banner-dong-ho-nam.png" alt="" class="logo__banner"></a>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="advertises">
                 <a href=""><img src="./images/banner-dong-ho-nu.png" alt="" class="logo__banner"></a>
             </div>
         </div>
@@ -59,11 +62,13 @@
     </div>
 </div>
 
+
 <!-- Sản phẩm nam -->
 @Html.Action("SPNam", "HomeUser")
 
 
 @Html.Action("SPNu", "HomeUser")
+
 
 
 <!-- Thương hiệu nổi tiếng -->
@@ -99,13 +104,13 @@
     <div class="row">
         @foreach (var item in Model)
         {
-        <div class="col-4">
-            <a href="@Url.Action("Detail","HomeUser",new{ id=item.MaSanPham  })">             
+            <div class="col-4">
+                <a href="@Url.Action("Detail","HomeUser",new{ id=item.MaSanPham  })">
                     <img src="@item.ImgUrl" alt="@item.TenSanPham">
                     <h4>@item.TenSanPham</h4>
                     <p class="price">@item.GiaGoc VND</p>
                 </a>
-        </div>
+            </div>
         }
 
 
@@ -113,33 +118,37 @@
     </div>
 </div>
 
+
 <!-- Bài viết -->
 <div class="container">
     <h2 class="title">Bài viết</h2>
     <div class="row">
-        <div class="col-3">
+        <div class="col-3-1 ">
             <a href=""><img src="./images/post1.jpg" alt="" class="page__post"></a>
         </div>
-        <div class="col-3">
+        <div class="col-3-1">
             <div class="post">
-                <a href="">Hoạt động xã hội tháng 5: Hải Triều lan tỏa yêu thương đến người nghèo</a>
-                <p>Posted on 11/06/2021 at 10:59 sáng by Đồng Hồ Hải Triều</p>
+                <a href="">Hoạt động xã hội tháng 5: Đồng hồ 4AE lan tỏa yêu thương đến người nghèo</a>
+                <p>Posted on 11/06/2021 at 10:59 sáng by Đồng Hồ 4AE </p>
                 <p>Bên cạnh yếu tố lợi nhuận, Đồng Hồ Hải Triều là doanh nghiệp tiên phong thực hiện các hoạt động xã hội tích cực hướng tới cộng đồng, đặc biệt là trong mùa dịch Covid. Mới đây nhất, Hải Triều đã tổ chức chương trình phát quà cho rất nhiều hoàn cảnh khó khăn tại TPHCM. Từ những ngày đầu tháng 5/2021, Đồng Hồ Hải…</p>
+                <br>
                 <a href=""><h2>Read more</h2></a>
             </div>
         </div>
-        <div class="col-3">
+        <div class="col-3-1">
             <a href=""><img src="./images/nhan-khuyen-mai.png" alt="" class="discount"></a>
         </div>
 
     </div>
 </div>
 
+
+
 <!-- Nhãn hàng tài trợ -->
 <div class="container">
     <h2 class="title">Khách hàng của chúng tôi</h2>
     <div class="row">
-        <div class="row__logo">
+        <div class="col-1">
             <img src="./images/UNILEVER-1.jpg" alt="" class="logo__customer">
             <img src="./images/NESTLE-1.jpg" alt="" class="logo__customer">
             <img src="./images/NUMBER-1-1.jpg" alt="" class="logo__customer">
@@ -152,4 +161,5 @@
     </div>
     <hr>
 </div>
+
 
