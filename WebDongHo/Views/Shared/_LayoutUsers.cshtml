@@ -5,9 +5,10 @@
     <title>@ViewBag.Title</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/fonts/fontawesome-free-5.15.3-web/css/all.min.css">
     <link rel="stylesheet" href="~/Content/base.css">
     <link rel="stylesheet" href="~/Content/style.css">
-    
+    <link rel="stylesheet" href="~/Content/responsive.css">
 </head>
 <body>
     <div class="header">
@@ -16,14 +17,45 @@
                 <div class="logo">
                     <a href=""><img src="~/images/logo-hai-trieu3.png" width="200px" ; height="55px" alt=""></a>
                 </div>
+                <div class="menu__bars hide-on-pc">
+                    <div class="header__search ">
+                        <input type="text" class="header__input" placeholder="Nhập để tìm kiếm">
+                        <button class="search-icon">
+                            <i class="search-icon-item fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="bars">
+                        <label for="check" class="checkbtn">
+                            <i class="fas fa-bars"></i>
+                        </label>
+
+                        <input type="checkbox" hidden name="" class="check__input" id="check">
+
+                        <label for="check" class="nav__overlay"></label>
+                        <nav class="nav__mobile">
+                            <ul class="nav__mobile-list">
+                                <li><a href="">Trang Chủ</a></li>
+                                <li><a href="">Tin Tức</a></li>
+                                <li><a href="">Liên Hệ</a></li>
+                                <li><a href="">Khuyến Mãi</a></li>
+                                <li><a href="">Giở Hàng</a></li>
+                                <li><a href="">Đăng Nhập</a></li>
+                                <li><a href="">Đăng Ký</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="header__cart">
+                        <a href="" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+                    </div>
+                </div>
                 <nav>
-                    <ul class="menuItems">
+                    <ul class="menuItems hide-on-tablet">
                         <li>
-                            <a href="">Thương hiệu</a>                         
+                            <a href="">Thương hiệu</a>
                             <ul class="subnav ">
-                                <li><a href="">Casio</a></li>
-                                <li><a href="">Gshock</a></li>
-                                <li><a href="">Seiko</a></li>
+                                <li><a href="">Hublot</a></li>
+                                <li><a href="">Rolex</a></li>
+                                <li><a href="">Versace</a></li>
                                 <li><a href="">Michael Kors</a></li>
                                 <li><a href="">Citizen</a></li>
                             </ul>
@@ -34,13 +66,17 @@
                         <li><a href="">Liên hệ</a></li>
                         <li><a href="">Khuyến mãi</a></li>
                         <li><a href="">Đăng Nhập</a></li>
+
                     </ul>
                 </nav>
             </div>
-            <div class="header__search">
+            <div class="header__cart hide-on-tablet">
+                <a href="" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+            <div class="header__search hide-on-tablet">
                 <input type="text" class="header__input" placeholder="Nhập để tìm kiếm">
                 <button class="search-icon">
-                    <i class="search-icon-item fa fa-search"></i>
+                    <i class="search-icon-item fas fa-search"></i>
                 </button>
             </div>
         </div>
@@ -49,16 +85,21 @@
 
 
     <div>
-        @RenderBody()   
+        @RenderBody()
     </div>
+
+
+
+
+    <!-- social page -->
     <div class="container">
         <div class="row" style="background-color: #fff;">
             <h2 class="social__page">Social page:</h2>
             <div class="social__icon">
-                <a href=""><i class="fa fa-facebook-square"></i></a>
-                <a href=""><i class="fa fa-twitter-square"></i></a>
-                <a href=""><i class="fa fa-youtube-square"></i></a>
-                <a href=""><i class="fa fa-instagram-square"></i></a>
+                <a href=""><i class="fab fa-facebook-square"></i></a>
+                <a href=""><i class="fab fa-twitter-square"></i></a>
+                <a href=""><i class="fab fa-youtube-square"></i></a>
+                <a href=""><i class="fab fa-instagram-square"></i></a>
             </div>
         </div>
         <hr>
@@ -88,7 +129,7 @@
                     <p>Bài Viết Mới </p>
                     <p>Thông Tin Khuyến Mãi</p>
                     <!--<p>Ngưng Hiện Quảng Cáo</p>-->
-                    <img src="./images/thong-bao-bo-cong-thuong.png" alt="" height="55x">
+                    <img src="~/images/thong-bao-bo-cong-thuong.png" alt="" height="55x">
                 </div>
                 <div class="footer-col-4">
                     <h2 class="footer__title">Chứng Nhận</h2>
@@ -100,23 +141,30 @@
         <hr>
         <div class="container">
             <div class="row">
-                <div class="footer-col-5">
+                <div class="col-3">
                     <h3>Copyright by Nhóm 4 anh em ® Since 2021</h3>
                     <p>Góp ý & Khiếu nại: ptl171000@gmail.com</p>
                 </div>
-                <div class="footer-col-6">
-                    <p>Phương thức thanh toán: </p>
-                    <img src="./images/tien-mat.png" alt="">
+                <div class="col-3"></div>
+                <div class="col-3">
+                    <div class="pay">
+                        <p>Phương thức thanh toán: </p>
+                        <img src="~/images/tien-mat.png" alt="" class="palpay">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- messager -->
-    <a href="" class="icon__mess"><i class="fa fa-facebook-messenger"></i></a>
+    <a href="" class="icon__mess"><i class="fab fa-facebook-messenger"></i></a>
+
+
 
 
 
     <script src="~/Scripts/slides.js"></script>
+
+
 </body>
 </html>
