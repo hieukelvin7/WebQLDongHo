@@ -37,9 +37,9 @@ nav ul li{
 nav ul li ul::before{
     position: absolute;
     content: "";
-    top: -25px;
-    left: 738px;
-    right: 500px;
+    top: -26px;
+    left: 596px;
+    right: 636px;
     bottom: 165px;
     background-color: #000;
 }
@@ -51,7 +51,7 @@ nav ul li ul{
     background-color: #222;
     position: absolute;
     top: 44px;
-    left: -611px;
+    left: -587px;
     line-height: 1.4rem;
 }
 
@@ -101,19 +101,17 @@ nav ul li:hover .subnav{
 }
 
 
-.banner__logo img{
-    width: 100%;
-    background-repeat: no-repeat;
-    cursor: pointer;
-}
-
 .header__search{
     display: block;
     float: right;
-    margin-right: 70px;
+    margin-right: 20px;
     background-color: #222;
-    padding: 8px;
+    width: 200px;
+    height: 30px;
+    max-width: 100%;
+    max-height: 100%;
     border-radius: 50px;
+    padding: 8px 0;
 }
 
 .header__input{
@@ -123,6 +121,7 @@ nav ul li:hover .subnav{
     color: #fff;
     border-radius: 2px;
     margin-left: 5px;
+    
 }
 
 .search-icon{   
@@ -133,15 +132,28 @@ nav ul li:hover .subnav{
     margin: 0 3px;
 }
 
+.header__cart{
+    display: block;
+    float: right;
+    
+}
+
+.header__cart a{
+    padding: 15px;
+    line-height: 30px;
+    color: #999;
+}
+
 
 
 /* Quảng cáo */
 
+
 .slider{
     width: 100%;
-    height: 370px;
     border-radius: 3px;
     overflow: hidden;
+    margin-bottom: 120px;
 }
 .slides{
     width: 500%;
@@ -158,21 +170,19 @@ nav ul li:hover .subnav{
 }
 
 .slide img{
-    width: 750px;
-    height: 335px;
+   width: 100%;
 }
 
 .navigation-manual{
     position: absolute;
     display: flex;
     justify-content: center;
-    width: 800px;
+    width: 100%;
     margin-top: -35px;
-
 }
 
 .manual-btn{
-    border: 2px solid #fff;
+    border: 2px solid rgb(179, 179, 179);
     padding: 5px;
     border-radius: 10px;
     transition: 1s;
@@ -206,20 +216,21 @@ nav ul li:hover .subnav{
     justify-content: center;
 }
 
-.col-1  .logo__banner{
-    width: 100%;
-    padding: 10px;
+.col-2  .logo__banner{
+    max-width: 100%;
+    width: 360px;
+    max-height: 275px;
 }
 
 /* Banner*/
 .col-3 img{
+    border-radius: 40px;
     width: 100%;
 }
 
 /* Sản phẩm bán chạy */
 .col-4 img{
-    width: 100%;
-
+    max-width: 100%;
 }
 .col-4 a{
     text-decoration: none;
@@ -252,22 +263,9 @@ nav ul li:hover .subnav{
 
 
 
-/* Thương hiệu nổi tiếng */
-/* 
-.col-3 .famous__brand{
-    width: 49%;
-    filter: grayscale(100%);
-}
-
-.col-3 .famous__brand:hover{
-    filter: grayscale(0);
-} */
-
 .col-5 img{
-    border: black;
-    margin-right: 80px;
-    width: 170px;
-    cursor: pointer;
+    width: 100%;
+    border: 1px solid #666; 
     filter: grayscale(100%);
 }
 
@@ -277,32 +275,32 @@ nav ul li:hover .subnav{
 
 /* bài viết */
 
-.col-3 .page__post{
+.col-3-1 .page__post{
     width: 100%;
 }
 
-.col-3 .post{
+.col-3-1 .post{
     width: 100%;
     line-height: 32px;
     font-size: 12px;
 }
 
-.col-3 .post a{
+.col-3-1 .post a{
     text-decoration: none;
     color: #fff;
     font-size: 18px;
     text-transform: uppercase;
 }
 
-.col-3 .post p{
+.col-3-1 .post p{
     color: #fff;
 }
-.col-3 .post a:hover{
+.col-3-1 .post a:hover{
     color: rgb(175, 0, 0);
     text-decoration: underline;
 }
 
-.col-3 .post h2{
+.col-3-1 .post h2{
     display: inline-block;
     padding: 1px 10px;
     font-size: 14px;
@@ -310,7 +308,7 @@ nav ul li:hover .subnav{
     border: 1px solid #ccc;
 }
 
-.col-3 .post h2:hover{
+.col-3-1 .post h2:hover{
     border: 1px solid rgb(175, 0, 0);
     color: rgb(175, 0, 0);
 }
@@ -320,13 +318,8 @@ nav ul li:hover .subnav{
 .logo__customer{
     max-width: 100%;
     max-height: 100%;
-    width: 120px;
-    height: 69px;
-    margin-right: 30px;
-}
-
-.row__logo{
-    margin-bottom: 45px;
+    width: 118px;
+    margin-right: 25px;
 }
 
 /* Social page */
@@ -352,97 +345,6 @@ nav ul li:hover .subnav{
     opacity: 1;
 }
 
-/* footer */
-/* .footer{
-    background: #000;
-    color: #fff;
-    margin: 30px 0;
-}
-
-.footer-col-1{
-    width: 30%;
-}
-
-.footer-col-1 a img{
-    padding: 35px 0;
-}
-
-.footer-col-1 p,
-.footer-col-2 p, 
-.footer-col-3 p,
-.footer-col-5 p{
-    font-size: 12px;
-    line-height: 24px;
-    opacity: 0.9;
-}
-
-.footer-col-2 p:hover, 
-.footer-col-3 p:hover{
-    opacity: 1;
-    text-decoration: underline;
-}
-
-.footer-col-2, 
-.footer-col-3 {
-    width: 20%;
-    text-align: center;
-}
-
-.footer-col-2 a, 
-.footer-col-3 a{
-   text-decoration: none;
-   color: #fff;
-}
-
-.footer__title{
-    font-size: 18px;
-    line-height: 30px;
-    padding: 25px 0;
-    text-transform: uppercase;
-    font-weight: 300;
-}
-
-.footer-col-3 h2{
-    padding-top: 65px;
-}
-
-.footer-col-4{
-    width: 30%;
-    text-align: center;
-    padding-top: 32px;
-}
-
-.city{
-    text-align: center;
-    margin: 0 auto;
-}
-
-.city ul{
-    display: inline-block;
-    list-style: none;
-    padding: 30px 0;
-}
-
-.city ul li{
-    display: inline-block;
-    text-align: center;
-    line-height: 60px;
-}
-
-.city ul li a{
-    color: #fff;
-    text-decoration: none;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 25px;
-   
-}
-
-.city ul li a:hover{
-    background-color: #fff;
-    color: rgb(88, 88, 88);
-    transition: 0.8s;
-} */
 
 .footer{
     background: #111;
@@ -493,47 +395,35 @@ nav ul li:hover .subnav{
     padding-top: 65px;
 }
 
+
+.footer-col-3 img{
+    margin-bottom: 15px;
+}
+
 .footer-col-4{
     width: 30%;
     text-align: center;
     padding-top: 32px;
-}.footer-col-5,
-.footer-col-6{
-    margin: 30px 0;
 }
 
-.footer-col-5{
-    width: 60%;
+.col-3 h3,
+.col-3 p{
+    margin-bottom: 10px;
 }
 
-.footer-col-5 h3{
-    font-size: 14px;
-    font-weight: 100;
-}
 
-.footer-col-6{
-    width: 40%;
-}
 
 /* coppy right */
 
-.footer-col-5,
-.footer-col-6{
-    margin: 30px 0;
+.col-2 h3{
+    margin-top: 15px;
+    font-size: 16px;
 }
 
-.footer-col-5{
-    width: 60%;
+.col-2 .pay{
+    margin: 15px 0 0 80px;
 }
 
-.footer-col-5 h3{
-    font-size: 14px;
-    font-weight: 100;
-}
-
-.footer-col-6{
-    width: 40%;
-}
 
 /* messager */
 .icon__mess i{
