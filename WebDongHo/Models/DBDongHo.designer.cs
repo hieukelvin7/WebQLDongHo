@@ -77,6 +77,14 @@ namespace WebDongHo.Models
 			OnCreated();
 		}
 		
+		public System.Data.Linq.Table<TinTuc> TinTucs
+		{
+			get
+			{
+				return this.GetTable<TinTuc>();
+			}
+		}
+		
 		public System.Data.Linq.Table<CHITIETDONHANG> CHITIETDONHANGs
 		{
 			get
@@ -117,11 +125,74 @@ namespace WebDongHo.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<TinTuc> TinTucs
+		public System.Data.Linq.Table<TinTuc1> TinTuc1s
 		{
 			get
 			{
-				return this.GetTable<TinTuc>();
+				return this.GetTable<TinTuc1>();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TinTuc")]
+	public partial class TinTuc
+	{
+		
+		private int _MaTinTic;
+		
+		private string _TieuDe;
+		
+		private string _NoiDung;
+		
+		public TinTuc()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTinTic", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int MaTinTic
+		{
+			get
+			{
+				return this._MaTinTic;
+			}
+			set
+			{
+				if ((this._MaTinTic != value))
+				{
+					this._MaTinTic = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TieuDe", DbType="NVarChar(200)")]
+		public string TieuDe
+		{
+			get
+			{
+				return this._TieuDe;
+			}
+			set
+			{
+				if ((this._TieuDe != value))
+				{
+					this._TieuDe = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NoiDung", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string NoiDung
+		{
+			get
+			{
+				return this._NoiDung;
+			}
+			set
+			{
+				if ((this._NoiDung != value))
+				{
+					this._NoiDung = value;
+				}
 			}
 		}
 		
@@ -1478,7 +1549,74 @@ namespace WebDongHo.Models
 		private void detach_DONDATHANGs(DONDATHANG entity)
 		{
 			this.SendPropertyChanging();
+<<<<<<< HEAD
+			entity.SanPham = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TinTuc")]
+	public partial class TinTuc1
+	{
+		
+		private int _MaTinTic;
+		
+		private string _TieuDe;
+		
+		private string _NoiDung;
+		
+		public TinTuc1()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTinTic", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int MaTinTic
+		{
+			get
+			{
+				return this._MaTinTic;
+			}
+			set
+			{
+				if ((this._MaTinTic != value))
+				{
+					this._MaTinTic = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TieuDe", DbType="NVarChar(200)")]
+		public string TieuDe
+		{
+			get
+			{
+				return this._TieuDe;
+			}
+			set
+			{
+				if ((this._TieuDe != value))
+				{
+					this._TieuDe = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NoiDung", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string NoiDung
+		{
+			get
+			{
+				return this._NoiDung;
+			}
+			set
+			{
+				if ((this._NoiDung != value))
+				{
+					this._NoiDung = value;
+				}
+			}
+=======
 			entity.User = null;
+>>>>>>> 10da9c0ec92a49e9b976bd8b969ffbc63a48d91c
 		}
 	}
 }
