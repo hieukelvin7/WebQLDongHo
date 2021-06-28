@@ -76,3 +76,4 @@ D:\WebQLDongHo\WebDongHo\obj\Debug\WebDongHo.csproj.CoreCompileInputs.cache
 D:\WebQLDongHo\WebDongHo\obj\Debug\WebDongHo.csproj.CopyComplete
 D:\WebQLDongHo\WebDongHo\obj\Debug\WebDongHo.dll
 D:\WebQLDongHo\WebDongHo\obj\Debug\WebDongHo.pdb
+D:\WebQLDongHo\WebDongHo\obj\Debug\WebDongHo.csproj.AssemblyReference.cache
