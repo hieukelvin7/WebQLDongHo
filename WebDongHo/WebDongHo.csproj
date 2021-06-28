@@ -214,12 +214,9 @@
     <Content Include="images\seiko-2.jpg" />
     <Content Include="images\seiko-3.jpg" />
     <Content Include="images\seiko-4.jpg" />
-<<<<<<< HEAD
     <Content Include="images\slider-casino.jpg" />
     <Content Include="images\slider-gsock.jpg" />
     <Content Include="images\slider-senko.jpg" />
-=======
->>>>>>> parent of 6da8cc0 (Update code)
     <Content Include="images\spmoi-1.jpg" />
     <Content Include="images\spmoi-2.jpg" />
     <Content Include="images\spmoi-3.jpg" />

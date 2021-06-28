@@ -48,7 +48,7 @@ namespace WebDongHo.Models
     #endregion
 		
 		public DBDongHoDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["QLDongHoConnectionString1"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["QLDongHoConnectionString2"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
