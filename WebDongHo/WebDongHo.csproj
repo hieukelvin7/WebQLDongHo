@@ -123,6 +123,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomeUserController.cs" />
+    <Compile Include="Controllers\NguoiDungController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1987,6 +1988,7 @@
     <Content Include="Views\HomeUser\IndexSPMoiNhat.cshtml" />
     <Content Include="Views\HomeUser\SPNam.cshtml" />
     <Content Include="Views\HomeUser\SPNu.cshtml" />
+    <Content Include="Views\NguoiDung\DangKy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
