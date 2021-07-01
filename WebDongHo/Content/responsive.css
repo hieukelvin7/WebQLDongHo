@@ -75,6 +75,10 @@
     color: #999;
 }
 
+.header__cart a:hover {
+    color: #ff9c27;
+}
+
 
 
 /* PC */

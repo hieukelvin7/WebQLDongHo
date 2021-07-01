@@ -140,6 +140,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\detail.css" />
     <Content Include="Content\responsive.css" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
@@ -1799,6 +1800,7 @@
     <Content Include="images\banner-dong-ho-nu.png" />
     <Content Include="images\banner-dong-ho-tre-em.png" />
     <Content Include="images\Bosch_logo-1.jpg" />
+    <Content Include="images\br-login.jpg" />
     <Content Include="images\brand1.png" />
     <Content Include="images\brand10.png" />
     <Content Include="images\brand11.png" />
@@ -1845,6 +1847,8 @@
     <Content Include="images\khac-hang-noi-ve-chung-toi.png" />
     <Content Include="images\LAVIE-1.jpg" />
     <Content Include="images\logo-hai-trieu3.png" />
+    <Content Include="images\logo-icon.png" />
+    <Content Include="images\logo.png" />
     <Content Include="images\logo_advertise2.jpg" />
     <Content Include="images\logo_advertise3.jpg" />
     <Content Include="images\logo_advertises.jpg" />
