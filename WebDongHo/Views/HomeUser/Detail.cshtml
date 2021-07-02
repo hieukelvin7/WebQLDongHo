@@ -1,7 +1,7 @@
 ﻿
 
 @model WebDongHo.Models.SanPham
-
+@*@model IEnumerable<WebDongHo.Models.SanPham>*@
 
 @{
     ViewBag.Title = "Chi Tiết Sản Phẩm";
@@ -46,12 +46,12 @@
     <div class="container">
         <div class="row">
             <div class="col-2">
-                <img id="img__big" src="./images/details-nu-1.jpg" alt="">
+                <img id="img__big" src="@Model.ImgUrl" alt="">
                 <div class="images">
                     <div class="img__small">
-                        <img src="./images/details-nu-1.jpg" alt="" class="imgs active">
-                        <img src="./images/details-nu-1.2.jpg" alt="" class="imgs">
-                        <img src="./images/details-nu-1.3.jpg " alt="" class="imgs">
+                        <img src="@Model.ImgUrl" alt="" class="imgs active">
+                        <img src="@Model.ImgUrl" alt="" class="imgs">
+                        <img src="@Model.ImgUrl " alt="" class="imgs">
                     </div>
                 </div>
             </div>
@@ -61,8 +61,8 @@
                         <h2>Thông Tin Sản Phẩm</h2>
                     </div>
                     <div class="price">
-                        <h3>15.000.000VND</h3>
-                        <h3>18.000.000VND</h3>
+                        <h3>@Model.KhuyenMai VND</h3>
+                        <h3>@Model.GiaGoc VND</h3>
                     </div>
                     <div class="tabs-info">
                         <div class="info-item active">Mô Tả</div>
@@ -72,10 +72,10 @@
                     </div>
                     <div class="tabs-info-content">
                         <div class="tab-pane active">
-                            <p>Đồng hồ Longines L4.860.2.11.7 có kim chỉ thanh mãnh màu vàng và vạch số La Mã phủ màu đen nổi bật trên nền số màu trắng trang nhã, dây đeo kim loại màu demi thời trang sang trọng.</p>
+                            <p>@Model.MoTaNgan</p>
                         </div>
                         <div class="tab-pane">
-                            <p>Phong cách chính trong các sản phẩm đồng hồ mang thương hiệu Fossil là sự cổ điển, nét hoài cổ. Những chiếc đồng hồ Fossil thường sử dụng bộ máy quartz với độ chính xác cao được nhập trực tiếp từ Nhật với độ bền và chất lượng hàng đầu.Tất cả các mẫu đồng hồ đều có khả năng chịu nước ít nhất là 30m.</p>
+                            <p>@Model.MoTaChiTiet</p>
                         </div>
                         <div class="tab-pane">
                             <p>Đồng hồ Longines L4.860.2.11.7 là đồng hồ thời trang thuộc công ty Fossil có trụ sở tại bang Texas, của Mỹ.</p>
