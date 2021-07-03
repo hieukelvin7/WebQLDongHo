@@ -49,5 +49,10 @@ namespace WebDongHo.Controllers
                      select s;
             return View(sp.Single());
         }
+
+        public ActionResult Contact()
+        {
+            return View();
+        }
     }
 }

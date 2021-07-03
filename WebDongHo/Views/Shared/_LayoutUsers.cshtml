@@ -19,7 +19,7 @@
         <div class="container">
             <div class="navbar">
                 <div class="logo">
-                    <a href=""><img src="~/images/logo.png" width="200px" ; height="60px" alt=""></a>
+                    <a href="@Url.Action("Index", "HomeUser")"><img src="~/images/logo.png" width="200px" ; height="60px" alt=""></a>
                 </div>
                 <div class="menu__bars hide-on-pc">
                     <div class="header__search ">
@@ -68,7 +68,7 @@
                         <li><a href="">Nam</a></li>
                         <li><a href="">Nữ</a></li>
                         <li><a href="">Tin tức</a></li>
-                        <li><a href="">Liên hệ</a></li>
+                        <li><a href="@Url.Action("Contact", "HomeUser")">Liên hệ</a></li>
                         <li><a href="">Khuyến mãi</a></li>
                         <li><a href="@Url.Action("DangNhap", "NguoiDung")">Đăng Nhập</a></li>
                         <li><a href="@Url.Action("DangKy", "NguoiDung")">Đăng Ký</a></li>
