@@ -75,5 +75,39 @@ namespace WebDongHo.Controllers
             }
             return this.DangKy();
         }
+        [HttpGet]
+        public ActionResult DangNhap()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult DangNhap(FormCollection collection)
+        {
+            var tendn = collection["TenDN"];
+            var matkhau = collection["MatKhau"];
+            if (String.IsNullOrEmpty(tendn))
+            {
+                ViewData["Loi1"] = "Phải nhập tên đăng nhập";
+            }
+            else if (String.IsNullOrEmpty(matkhau))
+            {
+                ViewData["Loi2"] = "Phải nhập mật khẩu";
+            }
+            else
+            {
+                User us = data.Users.SingleOrDefault(p => p.TaiKhoan == tendn && p.MatKhau == matkhau);
+                if (us!=null)
+                {
+                    Session["TaiKhoan"] = us.HoTen;
+                    return RedirectToAction("Index", "HomeUser");
+                }
+                else
+                {
+                    ViewBag.ThongBao = "Tên đăng nhập hoặc mật khẩu không đúng";
+                }
+               
+            }
+            return View();
+        }
     }
 }
