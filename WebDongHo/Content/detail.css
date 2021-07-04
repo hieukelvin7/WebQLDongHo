@@ -15,6 +15,13 @@
     padding-left: 20px;
 }
 
+.info h3{
+    line-height: 30px;
+    color: #fff;
+    font-size: 18px;
+    padding-left: 20px;
+}
+
 .price{
     display: flex;
     flex-wrap: wrap;
@@ -53,6 +60,7 @@
     opacity: 1;
     background-color: #222;
     border-color: #ff9c27;
+    color: #ff9c27;
 }
 .info-item.active{
     opacity: 1;
@@ -107,8 +115,8 @@
     display: flex;
     align-items: center;
     width: 80%;
-    height: 60%;
-    margin: 20px auto;
+    height: 80%;
+    margin: 0 auto;
     cursor: pointer;
     border-radius: 3px;
 }
@@ -119,6 +127,7 @@
     justify-content: space-between;
     margin: auto;
     width: 40%;
+    margin-top: 10px;
 }
 
 .images div{

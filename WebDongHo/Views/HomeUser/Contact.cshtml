@@ -4,65 +4,161 @@
     Layout = "~/Views/Shared/_LayoutUsers.cshtml";
 }
 
-<style>
-    .container {
-        color:white;
-        
-    }
-    .col-md-5 {
-       margin:0px 0px 0px 20px
-    }
-    
-    .small-container .containerinfo .sci {
-        position: relative;
+
+<style type="text/css">
+
+    .row {
         display: flex;
+        flex-wrap: wrap;
     }
 
-        
-          
-               
+    .col-6 {
+        width: 66.67%;
+        padding: 0 12px;
+        margin: 20px 0 50px 0;
+    }
+
+    .gg-map {
+        width: 100%;
+        height: 85vh;
+        border: 0;
+    }
+
+    .containerinfo {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-top: 30px;
+    }
+
+        .containerinfo div {
+            color: #fff;
+            line-height: 20px;
+        }
+
+            .containerinfo div h1 {
+                line-height: 30px;
+                font-size: 28px;
+                color: #ff9c27;
+            }
+
+            .containerinfo div ul {
+                list-style: none;
+                padding-top: 10px;
+            }
+
+            .containerinfo div:nth-child(2) {
+                padding-top: 40px;
+            }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        max-height: 100%;
+        padding: 10px 20px;
+        text-align: center;
+        background: #222;
+        border-radius: 2px;
+        margin: 0 20px;
+        align-self: center;
+        box-shadow: 0 2px 5px 0 rgba(255, 255, 255, 0.5);
+        color: #ff9c27;
+    }
+
+    .form h3 {
+        letter-spacing: 5px;
+    }
+
+    .form-group {
+        display: flex;
+        margin-bottom: 16px;
+        flex-direction: column;
+    }
+
+    .form-group label {
+        display: flex;
+        margin-bottom: 10px;
+    }
+
+    .form-control {
+        height: 35px;
+        padding: 6px 15px;
+        border: 1px solid #b3b3b3;
+        border-radius: 3px;
+        outline: none;
+        font-size: 14px;
+        background-color: #222;
+        color: #fff;
+    }
+
+    .form-control:hover {
+            border-color: #1dbfaf;
+    }
+
+    .text-area {
+        height: 70px;
+    }
+
+    .form-submit {
+        outline: none;
+        background-color: #1dbfaf;
+        margin-top: 12px;
+        padding: 12px 16px;
+        font-weight: 600;
+        color: #fff;
+        border: none;
+        width: 100%;
+        font-size: 14px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+        .form-submit:hover {
+            background-color: #1ac7b6;
+        }
 </style>
-<div class="container">  
+
+
+<div class="container">
     <div class="row">
-        <div class="col-md-7">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.1251208102735!2d106.7123030146227!3d10.801727892304385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528a459cb43ab%3A0x6c3d29d370b52a7e!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVFAuSENN!5e0!3m2!1svi!2s!4v1625308012925!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-        <div class="col-md-5">
-                <div class="small-container">
-                    <div class="containerinfo">
-                        <div>
-                            <h1>Thông Tin Liên Hệ</h1>
-                            <ul class="info">
-                                <h3>Công Ty Đồng Hồ 4AE</h3>
-                                <li>
-                                    <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-                                    <span>
-                                        475A Điện Biên Phủ,<br />
-                                        P.25, Q.Bình Thạnh,<br />
-                                        Thành Phố Hồ Chí Minh
-                                    </span>
-                                </li>
-                                <li>
-                                    <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                                    <span>dongho4ae@gmail.com</span>
-                                </li>
-                                <li>
-                                    <span><i class="fa fa-phone-square" aria-hidden="true"></i></span>
-                                    <span>012-345-6789</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>    
-                
-                @*<div>
-                <h3>Công Ty Đồng Hồ 4 Anh Em</h3>
-                <p>SDT:09XXXXXXXX</p>
-                <p>Email:dongho4ae@gmail.com</p>
-                <p>Địa chỉ:Hutech</p>
+        <div class="col-6">
+            <iframe class="gg-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.1251208102735!2d106.7123030146227!3d10.801727892304385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528a459cb43ab%3A0x6c3d29d370b52a7e!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVFAuSENN!5e0!3m2!1svi!2s!4v1625308012925!5m2!1svi!2s" allowfullscreen="" loading="lazy"></iframe>
+            <div class="containerinfo">
+                <div>
+                    <h1>Thông Tin Liên Hệ</h1>
+                    <ul class="info">
+                        <h3>Công Ty Đồng Hồ 4AE</h3>
+                        <li>
+                            <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                            <span>
+                                475A Điện Biên Phủ,<br />
+                                P.25, Q.Bình Thạnh,<br />
+                                Thành Phố Hồ Chí Minh
+                            </span>
+                        </li>
+                        <li>
+                            <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                            <span>dongho4ae@gmail.com</span>
+                        </li>
+                        <li>
+                            <span><i class="fa fa-phone-square" aria-hidden="true"></i></span>
+                            <span>012-345-6789</span>
+                        </li>
+                    </ul>
+
+                </div>
+                <div>
+                    <h3>Công Ty Đồng Hồ 4AE</h3>
+                    <p>SDT:09XXXXXXXX</p>
+                    <p>Email:dongho4ae@gmail.com</p>
+                    <p>Địa chỉ:Hutech</p>
+                </div>
             </div>
-            <div class="form-control">
-                <h3>FORM LIÊN HỆ</h3>
+        </div>
+        <div class="col-3">
+            <div class="form">
+                <h3> LIÊN HỆ</h3>
                 <div class="form-group">
                     <label> Họ Tên</label>
                     <input name="Fullname" class="form-control" placeholder="Ví dụ: Nguyễn Văn A" />
@@ -77,17 +173,15 @@
                 </div>
                 <div class="form-group">
                     <label>Tiêu đề liên hệ</label>
-                    <textarea class="form-control" rows="3" placeholder="Tiêu đề liên hệ"></textarea>
+                    <textarea class="form-control text-area" rows="3" placeholder="Tiêu đề liên hệ"></textarea>
                 </div>
                 <div class="form-group">
                     <label>Nội dung liên hệ</label>
-                    <textarea class="form-control" rows="3" placeholder="Nôi dung liên hệ"></textarea>
+                    <textarea class="form-control text-area " rows="3" placeholder="Nôi dung liên hệ"></textarea>
                 </div>
-                <div class="form-group">
-                    <button class="btn btn-danger">Gửi liên hệ</button>
-                </div>
-            </div>*@
-            
+                <button class="form-submit">Gửi liên hệ</button>
+            </div>
+
         </div>
     </div>
 </div>

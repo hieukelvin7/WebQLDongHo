@@ -91,7 +91,7 @@ nav ul> li> a:hover::after{
 }
 nav > ul > li:hover >a
 ,.subnav li:hover a{
-    color: #fff;
+    color: #ff9c27;
     transition: 0.8s;
 }
 
