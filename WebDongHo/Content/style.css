@@ -9,7 +9,7 @@ body{
 .header{
     background-color: #000;
     margin-bottom: 80px;
-    height: 120px;
+    height: 140px;
 }
 
 .navbar{
@@ -38,8 +38,8 @@ nav ul li ul::before{
     position: absolute;
     content: "";
     top: -26px;
-    left: 596px;
-    right: 636px;
+    left: 486px;
+    right: 740px;
     bottom: 165px;
     background-color: #000;
 }
@@ -47,11 +47,11 @@ nav ul li ul::before{
 nav ul li ul{
     display: none;
     width: 1347px;
-    padding: 0px 612px 10px 632px;
+    padding: 0px 723px 10px 504px;
     background-color: #222;
     position: absolute;
     top: 44px;
-    left: -587px;
+    left: -482px;
     line-height: 1.4rem;
 }
 
@@ -132,10 +132,13 @@ nav ul li:hover .subnav{
     margin: 0 3px;
 }
 
+.search-icon i:hover{
+    color: #ff9c27;
+}
+
 .header__cart{
     display: block;
-    float: right;
-    
+    float: right; 
 }
 
 .header__cart a{
@@ -239,13 +242,14 @@ nav ul li:hover .subnav{
 }
 .col-4 a:hover{
     color: #ff9c27;
+   
 }
 
 
 .col-4 .price{
     font-size: 12px;
     color: #ed1c2e;
-    margin: 6px auto;
+    margin: 6px 0;
 }
 
 .col-4:hover{
@@ -253,7 +257,6 @@ nav ul li:hover .subnav{
     border-radius: 3px;
     transform: translateY(-5px);
 }
-
 
 
 .col-5 img{
@@ -342,7 +345,6 @@ nav ul li:hover .subnav{
 .footer{
     background: #111;
     color: #fff;
-    margin: 30px 0;
 }
 
 .footer-col-1{

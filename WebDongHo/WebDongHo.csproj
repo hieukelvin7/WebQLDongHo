@@ -144,6 +144,7 @@
     <Content Include="Content\detail.css" />
     <Content Include="Content\responsive.css" />
     <Content Include="Content\style.css" />
+    <Content Include="Content\user.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-free-5.15.3-web\attribution.js" />
     <Content Include="fonts\fontawesome-free-5.15.3-web\css\all.css" />

@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="~/fonts/fontawesome-free-5.15.3-web/css/all.min.css">
-    <link rel="stylesheet" href="~/Content/style.css">
+    <link rel="stylesheet" href="~/Content/style.css" />
     <link rel="stylesheet" href="~/Content/base.css" />
     <link rel="stylesheet" href="~/Content/responsive.css">
 
@@ -70,7 +70,7 @@
                         <li><a href="@Url.Action("Contact", "HomeUser")">Liên hệ</a></li>
                         <li><a href="">Khuyến mãi</a></li>
                         <li><a href="@Url.Action("DangNhap", "NguoiDung")">Đăng Nhập</a></li>
-                        <li><a href="@Url.Action("DangKy", "NguoiDung")">Đăng Ký</a></li>
+                        @*<li><a href="@Url.Action("DangKy", "NguoiDung")">Đăng Ký</a></li>*@
                         <li><a href="">Xin chào: @Session["TaiKhoan"]</a></li>
                     </ul>
                 </nav>
