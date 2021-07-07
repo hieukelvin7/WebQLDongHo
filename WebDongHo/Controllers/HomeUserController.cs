@@ -50,9 +50,45 @@ namespace WebDongHo.Controllers
             return View(sp.Single());
         }
 
+        [HttpGet]
         public ActionResult Contact()
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult Contact(FormCollection f,LienHe lh)
+        {
+            var Hoten = f["HoTen"];
+            var Email = f["Email"];
+            var Chude = f["ChuDe"];
+            var Noidung = f["NoiDung"];
+            if(String.IsNullOrEmpty(Hoten))
+            {
+                ViewData["Loi1"] = "Họ tên không được để trống";
+            }
+            else if (String.IsNullOrEmpty(Email))
+            {
+                ViewData["Loi2"] = "Email không được để trống";
+            }
+            else if (String.IsNullOrEmpty(Chude))
+            {
+                ViewData["Loi3"] = "Chủ đề không được để trống";
+            }
+            else if (String.IsNullOrEmpty(Noidung))
+            {
+                ViewData["Loi4"] = "Nội dung không được để trống";
+            }
+            else
+            {
+                lh.HoTen = Hoten;
+                lh.Email = Email;
+                lh.ChuDe = Chude;
+                lh.NoiDung = Noidung;
+                data.LienHes.InsertOnSubmit(lh);
+                data.SubmitChanges();
+            }
+            return this.Contact();
+        }
+
     }
 }

@@ -88,7 +88,9 @@
 
                     <div class="button">
                         <div class="btn">
-                            <a href="" class="cart-icon"><i class="fas fa-shopping-cart"></i>Thêm vào giỏ</a>
+                            <a href="@Url.Action("ThemGiohang","Giohang", new { @id = @Model.MaSanPham,@strURL=Request.Url.ToString() })" class="cart-icon"><i class="fas fa-shopping-cart"></i>
+                            Thêm vào giỏ
+                            </a>
                         </div>
                         <div class="btn">
                             <a href="" class="buy-now">Mua Ngay</a>

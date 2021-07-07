@@ -148,39 +148,52 @@
                     </ul>
 
                 </div>
-                <div>
-                    <h3>Công Ty Đồng Hồ 4AE</h3>
-                    <p>SDT:09XXXXXXXX</p>
-                    <p>Email:dongho4ae@gmail.com</p>
-                    <p>Địa chỉ:Hutech</p>
-                </div>
+                
             </div>
         </div>
         <div class="col-3">
-            <div class="form">
+            <table class="form">
                 <h3> LIÊN HỆ</h3>
-                <div class="form-group">
-                    <label> Họ Tên</label>
-                    <input name="Fullname" class="form-control" placeholder="Ví dụ: Nguyễn Văn A" />
-                </div>
-                <div class="form-group">
-                    <label>Điện thoại</label>
-                    <input name="phone" class="form-control" placeholder="Ví dụ: 0985xxxxxxx" />
-                </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input name="Email" class="form-control" placeholder="Ví dụ: nguyenvana@gmail.com" />
-                </div>
-                <div class="form-group">
-                    <label>Tiêu đề liên hệ</label>
-                    <textarea class="form-control text-area" rows="3" placeholder="Tiêu đề liên hệ"></textarea>
-                </div>
-                <div class="form-group">
-                    <label>Nội dung liên hệ</label>
-                    <textarea class="form-control text-area " rows="3" placeholder="Nôi dung liên hệ"></textarea>
-                </div>
-                <button class="form-submit">Gửi liên hệ</button>
-            </div>
+                @using (Html.BeginForm())
+                {
+                    @Html.ValidationSummary(true)
+                    <tr>
+                        <td>Họ Tên</td>
+                        <td>
+                            @Html.TextBox("HoTen")
+                            @ViewData["Loi1"]
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>
+                            @Html.TextBox("Email")
+                            @ViewData["Loi2"]
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Chủ đề</td>
+                        <td>
+                            @Html.TextBox("ChuDe")
+                            @ViewData["Loi3"]
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nội dung</td>
+                        <td>
+                            @Html.TextBox("NoiDung")
+                            @ViewData["Loi4"]
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" value="Gửi liên hệ" />
+                        </td>
+                    </tr>
+
+                }
+            </table>
 
         </div>
     </div>
