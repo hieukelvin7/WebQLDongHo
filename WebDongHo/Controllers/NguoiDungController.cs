@@ -98,7 +98,9 @@ namespace WebDongHo.Controllers
                 User us = data.Users.SingleOrDefault(p => p.TaiKhoan == tendn && p.MatKhau == matkhau);
                 if (us!=null)
                 {
-                    Session["TaiKhoan"] = us.HoTen;
+                    //hình như chỗ này bị sai, cái session này em hiện tên người dùng. Em vẫn lấy được tên người dùng
+                    Session["TaiKhoan"] = us;
+                //    Session["TaiKhoan1"] = us.HoTen;
                     return RedirectToAction("Index", "HomeUser");
                 }
                 else
