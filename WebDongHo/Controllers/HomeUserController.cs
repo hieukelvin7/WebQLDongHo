@@ -151,5 +151,9 @@ namespace WebDongHo.Controllers
                           select c;
             return View(clients);
         }
+        public ActionResult TinTuc()
+        {     
+            return View();
+        }
     }
 }

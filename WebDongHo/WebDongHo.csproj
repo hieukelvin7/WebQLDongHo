@@ -2018,6 +2018,7 @@
     <Content Include="Views\HomeUser\ThuongHieu.cshtml" />
     <Content Include="Views\HomeUser\Nu.cshtml" />
     <Content Include="Views\HomeUser\Nam.cshtml" />
+    <Content Include="Views\HomeUser\TinTuc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
