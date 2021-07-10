@@ -89,6 +89,67 @@ namespace WebDongHo.Controllers
             }
             return this.Contact();
         }
+        public ActionResult Casio()
+        {          
+                var sp = from s in data.SanPhams
+                         where s.MaDanhMuc == 1
+                         select s;
+                return View(sp);
+           
+        }
+        public ActionResult Gshock()
+        {
+            var sp = from s in data.SanPhams
+                     where s.MaDanhMuc == 2
+                     select s;
+            return View(sp);
 
+        }
+        public ActionResult Seiko()
+        {
+            var sp = from s in data.SanPhams
+                     where s.MaDanhMuc == 3
+                     select s;
+            return View(sp);
+
+        }
+        public ActionResult Michael()
+        {
+            var sp = from s in data.SanPhams
+                     where s.MaDanhMuc == 4
+                     select s;
+            return View(sp);
+
+        }
+        public ActionResult Citizen()
+        {
+            var sp = from s in data.SanPhams
+                     where s.MaDanhMuc == 5
+                     select s;
+            return View(sp);
+
+        }
+        public ActionResult ThuongHieu()
+        {
+            var sp = from s in data.SanPhams select s;
+
+            return View(sp);
+
+        }
+        public ActionResult Nu()
+        {
+            var clients = from c in data.SanPhams
+                          where c.TenSanPham.Contains("Nữ")
+                          select c;
+            return View(clients);
+        }
+
+        public ActionResult Nam()
+        {
+            var clients = from c in data.SanPhams
+                          where c.TenSanPham.Contains("Nam")
+                          select c;
+            return View(clients);
+        }
     }
 }

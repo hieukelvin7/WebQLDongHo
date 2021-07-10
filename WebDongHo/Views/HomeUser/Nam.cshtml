@@ -1,0 +1,23 @@
+﻿@model IEnumerable<WebDongHo.Models.SanPham>
+@{
+    ViewBag.Title = "Nam";
+    Layout = "~/Views/Shared/_LayoutUsers.cshtml";
+}
+
+<div class="container">
+    <h2 class="title">Đồng hồ nam</h2>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-4">
+                <a href="@Url.Action("Detail","HomeUser",new{ id=item.MaSanPham  })">
+                    <img src="@item.ImgUrl" width="250" height="250" alt="@item.TenSanPham">
+                    <h4>@item.TenSanPham</h4>
+                    <p class="price">@item.GiaGoc VND</p>
+                </a>
+            </div>
+        }
+
+    </div>
+</div>
+

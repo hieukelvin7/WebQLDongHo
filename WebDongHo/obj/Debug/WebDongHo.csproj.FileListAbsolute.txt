@@ -314,3 +314,7 @@ F:\Webdongho\WebQLDongHo\WebDongHo\obj\Debug\WebDongHo.csproj.CoreCompileInputs.
 F:\Webdongho\WebQLDongHo\WebDongHo\obj\Debug\WebDongHo.csproj.CopyComplete
 F:\Webdongho\WebQLDongHo\WebDongHo\obj\Debug\WebDongHo.dll
 F:\Webdongho\WebQLDongHo\WebDongHo\obj\Debug\WebDongHo.pdb
+C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\PagedList.dll
+C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\PagedList.Mvc.dll
+C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\PagedList.xml
+C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\PagedList.Mvc.xml
