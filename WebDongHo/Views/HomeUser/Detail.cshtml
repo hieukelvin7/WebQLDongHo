@@ -1,43 +1,13 @@
 ﻿
 
 @model WebDongHo.Models.SanPham
-@*@model IEnumerable<WebDongHo.Models.SanPham>*@
+
 
 @{
     ViewBag.Title = "Chi Tiết Sản Phẩm";
     Layout = "~/Views/Shared/_LayoutUsers.cshtml";
 }
-@*<style type="text/css">
-        #datmua{
-            margin-left:400px;
-            padding-top:98px}
-        #datmua a{
-            clear:both; background-color:red;
-            color:white; width:120px; height:35px;
-            display:block; text-align:center;
-            padding-top:10px; text-decoration:none; font-weight:bold;
 
-        }
-        #datmua a:hover{
-            background-color:grey;
-            color:red
-        }
-    </style>
-    <h2 style="color:white;padding-left:134px">Chi tiết sản phẩm</h2>
-    <div style="padding-left:134px">
-        <img src="@Model.ImgUrl" style= alt="" />
-
-        <div class="col-0" style="color:white;float:right ">
-            <p style="font-weight:bold; font-size:26px">@Model.TenSanPham</p>
-            @Model.MoTaNgan<br>
-            <textarea style="width:500px; height:140px">@Model.MoTaChiTiet</textarea>
-            <h2 style="color:red">@Model.GiaGoc VND</h2>
-            <div id="datmua">
-                <a href="@Url.Action()" class="list-group-item">ĐẶT MUA</a>
-            </div>
-        </div>
-
-    </div>*@
 
 
 <link rel="stylesheet" href="~/Content/base.css" />
@@ -52,8 +22,8 @@
                 <div class="images">
                     <div class="img__small">
                         <img src="@Model.ImgUrl" alt="" class="imgs active">
-                        <img src="@Model.ImgUrl" alt="" class="imgs">
-                        <img src="@Model.ImgUrl " alt="" class="imgs">
+                        <img src="@Model.ImgUrl1" alt="" class="imgs">
+                        <img src="@Model.ImgUrl2 " alt="" class="imgs">
                     </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLDongHo" Class="DBDongHoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=QLDongHo;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QLDongHoConnectionString3" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=QLDongHo;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QLDongHoConnectionString4" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CHITIETDONHANG" Member="CHITIETDONHANGs">
     <Type Name="CHITIETDONHANG">
       <Column Name="MaDonHang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -59,8 +59,10 @@
       <Column Name="GiaGoc" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="KhuyenMai" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="ImgUrl" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ImgUrl1" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ImgUrl2" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Column Name="NgayCapNhap" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="MoTaNgan" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="MoTaNgan" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="MoTaChiTiet" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
       <Association Name="SanPham_CHITIETDONHANG" Member="CHITIETDONHANGs" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="CHITIETDONHANG" />
       <Association Name="DanhMucSanPham_SanPham" Member="DanhMucSanPham" ThisKey="MaDanhMuc" OtherKey="MaDanhMuc" Type="DanhMucSanPham" IsForeignKey="true" />

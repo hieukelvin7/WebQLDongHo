@@ -48,7 +48,7 @@ namespace WebDongHo.Models
     #endregion
 		
 		public DBDongHoDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["QLDongHoConnectionString3"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["QLDongHoConnectionString4"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -1090,6 +1090,10 @@ namespace WebDongHo.Models
 		
 		private string _ImgUrl;
 		
+		private string _ImgUrl1;
+		
+		private string _ImgUrl2;
+		
 		private System.Nullable<System.DateTime> _NgayCapNhap;
 		
 		private string _MoTaNgan;
@@ -1116,6 +1120,10 @@ namespace WebDongHo.Models
     partial void OnKhuyenMaiChanged();
     partial void OnImgUrlChanging(string value);
     partial void OnImgUrlChanged();
+    partial void OnImgUrl1Changing(string value);
+    partial void OnImgUrl1Changed();
+    partial void OnImgUrl2Changing(string value);
+    partial void OnImgUrl2Changed();
     partial void OnNgayCapNhapChanging(System.Nullable<System.DateTime> value);
     partial void OnNgayCapNhapChanged();
     partial void OnMoTaNganChanging(string value);
@@ -1255,6 +1263,46 @@ namespace WebDongHo.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImgUrl1", DbType="NVarChar(200)")]
+		public string ImgUrl1
+		{
+			get
+			{
+				return this._ImgUrl1;
+			}
+			set
+			{
+				if ((this._ImgUrl1 != value))
+				{
+					this.OnImgUrl1Changing(value);
+					this.SendPropertyChanging();
+					this._ImgUrl1 = value;
+					this.SendPropertyChanged("ImgUrl1");
+					this.OnImgUrl1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImgUrl2", DbType="NVarChar(200)")]
+		public string ImgUrl2
+		{
+			get
+			{
+				return this._ImgUrl2;
+			}
+			set
+			{
+				if ((this._ImgUrl2 != value))
+				{
+					this.OnImgUrl2Changing(value);
+					this.SendPropertyChanging();
+					this._ImgUrl2 = value;
+					this.SendPropertyChanged("ImgUrl2");
+					this.OnImgUrl2Changed();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayCapNhap", DbType="DateTime")]
 		public System.Nullable<System.DateTime> NgayCapNhap
 		{
@@ -1275,7 +1323,7 @@ namespace WebDongHo.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MoTaNgan", DbType="NVarChar(200)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MoTaNgan", DbType="NText", UpdateCheck=UpdateCheck.Never)]
 		public string MoTaNgan
 		{
 			get
