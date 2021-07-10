@@ -83,6 +83,8 @@ namespace WebDongHo.Controllers
         [HttpPost]
         public ActionResult DangNhap(FormCollection collection)
         {
+
+            
             var tendn = collection["TenDN"];
             var matkhau = collection["MatKhau"];
             if (String.IsNullOrEmpty(tendn))

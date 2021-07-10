@@ -1,12 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLDongHo" Class="DBDongHoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=QLDongHo;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QLDongHoConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.TinTuc" Member="TinTucs">
-    <Type Name="TinTuc">
-      <Column Name="MaTinTic" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TieuDe" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="NoiDung" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
-    </Type>
-  </Table>
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=QLDongHo;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QLDongHoConnectionString3" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CHITIETDONHANG" Member="CHITIETDONHANGs">
     <Type Name="CHITIETDONHANG">
       <Column Name="MaDonHang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -73,8 +66,8 @@
       <Association Name="DanhMucSanPham_SanPham" Member="DanhMucSanPham" ThisKey="MaDanhMuc" OtherKey="MaDanhMuc" Type="DanhMucSanPham" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TinTuc" Member="TinTuc1s">
-    <Type Name="TinTuc1">
+  <Table Name="dbo.TinTuc" Member="TinTucs">
+    <Type Name="TinTuc">
       <Column Name="MaTinTic" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TieuDe" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Column Name="NoiDung" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
