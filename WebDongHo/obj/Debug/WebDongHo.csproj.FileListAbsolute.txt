@@ -318,3 +318,7 @@ C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\obj\Debug\WebDongHo.cspro
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\obj\Debug\WebDongHo.dll
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\obj\Debug\WebDongHo.pdb
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\obj\Debug\WebDongHo.csprojAssemblyReference.cache
+F:\Webdongho\WebQLDongHo\WebDongHo\bin\PagedList.dll
+F:\Webdongho\WebQLDongHo\WebDongHo\bin\PagedList.Mvc.dll
+F:\Webdongho\WebQLDongHo\WebDongHo\bin\PagedList.xml
+F:\Webdongho\WebQLDongHo\WebDongHo\bin\PagedList.Mvc.xml

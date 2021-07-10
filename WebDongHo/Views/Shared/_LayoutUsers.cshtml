@@ -19,6 +19,40 @@
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0&appId=4348948228482677&autoLogAppEvents=1" nonce="NvF4cWFk">
 
     </script>
+    @*ĐĂNG NHẬP FB*@
+    <script>
+
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '4348948228482677',
+                cookie: true,
+                xfbml: true,
+                version: 'v11.0'
+            });
+
+            FB.AppEvents.logPageView();
+
+        };
+
+        FB.getLoginStatus(function (response) {
+            statusChangeCallback(response);
+        });
+
+        function statusChangeCallback(response) {
+            status: 'connected',
+                authResponse: {
+                accessToken: '...',
+                    expiresIn: '...',
+                        signedRequest: '...',
+                            userID: '...'
+            }
+        }
+        function checkLoginState() {
+            FB.getLoginStatus(function (response) {
+                statusChangeCallback(response);
+            });
+        }
+    </script>
     <!-- logo and menu -->
     <div class="header">
         <div class="container">
@@ -57,11 +91,11 @@
                     </div>
                 </div>
                 <nav>
-                   
+
                     <ul class="menuItems hide-on-tablet">
                         <li>
                             <a href="@Url.Action("ThuongHieu","HomeUser")">Thương hiệu</a>
-                            <ul class="subnav">                              
+                            <ul class="subnav">
                                 <li><a href="@Url.Action("Casio","HomeUser")">Casio</a></li>
                                 <li><a href="@Url.Action("Gshock","HomeUser")">G-Shock</a></li>
                                 <li><a href="@Url.Action("Seiko","HomeUser")">Seiko</a></li>
@@ -74,7 +108,7 @@
                         <li><a href="@Url.Action("TinTuc","HomeUser")">Tin tức</a></li>
                         <li><a href="@Url.Action("Contact", "HomeUser")">Liên hệ</a></li>
                         <li><a href="">Khuyến mãi</a></li>
-                     
+
                         @{
                             var user = (User)Session["TaiKhoan"];
 
