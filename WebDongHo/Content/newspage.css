@@ -1,0 +1,39 @@
+
+h1{
+    display: block;
+    color: #ff9c27;
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 50px;
+}
+.newspage-img{
+    display: block;
+    margin: 15px auto;
+    width: 70%;
+    height: 70vh;
+    background-repeat: no-repeat;   
+                     
+}
+
+p{
+    font-size: 16px;
+    line-height: 20px;
+    padding: 15px 0;
+    color: #ccc;
+}
+
+h3{
+    font-size: 18px;
+    color:#ff9c27;
+    text-align: center;
+    padding: 20px 0;
+}
+
+h5{
+    font-size: 14px;
+    color: #ccc;
+    text-align: center;
+    font-style: italic;
+}

@@ -4,5 +4,68 @@
     Layout = "~/Views/Shared/_LayoutUsers.cshtml";
 }
 
-<h2>TinTuc</h2>
+
+<link rel="stylesheet" href="~/Content/news.css">
+<div id="news">
+    <h1>Tin tức</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <hr>
+                <a href="@Url.Action("Tintuc1","HomeUser")" class="new-heading">10/5 – 10/7: TẶNG VÍ DA FUJITA NHẬT CAO CẤP 1 TRIỆU KHI MUA CITIZEN NAM</a>
+                <img src="~/images/news-1.jpg" alt="" class="new-img">
+                <span>Từ ngày 10/05 – 10/07, Đồng Hồ 4AE x Citizen x Fujita ra mắt chương trình mua đồng hồ Citizen nam, tặng ngay ví da Fujita Nhật Bản cao cấp trị giá hơn 1 triệu. Số lượng quà tặng giới hạn và có thể kết thúc sớm hơn dự kiến. Cùng tham khảo mua sắm và nhận quà khủng ngay hôm nay. Mục Lục…</span>
+                <a href="@Url.Action("Tintuc1","HomeUser")" class="read-btn">Read more</a>
+            </div>
+
+            <div class="col-6">
+                <hr>
+                <a href="@Url.Action("Tintuc2","HomeUser")" class="new-heading">KHÁM PHÁ SHOWROOM ĐỒNG HỒ 4AE PREMIUM QUẬN 8</a>
+                <img src="~/images/news-2.jpg" alt="" class="new-img">
+                <span>Tọa lạc 81 Dương Bá Trạc, Phường 1, Quận 8 sẽ là thành viên tiếp theo của hệ thông Đồng Hồ 4AE . Nơi đây được dự đoán sẽ là Showroom đồng hồ hoành tráng nhất khu vực Nam Sài Gòn, với gần 2000 mẫu đồng hồ đến từ hơn 20 thương hiệu danh tiếng nhất</span>
+                <a href="@Url.Action("Tintuc2","HomeUser")" class="read-btn">Read more</a>
+            </div>
+
+            <div class="col-3-1">
+                <h3>Bài viết mới</h3>
+                <div class="new-post">
+                    <a href="@Url.Action("Tintuc4","HomeUser")"><img src="~/images/news-4.jpg" alt="" class="new-post-img"></a>
+                    <div class="new-post-info">
+                        <h5><a href="@Url.Action("Tintuc4","HomeUser")" class="new-sub-info">TUYỂN DỤNG NHÂN VIÊN BÁN HÀNG CẦN THƠ LƯƠNG CAO, KHÔNG CẦN BẰNG CẤP</a></h5>
+                        <p>by <span>Đồng Hồ 4AE</span></p>
+                        <p>05/07/2021</p>
+                    </div>
+                </div>
+
+                <div class="new-post">
+                    <a href="@Url.Action("Tintuc5","HomeUser")"><img src="~/images/news-5.jpg" alt="" class="new-post-img"></a>
+                    <div class="new-post-info">
+                        <h5><a href="@Url.Action("Tintuc5","HomeUser")" class="new-sub-info">THƯƠNG MẠI ĐIỆN TỬ LÀ GÌ? TOP 3 TRANG TMĐT LỚN NHẤT MẢNG THỜI TRANG</a></h5>
+                        <p>by <span>Đồng Hồ 4AE</span></p>
+                        <p>05/07/2021</p>
+                    </div>
+                </div>
+
+                <div class="new-post">
+                    <a href="@Url.Action("Tintuc6","HomeUser")"><img src="~/images/news-6.jpg" alt="" class="new-post-img"></a>
+                    <div class="new-post-info">
+                        <h5><a href="@Url.Action("Tintuc6","HomeUser")" class="new-sub-info">ĐỒNG HỒ 4AE VINH DỰ TIẾP ĐÓN NHIỀU NHÀ PHÂN PHỐI ĐỒNG HỒ CHÍNH HÃNG TẠI VIỆT NAM</a></h5>
+                        <p>by <span>Đồng Hồ 4AE</span></p>
+                        <p>05/07/2021</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-6">
+                <hr>
+                <a href="@Url.Action("Tintuc3","HomeUser")" class="new-heading">ĐỒNG HỒ 4AE NHẬN GIẢI ĐẠI LÝ ĐỒNG HỒ ORIENT XUẤT SẮC 2018</a>
+                <img src="~/images/news-3.jpg" alt="" class="new-img">
+                <span>Cứ mỗi năm Orient lại vinh danh những đại lý xuất sắc của mình, và năm nay, Đồng Hồ 4AE tiếp tục là đại lý đồng hồ Orient xuất sắc Việt Nam 2018. Đây là năm thứ ba liên tiếp Đồng Hồ 4AE được khách hàng yêu mến và ủng hộ nồng nhiệt như vậy.Đồng Hồ 4AE Nhận Giải Đại…</span>
+                <a href="@Url.Action("Tintuc3","HomeUser")" class="read-btn">Read more</a>
+            </div>
+
+        </div>
+    </div>
+</div>
 

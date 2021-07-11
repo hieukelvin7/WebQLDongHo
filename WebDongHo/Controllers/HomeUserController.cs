@@ -155,5 +155,35 @@ namespace WebDongHo.Controllers
         {     
             return View();
         }
+
+        public ActionResult TinTuc1()
+        {
+            return View();
+        }
+
+        public ActionResult TinTuc2()
+        {
+            return View();
+        }
+
+        public ActionResult TinTuc3()
+        {
+            return View();
+        }
+
+        public ActionResult TinTuc4()
+        {
+            return View();
+        }
+
+        public ActionResult TinTuc5()
+        {
+            return View();
+        }
+
+        public ActionResult TinTuc6()
+        {
+            return View();
+        }
     }
 }
