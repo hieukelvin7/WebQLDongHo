@@ -86,8 +86,9 @@ namespace WebDongHo.Controllers
                 lh.NoiDung = Noidung;
                 data.LienHes.InsertOnSubmit(lh);
                 data.SubmitChanges();
+                return RedirectToAction("Index");
             }
-            return this.Contact();
+            return this.Contact();  
         }
         public ActionResult Casio()
         {          

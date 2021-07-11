@@ -237,16 +237,17 @@
             </div>
         </div>
         <div class="col-3">
-            <div class="form">
+            @*<div class="form">*@
+            <form action="" method="POST" class="form" id="form-1">
                 <h3> LIÊN HỆ</h3>
                 <div class="form-group">
                     <label> Họ Tên</label>
                     <input name="HoTen" class="form-control" placeholder="Ví dụ: Nguyễn Văn A" />
                 </div>
-                
+
                 <div class="form-group">
                     <label>Email</label>
-                    <input name="Email" class="form-control" placeholder="Ví dụ: nguyenvana@gmail.com" />
+                    <input name="Email" class="form-control" placeholder="Ví dụ: nguyenvana@gmail.com" required />
                 </div>
                 <div class="form-group">
                     <label>Tiêu đề liên hệ</label>
@@ -257,7 +258,8 @@
                     <textarea name="NoiDung" class="form-control text-area " rows="3" placeholder="Nôi dung liên hệ"></textarea>
                 </div>
                 <button type="submit" class="form-submit">Gửi liên hệ</button>
-            </div>
+                </form>
+        @*</div>*@
 
         </div>
     </div>

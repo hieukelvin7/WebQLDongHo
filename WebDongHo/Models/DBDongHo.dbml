@@ -42,15 +42,6 @@
       <Association Name="User_DONDATHANG" Member="User" ThisKey="MaKH" OtherKey="MaKH" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.LienHe" Member="LienHes">
-    <Type Name="LienHe">
-      <Column Name="MaLienHe" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="ChuDe" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="NoiDung" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
-    </Type>
-  </Table>
   <Table Name="dbo.SanPham" Member="SanPhams">
     <Type Name="SanPham">
       <Column Name="MaSanPham" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -68,9 +59,18 @@
       <Association Name="DanhMucSanPham_SanPham" Member="DanhMucSanPham" ThisKey="MaDanhMuc" OtherKey="MaDanhMuc" Type="DanhMucSanPham" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.LienHe" Member="LienHes">
+    <Type Name="LienHe">
+      <Column Name="MaLienHe" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ChuDe" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NoiDung" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
   <Table Name="dbo.TinTuc" Member="TinTucs">
     <Type Name="TinTuc">
-      <Column Name="MaTinTic" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaTinTic" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TieuDe" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Column Name="NoiDung" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
     </Type>

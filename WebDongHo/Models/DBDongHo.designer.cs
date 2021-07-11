@@ -45,6 +45,12 @@ namespace WebDongHo.Models
     partial void InsertSanPham(SanPham instance);
     partial void UpdateSanPham(SanPham instance);
     partial void DeleteSanPham(SanPham instance);
+    partial void InsertLienHe(LienHe instance);
+    partial void UpdateLienHe(LienHe instance);
+    partial void DeleteLienHe(LienHe instance);
+    partial void InsertTinTuc(TinTuc instance);
+    partial void UpdateTinTuc(TinTuc instance);
+    partial void DeleteTinTuc(TinTuc instance);
     #endregion
 		
 		public DBDongHoDataContext() : 
@@ -109,19 +115,19 @@ namespace WebDongHo.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<LienHe> LienHes
-		{
-			get
-			{
-				return this.GetTable<LienHe>();
-			}
-		}
-		
 		public System.Data.Linq.Table<SanPham> SanPhams
 		{
 			get
 			{
 				return this.GetTable<SanPham>();
+			}
+		}
+		
+		public System.Data.Linq.Table<LienHe> LienHes
+		{
+			get
+			{
+				return this.GetTable<LienHe>();
 			}
 		}
 		
@@ -973,105 +979,6 @@ namespace WebDongHo.Models
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LienHe")]
-	public partial class LienHe
-	{
-		
-		private int _MaLienHe;
-		
-		private string _HoTen;
-		
-		private string _Email;
-		
-		private string _ChuDe;
-		
-		private string _NoiDung;
-		
-		public LienHe()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaLienHe", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
-		public int MaLienHe
-		{
-			get
-			{
-				return this._MaLienHe;
-			}
-			set
-			{
-				if ((this._MaLienHe != value))
-				{
-					this._MaLienHe = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTen", DbType="NVarChar(50)")]
-		public string HoTen
-		{
-			get
-			{
-				return this._HoTen;
-			}
-			set
-			{
-				if ((this._HoTen != value))
-				{
-					this._HoTen = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(100)")]
-		public string Email
-		{
-			get
-			{
-				return this._Email;
-			}
-			set
-			{
-				if ((this._Email != value))
-				{
-					this._Email = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChuDe", DbType="NVarChar(100)")]
-		public string ChuDe
-		{
-			get
-			{
-				return this._ChuDe;
-			}
-			set
-			{
-				if ((this._ChuDe != value))
-				{
-					this._ChuDe = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NoiDung", DbType="NText", UpdateCheck=UpdateCheck.Never)]
-		public string NoiDung
-		{
-			get
-			{
-				return this._NoiDung;
-			}
-			set
-			{
-				if ((this._NoiDung != value))
-				{
-					this._NoiDung = value;
-				}
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SanPham")]
 	public partial class SanPham : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1443,48 +1350,119 @@ namespace WebDongHo.Models
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TinTuc")]
-	public partial class TinTuc
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LienHe")]
+	public partial class LienHe : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
-		private int _MaTinTic;
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _TieuDe;
+		private int _MaLienHe;
+		
+		private string _HoTen;
+		
+		private string _Email;
+		
+		private string _ChuDe;
 		
 		private string _NoiDung;
 		
-		public TinTuc()
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaLienHeChanging(int value);
+    partial void OnMaLienHeChanged();
+    partial void OnHoTenChanging(string value);
+    partial void OnHoTenChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnChuDeChanging(string value);
+    partial void OnChuDeChanged();
+    partial void OnNoiDungChanging(string value);
+    partial void OnNoiDungChanged();
+    #endregion
+		
+		public LienHe()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTinTic", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
-		public int MaTinTic
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaLienHe", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaLienHe
 		{
 			get
 			{
-				return this._MaTinTic;
+				return this._MaLienHe;
 			}
 			set
 			{
-				if ((this._MaTinTic != value))
+				if ((this._MaLienHe != value))
 				{
-					this._MaTinTic = value;
+					this.OnMaLienHeChanging(value);
+					this.SendPropertyChanging();
+					this._MaLienHe = value;
+					this.SendPropertyChanged("MaLienHe");
+					this.OnMaLienHeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TieuDe", DbType="NVarChar(200)")]
-		public string TieuDe
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTen", DbType="NVarChar(50)")]
+		public string HoTen
 		{
 			get
 			{
-				return this._TieuDe;
+				return this._HoTen;
 			}
 			set
 			{
-				if ((this._TieuDe != value))
+				if ((this._HoTen != value))
 				{
-					this._TieuDe = value;
+					this.OnHoTenChanging(value);
+					this.SendPropertyChanging();
+					this._HoTen = value;
+					this.SendPropertyChanged("HoTen");
+					this.OnHoTenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(100)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChuDe", DbType="NVarChar(100)")]
+		public string ChuDe
+		{
+			get
+			{
+				return this._ChuDe;
+			}
+			set
+			{
+				if ((this._ChuDe != value))
+				{
+					this.OnChuDeChanging(value);
+					this.SendPropertyChanging();
+					this._ChuDe = value;
+					this.SendPropertyChanged("ChuDe");
+					this.OnChuDeChanged();
 				}
 			}
 		}
@@ -1500,8 +1478,142 @@ namespace WebDongHo.Models
 			{
 				if ((this._NoiDung != value))
 				{
+					this.OnNoiDungChanging(value);
+					this.SendPropertyChanging();
 					this._NoiDung = value;
+					this.SendPropertyChanged("NoiDung");
+					this.OnNoiDungChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TinTuc")]
+	public partial class TinTuc : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MaTinTic;
+		
+		private string _TieuDe;
+		
+		private string _NoiDung;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaTinTicChanging(int value);
+    partial void OnMaTinTicChanged();
+    partial void OnTieuDeChanging(string value);
+    partial void OnTieuDeChanged();
+    partial void OnNoiDungChanging(string value);
+    partial void OnNoiDungChanged();
+    #endregion
+		
+		public TinTuc()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTinTic", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaTinTic
+		{
+			get
+			{
+				return this._MaTinTic;
+			}
+			set
+			{
+				if ((this._MaTinTic != value))
+				{
+					this.OnMaTinTicChanging(value);
+					this.SendPropertyChanging();
+					this._MaTinTic = value;
+					this.SendPropertyChanged("MaTinTic");
+					this.OnMaTinTicChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TieuDe", DbType="NVarChar(200)")]
+		public string TieuDe
+		{
+			get
+			{
+				return this._TieuDe;
+			}
+			set
+			{
+				if ((this._TieuDe != value))
+				{
+					this.OnTieuDeChanging(value);
+					this.SendPropertyChanging();
+					this._TieuDe = value;
+					this.SendPropertyChanged("TieuDe");
+					this.OnTieuDeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NoiDung", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string NoiDung
+		{
+			get
+			{
+				return this._NoiDung;
+			}
+			set
+			{
+				if ((this._NoiDung != value))
+				{
+					this.OnNoiDungChanging(value);
+					this.SendPropertyChanging();
+					this._NoiDung = value;
+					this.SendPropertyChanged("NoiDung");
+					this.OnNoiDungChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
