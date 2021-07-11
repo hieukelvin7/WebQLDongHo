@@ -322,3 +322,7 @@ F:\Webdongho\WebQLDongHo\WebDongHo\bin\PagedList.dll
 F:\Webdongho\WebQLDongHo\WebDongHo\bin\PagedList.Mvc.dll
 F:\Webdongho\WebQLDongHo\WebDongHo\bin\PagedList.xml
 F:\Webdongho\WebQLDongHo\WebDongHo\bin\PagedList.Mvc.xml
+E:\WebQLDongHo\WebDongHo\bin\PagedList.dll
+E:\WebQLDongHo\WebDongHo\bin\PagedList.Mvc.dll
+E:\WebQLDongHo\WebDongHo\bin\PagedList.xml
+E:\WebQLDongHo\WebDongHo\bin\PagedList.Mvc.xml
