@@ -5,39 +5,95 @@
     Layout = "~/Views/Shared/_LayoutUsers.cshtml";
 }
 
-<h2 style="text-align:center">Thông Tin Hàng Hóa</h2>
-<table align="center" border="1">
-    <tr style="text-align:center;font-weight:bold">
-        <td>Mã Sản Phẩm</td>
-        <td>Tên Sản Phẩm</td>
-        <td>Ảnh</td>
-        <td>Số Lượng</td>
-        <td>Đơn Giá</td>
-        <td>Thành Tiền</td>
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@item.iMasanpham</td>
-            <td>@item.sTensanpham</td>
-            <td><img src="@item.sAnhbia" /></td>
-            @using (Html.BeginForm("CapnhatGiohang", "Giohang", new { @iMaSP = item.iMasanpham }))
-            {
-                <td>@item.iSoluong</td>
-                <td>@String.Format("{0:0,0}", item.dDongia)</td>
-                <td>@String.Format("{0:0,0}", item.dThanhtien)</td>
-            }
+@*<h2 style="text-align:center">Thông Tin Hàng Hóa</h2>
+    <table align="center" border="1">
+        <tr style="text-align:center;font-weight:bold">
+            <td>Mã Sản Phẩm</td>
+            <td>Tên Sản Phẩm</td>
+            <td>Ảnh</td>
+            <td>Số Lượng</td>
+            <td>Đơn Giá</td>
+            <td>Thành Tiền</td>
         </tr>
-    }
-    <tr style="font-weight: bold; text-align:right; color:red">
-        <td colspan="3"> Tổng số lượng: @ViewBag.Tongsoluong </td>
-        <td colspan="3"> Tổng tiền: @string.Format("{0:0,0}", ViewBag.Tongtien) VNĐ </td>
-    </tr>
-    <tr style="font-weight: bold; text-align:right; color:red">
-        <td colspan="6"> @Html.ActionLink("Trở về giỏ hàng", "Giohang", "Giohang")</td>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.iMasanpham</td>
+                <td>@item.sTensanpham</td>
+                <td><img src="@item.sAnhbia" /></td>
+                @using (Html.BeginForm("CapnhatGiohang", "Giohang", new { @iMaSP = item.iMasanpham }))
+                {
+                    <td>@item.iSoluong</td>
+                    <td>@String.Format("{0:0,0}", item.dDongia)</td>
+                    <td>@String.Format("{0:0,0}", item.dThanhtien)</td>
+                }
+            </tr>
+        }
+        <tr style="font-weight: bold; text-align:right; color:red">
+            <td colspan="3"> Tổng số lượng: @ViewBag.Tongsoluong </td>
+            <td colspan="3"> Tổng tiền: @string.Format("{0:0,0}", ViewBag.Tongtien) VNĐ </td>
+        </tr>
+        <tr style="font-weight: bold; text-align:right; color:red">
+            <td colspan="6"> @Html.ActionLink("Trở về giỏ hàng", "Giohang", "Giohang")</td>
 
-    </tr>
-</table>
+        </tr>
+    </table>*@
+
+
+<link rel="stylesheet" href="~/Content/cart.css" />
+<div id="cart">
+    <div class="container">
+        <div class="cart">
+            <h2>THÔNG TIN GIỎ HÀNG</h2>
+            <table>
+                <tr class="cart-info">
+                    <td>Mã sản phẩm </td>
+                    <td>Tên sản phẩm </td>
+                    <td>Ảnh bìa</td>
+                    <td>Số lượng </td>
+                    <td>Đơn giá </td>
+                    <td>Thành tiền </td>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr class="cart-sub-info">
+                        <td>@item.iMasanpham</td>
+                        <td>@item.sTensanpham</td>
+                        <td><img src="@item.sAnhbia"></td>
+                        @using (Html.BeginForm("CapnhatGiohang", "Giohang", new { @iMasp = item.iMasanpham }))
+                        {
+                            <td>
+                                <input type="number" min="1" name="txtSoluong" value="@item.iSoluong" />
+                            </td>
+                            <td>@String.Format("{0:0,0}", @item.dDongia)</td>
+                            <td>@string.Format("{0:0,0}", @item.dThanhtien)</td>
+                        }
+                    </tr>
+                }
+                <tr class="cart-money">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Tổng số lượng: <span>@ViewBag.Tongsoluong</span></td>
+                    <td></td>
+                    <td>Tổng tiền: <span>@string.Format("{0:0,0}", ViewBag.Tongtien)</span><span>VND</span></td>
+
+                    <td></td>
+
+                </tr>
+                <tr class="cart-checkout">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><button>@Html.ActionLink("Trở về giỏ hàng", "Giohang", "Giohang")</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
 
 
 @using WebDongHo.Models
