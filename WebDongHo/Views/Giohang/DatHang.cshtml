@@ -39,7 +39,6 @@
         </tr>
     </table>*@
 
-
 <link rel="stylesheet" href="~/Content/cart.css" />
 <div id="cart">
     <div class="container">
@@ -96,39 +95,83 @@
 
 
 
+@*@using WebDongHo.Models
+    <h2 style="text-align:center"> THÔNG TIN KHÁCH HÀNG</h2>
+    @{
+        User kh = (User)Session["TaiKhoan"];
+    }
+    <table align="center">
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            <tr style="height:40px">
+                <td> Ho ten khach: </td>
+                <td> @kh.HoTen </td>
+            </tr>
+            <tr style="height:40px">
+                <td> Dia chi: </td>
+                <td> @kh.DiaChi</td>
+            </tr>
+            <tr style="height:40px">
+                <td> SDT: </td>
+                <td> @kh.SDT</td>
+            </tr>
+            <tr style="height:40px">
+                <td> Ngay dat: </td>
+                <td> @DateTime.Now.ToShortDateString()</td>
+            </tr>
+            <tr style="height:40px">
+                <td> Ngày giao: </td>
+                <td> <input type="date" name="Ngaygiao" /></td>
+            </tr>
+            <tr style="height:40px">
+                <td> </td>
+                <td> <input type="submit" value="Đồng Ý Đặt Hàng" /></td>
+            </tr>
+        }
+    </table>*@
+
+
+
 @using WebDongHo.Models
-<h2 style="text-align:center"> THÔNG TIN KHÁCH HÀNG</h2>
 @{
     User kh = (User)Session["TaiKhoan"];
 }
-<table align="center">
-    @using (Html.BeginForm())
-    {
-        @Html.ValidationSummary(true)
-        <tr style="height:40px">
-            <td> Ho ten khach: </td>
-            <td> @kh.HoTen </td>
-        </tr>
-        <tr style="height:40px">
-            <td> Dia chi: </td>
-            <td> @kh.DiaChi</td>
-        </tr>
-        <tr style="height:40px">
-            <td> SDT: </td>
-            <td> @kh.SDT</td>
-        </tr>
-        <tr style="height:40px">
-            <td> Ngay dat: </td>
-            <td> @DateTime.Now.ToShortDateString()</td>
-        </tr>
-        <tr style="height:40px">
-            <td> Ngày giao: </td>
-            <td> <input type="date" name="Ngaygiao" /></td>
-        </tr>
-        <tr style="height:40px">
-            <td> </td>
-            <td> <input type="submit" value="Đồng Ý Đặt Hàng" /></td>
-        </tr>
-    }
-</table>
+<div id="order">
+    <div class="container">
+        <div class="order">
+            <h2> THÔNG TIN KHÁCH HÀNG</h2>
+            <table>
+                @using (Html.BeginForm())
+                {
+                    @Html.ValidationSummary(true)
+                    <tr>
+                        <td>Ho tên khach:</td>
+                        <td><span>@kh.HoTen</span></td>
+                    </tr>
+                    <tr>
+                        <td>Dia chi: </td>
+                        <td><span>@kh.DiaChi</span></td>
+                    </tr>
+                    <tr>
+                        <td> SDT:</td>
+                        <td><span> @kh.SDT</span></td>
+                    </tr>
+                    <tr>
+                        <td> Ngay dat: </td>
+                        <td><span>@DateTime.Now.ToShortDateString()</span></td>
+                    </tr>
+                    <tr>
+                        <td> Ngày giao: </td>
+                        <td><input class="date-input" type="date" name="Ngaygiao" /></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input class="btn-submit" type="submit" value="Đồng Ý Đặt Hàng" /></td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
 

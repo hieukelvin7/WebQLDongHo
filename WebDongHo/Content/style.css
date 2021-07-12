@@ -38,20 +38,20 @@ nav ul li ul::before{
     position: absolute;
     content: "";
     top: -26px;
-    left: 486px;
-    right: 740px;
+    left: 583px;
+    right: 637px;
     bottom: 165px;
     background-color: #000;
 }
 
-nav ul li ul{
+nav ul li ul {
     display: none;
     width: 1347px;
-    padding: 0px 723px 10px 504px;
+    padding: 0px 616px 10px 605px;
     background-color: #222;
     position: absolute;
     top: 44px;
-    left: -482px;
+    left: -586px;
     line-height: 1.4rem;
 }
 

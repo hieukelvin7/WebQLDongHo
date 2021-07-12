@@ -4,8 +4,20 @@
     Layout = "~/Views/Shared/_LayoutUsers.cshtml";
 }
 
-<h2>XacNhanDonHang</h2>
+@*<h2>XacNhanDonHang</h2>
 <h2>Cảm ơn quý khách</h2>
 <p>
-    @Html.ActionLink("Trở về trang chủ", "Index","HomeUser")
-</p>
+    @Html.ActionLink("Trở về trang chủ", "Index", "HomeUser")
+</p>*@
+
+
+<link rel="stylesheet" href="~/Content/cart.css" />
+<div id="confirm">
+    <div class="container">
+        <div class="confirm">
+            <h2 class="confirm-alert">Đơn hàng đã đặt thành công</h2>
+            <p>Cảm ơn quý khách đã ủng hộ shop. Đơn hàng của quý khách sẽ nhanh chóng được gửi đến đúng hẹn !</p>
+            <a href="@Url.Action("Index","HomeUser")" class="btn-back">Quay Về Trang Chủ</a>
+        </div>
+    </div>
+</div>
