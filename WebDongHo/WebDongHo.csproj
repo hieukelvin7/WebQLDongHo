@@ -2061,11 +2061,6 @@
     <Content Include="Views\Giohang\GiohangPartial.cshtml" />
     <Content Include="Views\Giohang\DatHang.cshtml" />
     <Content Include="Views\Giohang\XacNhanDonHang.cshtml" />
-    <Content Include="Views\HomeUser\Casio.cshtml" />
-    <Content Include="Views\HomeUser\Gshock.cshtml" />
-    <Content Include="Views\HomeUser\Seiko.cshtml" />
-    <Content Include="Views\HomeUser\Michael.cshtml" />
-    <Content Include="Views\HomeUser\Citizen.cshtml" />
     <Content Include="Views\HomeUser\ThuongHieu.cshtml" />
     <Content Include="Views\HomeUser\Nu.cshtml" />
     <Content Include="Views\HomeUser\Nam.cshtml" />
@@ -2076,6 +2071,8 @@
     <Content Include="Views\HomeUser\TinTuc4.cshtml" />
     <Content Include="Views\HomeUser\TinTuc5.cshtml" />
     <Content Include="Views\HomeUser\TinTuc6.cshtml" />
+    <Content Include="Views\HomeUser\DanhMucSanPham.cshtml" />
+    <Content Include="Views\HomeUser\DanhMucThuongHieu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

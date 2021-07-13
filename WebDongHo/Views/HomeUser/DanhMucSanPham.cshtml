@@ -1,0 +1,8 @@
+﻿@model IEnumerable<WebDongHo.Models.DanhMucSanPham>
+
+
+@foreach (var item in Model)
+{
+    <li><a href="@Url.Action("DanhMucThuongHieu","HomeUser",new {id = item.MaDanhMuc })">@item.TenDanhMuc</a></li>
+    
+    }

@@ -1,14 +1,11 @@
-﻿
+﻿@model IEnumerable<WebDongHo.Models.SanPham>
 @{
-    ViewBag.Title = "Michael";
+    ViewBag.Title = "DanhMucThuongHieu";
     Layout = "~/Views/Shared/_LayoutUsers.cshtml";
 }
 
-@model IEnumerable<WebDongHo.Models.SanPham>
-
-
 <div class="container">
-    <h2 class="title">Đồng hồ Micheal Kors</h2>
+    <h2 class="title">Đồng hồ G-Shock</h2>
     <div class="row">
         @foreach (var item in Model)
         {

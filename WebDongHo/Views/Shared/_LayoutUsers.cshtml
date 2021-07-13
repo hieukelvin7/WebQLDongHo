@@ -96,11 +96,7 @@
                         <li>
                             <a href="@Url.Action("ThuongHieu","HomeUser")">Thương hiệu</a>
                             <ul class="subnav">
-                                <li><a href="@Url.Action("Casio","HomeUser")">Casio</a></li>
-                                <li><a href="@Url.Action("Gshock","HomeUser")">G-Shock</a></li>
-                                <li><a href="@Url.Action("Seiko","HomeUser")">Seiko</a></li>
-                                <li><a href="@Url.Action("Michael","HomeUser")">Michael Kors</a></li>
-                                <li><a href="@Url.Action("Citizen","HomeUser")">Citizen</a></li>
+                                @Html.Action("DanhMucSanPham", "HomeUser")                               
                             </ul>
                         </li>
                         <li><a href="@Url.Action("Nam","HomeUser")">Nam</a></li>
