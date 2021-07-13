@@ -83,11 +83,13 @@
                                 <li><a href="">Khuyến Mãi</a></li>
                                 <li><a href="">Giở Hàng</a></li>
                                 <li><a href="">Đăng Nhập</a></li>
+                                <li><a href="">Đăng Ký</a></li>
                             </ul>
                         </nav>
                     </div>
                     <div class="header__cart">
-                        <a href="" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+                        <span class="header__cart-notice">0</span>
+                        @Html.Action("GiohangPartial", "Giohang")
                     </div>
                 </div>
                 <nav>
@@ -121,6 +123,7 @@
                 </nav>
             </div>
             <div class="header__cart hide-on-tablet">
+                <span class="header__cart-notice">0</span>
                 @Html.Action("GiohangPartial", "Giohang")
             </div>
             <div class="header__search hide-on-tablet">

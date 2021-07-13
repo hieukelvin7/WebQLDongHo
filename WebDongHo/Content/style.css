@@ -36,23 +36,26 @@ nav ul li{
 }
 nav ul li ul::before{
     position: absolute;
+    height:26px;
+    max-height:100%;
     content: "";
     top: -26px;
-    left: 583px;
-    right: 637px;
+    left: 573px;
+    right: 626px;
     bottom: 165px;
     background-color: #000;
 }
 
 nav ul li ul {
     display: none;
-    width: 1347px;
-    padding: 0px 616px 10px 605px;
+    width: 1351px;
+    padding: 0px 613px 10px 610px;
     background-color: #222;
     position: absolute;
     top: 44px;
-    left: -586px;
+    left: -591px;
     line-height: 1.4rem;
+    z-index:2;
 }
 
 nav ul li ul li{
@@ -137,6 +140,7 @@ nav ul li:hover .subnav{
 }
 
 .header__cart{
+    position:relative;
     display: block;
     float: right; 
 }
@@ -145,6 +149,18 @@ nav ul li:hover .subnav{
     padding: 15px;
     line-height: 30px;
     color: #999;
+}
+
+.header__cart-notice {
+    position: absolute;
+    top: -8px;
+    right: 3px;
+    padding: 2px 6px;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    border-radius: 10px;
+    color: #000;
+    background: #1dbfaf;
 }
 
 
