@@ -1,13 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLDongHo" Class="DBDongHoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=QLDongHo;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QLDongHoConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.CHITIETDONHANG" Member="CHITIETDONHANGs">
-    <Type Name="CHITIETDONHANG">
-      <Column Name="MaDonHang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MaSanPham" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DonGia" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Association Name="DONDATHANG_CHITIETDONHANG" Member="DONDATHANG" ThisKey="MaDonHang" OtherKey="MaDonHang" Type="DONDATHANG" IsForeignKey="true" />
-      <Association Name="SanPham_CHITIETDONHANG" Member="SanPham" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="SanPham" IsForeignKey="true" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=QLDongHo;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QLDongHoConnectionString4" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Admin" Member="Admins">
+    <Type Name="Admin">
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TaiKhoan" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MatKhau" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.Users" Member="Users">
@@ -22,6 +19,16 @@
       <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="SDT" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Association Name="User_DONDATHANG" Member="DONDATHANGs" ThisKey="MaKH" OtherKey="MaKH" Type="DONDATHANG" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CHITIETDONHANG" Member="CHITIETDONHANGs">
+    <Type Name="CHITIETDONHANG">
+      <Column Name="MaDonHang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaSanPham" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DonGia" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Association Name="DONDATHANG_CHITIETDONHANG" Member="DONDATHANG" ThisKey="MaDonHang" OtherKey="MaDonHang" Type="DONDATHANG" IsForeignKey="true" />
+      <Association Name="SanPham_CHITIETDONHANG" Member="SanPham" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="SanPham" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.DanhMucSanPham" Member="DanhMucSanPhams">
@@ -42,6 +49,15 @@
       <Association Name="User_DONDATHANG" Member="User" ThisKey="MaKH" OtherKey="MaKH" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.LienHe" Member="LienHes">
+    <Type Name="LienHe">
+      <Column Name="MaLienHe" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ChuDe" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NoiDung" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
   <Table Name="dbo.SanPham" Member="SanPhams">
     <Type Name="SanPham">
       <Column Name="MaSanPham" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -57,15 +73,6 @@
       <Column Name="MoTaChiTiet" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
       <Association Name="SanPham_CHITIETDONHANG" Member="CHITIETDONHANGs" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="CHITIETDONHANG" />
       <Association Name="DanhMucSanPham_SanPham" Member="DanhMucSanPham" ThisKey="MaDanhMuc" OtherKey="MaDanhMuc" Type="DanhMucSanPham" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.LienHe" Member="LienHes">
-    <Type Name="LienHe">
-      <Column Name="MaLienHe" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="ChuDe" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="NoiDung" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
   <Table Name="dbo.TinTuc" Member="TinTucs">

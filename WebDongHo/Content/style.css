@@ -249,6 +249,9 @@ nav ul li:hover .subnav{
 
 /* Sản phẩm bán chạy */
 .col-4 img{
+    height: 250px;
+    max-height:100%;
+    width:100%;
     max-width: 100%;
 }
 .col-4 a{
