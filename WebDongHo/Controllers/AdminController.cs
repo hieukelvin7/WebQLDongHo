@@ -14,13 +14,17 @@ namespace WebDongHo.Controllers
         // GET: Admin
         public ActionResult Index()
         {
+            if (Session["TaiKhoanAdmin"] == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
             return View();
         }
 
 
         [HttpGet]
         public ActionResult Login()
-        {
+        { 
             return View();
         }
 
@@ -32,28 +36,23 @@ namespace WebDongHo.Controllers
             // gắn các giá trị người dùng nhập liệu cho các biến
             var tendn = collection["username"];
             var matkhau = collection["pass"];
-            if(String.IsNullOrEmpty(tendn))
-            {
-                ViewData["Loi1"] = "Phải nhập tên đăng nhập";
-            }else if(String.IsNullOrEmpty(matkhau))
-            {
-                ViewData["Loi2"] = "Phải nhập mật khẩu";
-            }else
-            {
+
+            
                 //gắn giá trị cho đối tượng được tạo mới (ad)
                 Admin ad = data.Admins.SingleOrDefault(n => n.TaiKhoan == tendn && n.MatKhau == matkhau);
                 if (ad != null)
                 {
-                    Session["TaiKhoan"] = ad;
+                    Session["TaiKhoanAdmin"] = ad;
                     return RedirectToAction("Index", "Admin");
                 }
                 else
                 {
                     ViewBag.ThongBao = " Tên đăng nhập hoặc mật khẩu không đúng";
                 }
-            }    
             return View();
-        }
+        }    
+            
+       
 
     }
 }
