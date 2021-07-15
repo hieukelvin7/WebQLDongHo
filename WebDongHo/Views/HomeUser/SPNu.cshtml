@@ -12,7 +12,7 @@
                 <a href="@Url.Action("Detail","HomeUser",new{ id=item.MaSanPham  })">
                     <img src="@item.ImgUrl" height="250" width="250" alt="@item.TenSanPham">
                     <h4>@item.TenSanPham</h4>
-                    <p class="price">@item.GiaGoc VND</p>
+                    <p class="price">@String.Format("{0:0,0}", item.GiaGoc) VND</p>
                 </a>
             </div>
         }

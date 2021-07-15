@@ -1,0 +1,105 @@
+﻿@model WebDongHo.Models.SanPham
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center">Xác nhận thông tin sản phẩm cần xóa</h2>
+
+<h3 style="color:red">Bạn có chắc muốn xóa</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên Danh Mục
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DanhMucSanPham.TenDanhMuc)
+        </dd>
+
+        <dt>
+            Tên Sản Phẩm
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSanPham)
+        </dd>
+
+        <dt>
+            Giá Gốc
+        </dt>
+
+        <dd>
+            @String.Format("{0:0,0}", Model.GiaGoc) VND
+        </dd>
+
+        <dt>
+            Khuyến Mãi
+        </dt>
+
+        <dd>
+            @String.Format("{0:0,0}", Model.KhuyenMai) VND
+        </dd>
+
+        <dt>
+            Hình 1
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImgUrl)
+        </dd>
+
+        <dt>
+            Hình 2
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImgUrl1)
+        </dd>
+
+        <dt>
+            Hình 3
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImgUrl2)
+        </dd>
+
+        <dt>
+            Ngày Cập Nhật
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayCapNhap)
+        </dd>
+
+        <dt>
+            Mô Tả Ngắn
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTaNgan)
+        </dd>
+
+        <dt>
+            Mô Tả Chi Tiết
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTaChiTiet)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Trở về", "QLSanPham")
+        </div>
+    }
+</div>

@@ -6,6 +6,10 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+       <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+        <script>tinymce.init({ selector:'textarea' });</script>
+
+
 </head>
 <body>
    
@@ -26,8 +30,8 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li>@Html.ActionLink("Trang Chủ", "Index", "Admin")</li>
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("Quản Lý Sản Phẩm", "QLSanPham", "Admin")</li>
+                        <li>@Html.ActionLink("Quản Lý Thương Hiệu", "Contact", "Home")</li>
                     </ul>
                 </div>
             </div>

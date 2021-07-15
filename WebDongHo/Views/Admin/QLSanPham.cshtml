@@ -1,0 +1,116 @@
+﻿@using WebDongHo.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<WebDongHo.Models.SanPham>
+
+@helper Truncate(string input, int length) { 
+    if (input.Length<length)
+    {
+            @input
+    }
+    else
+    {
+        @input.Substring(0,length) <text>...</text>
+    }
+
+   }
+
+
+
+
+
+@{
+    ViewBag.Title = "QLSanPham";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center">Quản Lý Sản Phẩm</h2>
+
+<p>
+    @Html.ActionLink("Thêm Mới", "ThemSP")
+</p>
+<table class="table">
+    <tr>
+        <th style="width:50px">
+            Tên Thương Hiệu
+        </th>
+        <th style="width:200px">
+            Tên Sản Phẩm
+        </th >
+        <th style="width:50px">
+            Giá Gốc
+        </th>
+        <th style="width:50px">
+            Khuyến Mãi
+        </th>
+        <th style="width:80px">
+            Hình 1
+        </th>
+        <th style="width:80px">
+            Hình 2
+        </th>
+        <th style="width:80px">
+            Hình 3
+        </th>
+        <th style="width:150px">
+            Ngày Cập Nhật
+        </th>
+        <th style="width:300px">
+            Mô Tả Ngắn
+        </th>
+        <th style="width:300px">
+            Mô Tả Chi Tiết
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DanhMucSanPham.TenDanhMuc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenSanPham)
+        </td>
+        <td>
+            @String.Format("{0:0,0}", item.GiaGoc) VND
+        </td>
+        <td>
+            @String.Format("{0:0,0}", item.KhuyenMai) VND
+        </td>
+        <td>
+            <img src="@item.ImgUrl" width="100" height="100" />
+        </td>
+        <td>
+            <img src="@item.ImgUrl1" width="100" height="100" />
+        </td>
+        <td>
+            <img src="@item.ImgUrl2" width="100" height="100" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayCapNhap)
+        </td>
+        <td>
+            @Truncate(item.MoTaNgan,100)
+        </td>
+        <td>
+            @Truncate(item.MoTaChiTiet, 100)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id=item.MaSanPham }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.MaSanPham }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MaSanPham })
+        </td>
+    </tr>
+}
+
+</table>
+
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+<div class="MenuTrang">
+    @Html.PagedListPager(Model,page => Url.Action("QLSanPham",new { page = page}))
+</div>
+<style>
+    .MenuTrang li {
+        display:inline;
+    }
+</style>
