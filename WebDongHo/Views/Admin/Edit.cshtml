@@ -5,22 +5,25 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Edit</h2>
+<h2 style="text-align:center">Chỉnh sửa thông tin sản phẩm</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
+
 <div class="form-horizontal">
-    <h4>SanPham</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.MaSanPham)
-    @Html.HiddenFor(model => model.ImgUrl)
-    @Html.HiddenFor(model => model.ImgUrl1)
-    @Html.HiddenFor(model => model.ImgUrl2)
+
 
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.MaSanPham, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div style="font:18px;padding: 5px 0 0 5px">@Model.MaSanPham</div>
+        </div>
+    </div>
     <div class="form-group">
         @Html.LabelFor(model => model.MaDanhMuc, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -52,36 +55,18 @@
         </div>
     </div>
 
-    @*<div class="form-group">
-            @Html.LabelFor(model => model.ImgUrl, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextBox("files", "", new { type = "file", multiple = "multiple" })
-                @ViewBag.Thongbao
-            </div>
-        </div>*@
     <div class="form-group">
         @Html.LabelFor(model => model.ImgUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+        <img src="@Model.ImgUrl" width="150" height="100" />
+        <img src="@Model.ImgUrl1" width="150" height="100" />
+        <img src="@Model.ImgUrl2" width="150" height="100" />
         <div class="col-md-10">
-            <input type="file" name="fileupload"/>
-            <img src="@Model.ImgUrl" height="100" width="100" />
+            <input type="file" name="files" id="files" multiple />
+            <div class="filearray">
+            </div>
+            @ViewBag.Thongbao
         </div>
     </div>
-    <div class="form-group">
-        @Html.LabelFor(model => model.ImgUrl1, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            <input type="file" name="fileupload" />
-            <img src="@Model.ImgUrl1" height="100" width="100" />
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.ImgUrl2, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            <input type="file" name="fileupload" />
-            <img src="@Model.ImgUrl2" height="100" width="100" />
-        </div>
-    </div>
-
     <div class="form-group">
         @Html.LabelFor(model => model.NgayCapNhap, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -93,16 +78,14 @@
     <div class="form-group">
         @Html.LabelFor(model => model.MoTaNgan, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.MoTaNgan, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.MoTaNgan, "", new { @class = "text-danger" })
+            <textarea name="MoTaNgan">@Model.MoTaNgan</textarea>
         </div>
     </div>
 
     <div class="form-group">
         @Html.LabelFor(model => model.MoTaChiTiet, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.MoTaChiTiet, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.MoTaChiTiet, "", new { @class = "text-danger" })
+            <textarea name="MoTaChiTiet">@Model.MoTaChiTiet</textarea>
         </div>
     </div>
 
@@ -117,3 +100,25 @@
 <div>
     @Html.ActionLink("Back to List", "QLSanPham")
 </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+$(document).on('ready',()=>{
+    $("#files").on('change',function(){
+
+        $(".filearray").empty();//you can remove this code if you want previous user input
+        for(let i=0;i<this.files.length;++i){
+            let filereader = new FileReader();
+            let $img=jQuery.parseHTML("<img width='150' height='100' src=''>");
+            filereader.onload = function(){
+                $img[0].src=this.result;
+            };
+            filereader.readAsDataURL(this.files[i]);
+            $(".filearray").append($img);
+        }
+
+
+    });
+});
+</script>

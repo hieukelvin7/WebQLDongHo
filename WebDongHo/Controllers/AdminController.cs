@@ -223,106 +223,56 @@ namespace WebDongHo.Controllers
         }
         [HttpPost]
         [ValidateInput(false)]
-        //public ActionResult Edit(SanPham sp, HttpPostedFileBase[] files)
-        //{
-        //    try
-        //    {
-        //        ViewBag.MaDanhMuc = new SelectList(data.DanhMucSanPhams.ToList().OrderBy(n => n.TenDanhMuc), "MaDanhMuc", "TenDanhMuc");
-
-        //        SanPham record = (from p in data.SanPhams
-        //                          where p.MaSanPham == sp.MaSanPham
-        //                          select p).SingleOrDefault();
-
-        //        if (record != null)
-        //        {
-        //            if (files.Count() == 3) //=3 đồng nghĩa với việc người dùng chọn 3 ảnh -> thì mình sẽ set lại 3 ảnh đó db.
-        //            {
-        //                int count = 1;
-        //                foreach (HttpPostedFileBase file in files)
-        //                {
-        //                    if (file != null || file.ContentLength > 0)
-        //                    {
-        //                        string _FileName = Path.GetFileName(file.FileName);
-
-        //                        string path = Path.Combine(Server.MapPath("/images/"), _FileName);
-        //                        if (System.IO.File.Exists(path))
-        //                        {
-        //                            //nếu hình ảnh đã tồn tại, thì xóa ảnh cũ, cập nhật lại ảnh mới
-        //                            System.IO.File.Delete(path);
-        //                            file.SaveAs(path);
-        //                        }
-        //                        else
-        //                        {
-        //                            file.SaveAs(path);
-        //                        }
-
-        //                        if (count == 1)
-        //                            record.ImgUrl = "/images/" + _FileName;
-        //                        if (count == 2)
-        //                            record.ImgUrl1 = "/images/" + _FileName;
-        //                        if (count == 3)
-        //                            record.ImgUrl2 = "/images/" + _FileName;
-
-        //                        count++;
-        //                    }
-        //                }
-        //            }
-
-        //            record.TenSanPham = sp.TenSanPham;
-
-        //            data.SubmitChanges();
-        //        }
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        var a = "";
-        //    }
-
-
-        //    data.SanPhams.InsertOnSubmit()
-
-
-        //    return RedirectToAction("QLSanPham");
-
-        //}
-        public ActionResult Edit(SanPham sp, HttpPostedFileBase fileupload)
+        public ActionResult Edit(SanPham sp, HttpPostedFileBase[] files)
         {
             ViewBag.MaDanhMuc = new SelectList(data.DanhMucSanPhams.ToList().OrderBy(n => n.TenDanhMuc), "MaDanhMuc", "TenDanhMuc");
-            if (fileupload == null)
+
+            SanPham record = (from p in data.SanPhams
+                              where p.MaSanPham == sp.MaSanPham
+                              select p).SingleOrDefault();
+
+            if (record != null)
             {
-                ViewBag.Thongbao = "Vui lòng chọn ảnh";
-                return View();
-            }
-            //them vào csdl
-            else
-            {
-                if (ModelState.IsValid)
+                if (files.Count() == 3) //=3 đồng nghĩa với việc người dùng chọn 3 ảnh -> thì mình sẽ set lại 3 ảnh đó db.
                 {
-                    //Luu ten file
-                    var fileName = Path.GetFileName(fileupload.FileName);
-                    //Luu duong dan cua file
-                    var path = Path.Combine(Server.MapPath("~/images"), fileName);
-                    // kiem tra hinh anh ton tai chua?
-                    if (System.IO.File.Exists(path))
+                    int count = 1;
+                    foreach (HttpPostedFileBase file in files)
                     {
-                        ViewBag.Thongbao = "Hình ảnh đã tồn tại";
+                        if (file != null || file.ContentLength > 0)
+                        {
+                            string _FileName = Path.GetFileName(file.FileName);
+
+                            string path = Path.Combine(Server.MapPath("/images/"), _FileName);
+                            if (System.IO.File.Exists(path))
+                            {
+                                //nếu hình ảnh đã tồn tại, thì xóa ảnh cũ, cập nhật lại ảnh mới
+                                System.IO.File.Delete(path);
+                                file.SaveAs(path);
+                            }
+                            else
+                            {
+                                file.SaveAs(path);
+                            }
+
+                            if (count == 1)
+                                record.ImgUrl = "/images/" + _FileName;
+                            if (count == 2)
+                                record.ImgUrl1 = "/images/" + _FileName;
+                            if (count == 3)
+                                record.ImgUrl2 = "/images/" + _FileName;
+
+                            count++;
+                        }
                     }
-                    else
-                    {
-                        fileupload.SaveAs(path);
-                    }
-                    sp.ImgUrl = "/images/" + fileName;
-                    sp.ImgUrl1 = "/images/" + fileName;
-                    sp.ImgUrl2 = "/images/" + fileName;
                 }
 
-
-                UpdateModel(sp);
+                record.TenSanPham = sp.TenSanPham;
+                record.MoTaNgan = sp.MoTaNgan;
+                record.MoTaChiTiet = sp.MoTaChiTiet;
+                UpdateModel(record);
                 data.SubmitChanges();
-                
             }
             return RedirectToAction("QLSanPham");
         }
-        }
     }
+}
