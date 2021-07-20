@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Facebook;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -114,5 +116,29 @@ namespace WebDongHo.Controllers
             }
             return View();
         }
+        //private Uri RedirectUri
+        //{
+        //    get
+        //    {
+        //        var uriBuilder = new UriBuilder(Request.Url);
+        //        uriBuilder.Query = null;
+        //        uriBuilder.Fragment = null;
+        //        uriBuilder.Path = Url.Action("FacebookCallback");
+        //        return uriBuilder.Uri;
+        //    }
+        //}
+        //public ActionResult LoginFB()
+        //{
+        //    var fb = new FacebookClient();
+        //    var loginUrl = fb.GetLoginUrl(new
+        //    {
+        //        client_id = ConfigurationManager.AppSettings["FbAppId"],
+        //        client_secret = ConfigurationManager.AppSettings["FbAppSecret"],
+        //        Redirect_uri= RedirectUri.AbsoluteUri,
+        //        response_type="code",
+        //        scope="email",
+        //    });
+        //    return Redirect(loginUrl.AbsoluteUri);
+        //}
     }
 }

@@ -330,3 +330,5 @@ D:\WebQLDongHo\WebDongHo\bin\PagedList.dll
 D:\WebQLDongHo\WebDongHo\bin\PagedList.Mvc.dll
 D:\WebQLDongHo\WebDongHo\bin\PagedList.xml
 D:\WebQLDongHo\WebDongHo\bin\PagedList.Mvc.xml
+D:\WebQLDongHo\WebDongHo\bin\Facebook.dll
+D:\WebQLDongHo\WebDongHo\bin\Facebook.xml
