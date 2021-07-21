@@ -1,23 +1,36 @@
-﻿@model IEnumerable<WebDongHo.Models.SanPham>
+﻿@*@model IEnumerable<WebDongHo.Models.SanPham>*@
+@using WebDongHo.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<WebDongHo.Models.SanPham>
 @{
     ViewBag.Title = "ThuongHieu";
     Layout = "~/Views/Shared/_LayoutUsers.cshtml";
 }
 
-
-<div class="container">
-    <h2 class="title">Tất Cả Sản Phẩm</h2>
-    <div class="row">
-        @foreach (var item in Model)
-        {
-            <div class="col-4">
-                <a href="@Url.Action("Detail","HomeUser",new{ id=item.MaSanPham  })">
-                    <img src="@item.ImgUrl" width="250" height="250" alt="@item.TenSanPham">
-                    <h4>@item.TenSanPham</h4>
-                    <p class="price">@String.Format("{0:0,0}", item.GiaGoc) VND</p>
-                </a>
-            </div>
-        }
-
+<table>
+    <div class="container">
+        <h2 class="title">Tất Cả Sản Phẩm</h2>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-4">
+                    <a href="@Url.Action("Detail","HomeUser",new{ id=item.MaSanPham  })">
+                        <img src="@item.ImgUrl" width="250" height="250" alt="@item.TenSanPham">
+                        <h4>@item.TenSanPham</h4>
+                        <p class="price">@String.Format("{0:0,0}", item.GiaGoc) VND</p>
+                    </a>
+                </div>
+            }
+        </div>
     </div>
+</table>
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("ThuongHieu", new { page = page }))
 </div>
+<style>
+    .MenuTrang li {
+        display: inline;
+        color: #fff
+    }
+</style>

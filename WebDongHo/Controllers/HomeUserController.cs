@@ -17,16 +17,14 @@ namespace WebDongHo.Controllers
         {
             return data.SanPhams.OrderByDescending(a => a.NgayCapNhap).Take(count).ToList();
         }
-        public ActionResult Index(string searchString, int page = 1, int pageSize = 10)
+        public ActionResult Index()
         {
-            var spmoi = SanPhamMoi(4);
-            var model = ListAllPage(searchString, page, pageSize);
-            
-            return View(model);
+            var spmoi = SanPhamMoi(4);       
+            return View(spmoi);
         }
         public IEnumerable<SanPham> ListAllPage(string searchString, int page, int pageSize)
         {
-           
+        
             IQueryable<SanPham> model = data.SanPhams;
             if (!String.IsNullOrEmpty(searchString))
             {
@@ -110,11 +108,15 @@ namespace WebDongHo.Controllers
             }
             return this.Contact();  
         }        
-        public ActionResult ThuongHieu()
+        public ActionResult ThuongHieu(/*string searchString, int page = 1, int pageSize = 10,*/ int? page)
         {
-            var sp = from s in data.SanPhams select s;
+            var sp = from s in data.SanPhams select s;       
+            //var model = ListAllPage(searchString, page, pageSize);
+            int pageNumber = (page ?? 1);
+            int pageSize = 8;
+            return View(data.SanPhams.ToList().OrderBy(n => n.MaSanPham).ToPagedList(pageNumber, pageSize));
 
-            return View(sp);
+            //return View(model);
 
         }
         public ActionResult Nu()
