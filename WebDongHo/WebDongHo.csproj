@@ -134,7 +134,9 @@
     <Compile Include="Controllers\GiohangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomeUserController.cs" />
+    <Compile Include="Controllers\Momo.cs" />
     <Compile Include="Controllers\NguoiDungController.cs" />
+    <Compile Include="Controllers\PaymentRequest.cs" />
     <Compile Include="Controllers\ThuongHieuController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -2193,6 +2195,7 @@
     <Content Include="Views\ThuongHieu\Edit.cshtml" />
     <Content Include="Views\ThuongHieu\Create.cshtml" />
     <Content Include="Views\ThuongHieu\Delete.cshtml" />
+    <Content Include="Views\HomeUser\ConfirmPaymentClient.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -332,3 +332,5 @@ D:\WebQLDongHo\WebDongHo\bin\PagedList.xml
 D:\WebQLDongHo\WebDongHo\bin\PagedList.Mvc.xml
 D:\WebQLDongHo\WebDongHo\bin\Facebook.dll
 D:\WebQLDongHo\WebDongHo\bin\Facebook.xml
+C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\Facebook.dll
+C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\Facebook.xml

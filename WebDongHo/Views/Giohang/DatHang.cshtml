@@ -5,39 +5,6 @@
     Layout = "~/Views/Shared/_LayoutUsers.cshtml";
 }
 
-@*<h2 style="text-align:center">Thông Tin Hàng Hóa</h2>
-    <table align="center" border="1">
-        <tr style="text-align:center;font-weight:bold">
-            <td>Mã Sản Phẩm</td>
-            <td>Tên Sản Phẩm</td>
-            <td>Ảnh</td>
-            <td>Số Lượng</td>
-            <td>Đơn Giá</td>
-            <td>Thành Tiền</td>
-        </tr>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.iMasanpham</td>
-                <td>@item.sTensanpham</td>
-                <td><img src="@item.sAnhbia" /></td>
-                @using (Html.BeginForm("CapnhatGiohang", "Giohang", new { @iMaSP = item.iMasanpham }))
-                {
-                    <td>@item.iSoluong</td>
-                    <td>@String.Format("{0:0,0}", item.dDongia)</td>
-                    <td>@String.Format("{0:0,0}", item.dThanhtien)</td>
-                }
-            </tr>
-        }
-        <tr style="font-weight: bold; text-align:right; color:red">
-            <td colspan="3"> Tổng số lượng: @ViewBag.Tongsoluong </td>
-            <td colspan="3"> Tổng tiền: @string.Format("{0:0,0}", ViewBag.Tongtien) VNĐ </td>
-        </tr>
-        <tr style="font-weight: bold; text-align:right; color:red">
-            <td colspan="6"> @Html.ActionLink("Trở về giỏ hàng", "Giohang", "Giohang")</td>
-
-        </tr>
-    </table>*@
 
 <link rel="stylesheet" href="~/Content/cart.css" />
 <div id="cart">
@@ -95,42 +62,6 @@
 
 
 
-@*@using WebDongHo.Models
-    <h2 style="text-align:center"> THÔNG TIN KHÁCH HÀNG</h2>
-    @{
-        User kh = (User)Session["TaiKhoan"];
-    }
-    <table align="center">
-        @using (Html.BeginForm())
-        {
-            @Html.ValidationSummary(true)
-            <tr style="height:40px">
-                <td> Ho ten khach: </td>
-                <td> @kh.HoTen </td>
-            </tr>
-            <tr style="height:40px">
-                <td> Dia chi: </td>
-                <td> @kh.DiaChi</td>
-            </tr>
-            <tr style="height:40px">
-                <td> SDT: </td>
-                <td> @kh.SDT</td>
-            </tr>
-            <tr style="height:40px">
-                <td> Ngay dat: </td>
-                <td> @DateTime.Now.ToShortDateString()</td>
-            </tr>
-            <tr style="height:40px">
-                <td> Ngày giao: </td>
-                <td> <input type="date" name="Ngaygiao" /></td>
-            </tr>
-            <tr style="height:40px">
-                <td> </td>
-                <td> <input type="submit" value="Đồng Ý Đặt Hàng" /></td>
-            </tr>
-        }
-    </table>*@
-
 
 
 @using WebDongHo.Models
@@ -166,7 +97,7 @@
                         <td><input class="date-input" type="date" name="Ngaygiao" /></td>
                     </tr>
                     <tr>
-                        <td></td>
+                        <td><a href="@Url.Action("Payment","HomeUser")">Thanh Toán Bằng MoMo</a></td>
                         <td><input class="btn-submit" type="submit" value="Đồng Ý Đặt Hàng" /></td>
                     </tr>
                 }

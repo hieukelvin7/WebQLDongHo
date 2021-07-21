@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebDongHo.Models;
+using PagedList;
 namespace WebDongHo.Controllers
 {
     public class HomeUserController : Controller
@@ -15,12 +17,23 @@ namespace WebDongHo.Controllers
         {
             return data.SanPhams.OrderByDescending(a => a.NgayCapNhap).Take(count).ToList();
         }
-        public ActionResult Index()
+        public ActionResult Index(string searchString, int page = 1, int pageSize = 10)
         {
             var spmoi = SanPhamMoi(4);
-            return View(spmoi);
+            var model = ListAllPage(searchString, page, pageSize);
+            
+            return View(model);
         }
-       
+        public IEnumerable<SanPham> ListAllPage(string searchString, int page, int pageSize)
+        {
+           
+            IQueryable<SanPham> model = data.SanPhams;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                model = model.Where(s => s.TenSanPham.Contains(searchString) || s.MoTaNgan.Contains(searchString));
+            }
+            return model.OrderByDescending(x => x.NgayCapNhap).ToPagedList(page, pageSize);
+        }
         public ActionResult SPNu()
         {
             var clients = from c in data.SanPhams
@@ -152,6 +165,141 @@ namespace WebDongHo.Controllers
         public ActionResult TinTuc6()
         {
             return View();
+        }
+        public ActionResult Payment()
+        {
+            //request params need to request to MoMo system
+            string endpoint = "https://test-payment.momo.vn/gw_payment/transactionProcessor";
+            string partnerCode = "MOMO2C5U20210720";
+            string accessKey = "xTyRu9YtM0I082Z7";
+            string serectkey = "bNjdi5w3IoG1fhVZbFPCDy5dUkfLZH0i";
+            string orderInfo = "test";
+            string returnUrl = "https://localhost:44324/HomeUser/ConfirmPaymentClient";
+            string notifyurl = "http://ba1adf48beba.ngrok.io/HomeUser/SavePayment"; //lưu ý: notifyurl không được sử dụng localhost, có thể sử dụng ngrok để public localhost trong quá trình test
+
+            string amount = TongTien().ToString();
+            string orderid = DateTime.Now.Ticks.ToString();
+            string requestId = DateTime.Now.Ticks.ToString();
+            string extraData = "";
+
+            //Before sign HMAC SHA256 signature
+            string rawHash = "partnerCode=" +
+                partnerCode + "&accessKey=" +
+                accessKey + "&requestId=" +
+                requestId + "&amount=" +
+                amount + "&orderId=" +
+                orderid + "&orderInfo=" +
+                orderInfo + "&returnUrl=" +
+                returnUrl + "&notifyUrl=" +
+                notifyurl + "&extraData=" +
+                extraData;
+
+            Momo crypto = new Momo();
+            //sign signature SHA256
+            string signature = crypto.signSHA256(rawHash, serectkey);
+
+            //build body json request
+            JObject message = new JObject
+            {
+                { "partnerCode", partnerCode },
+                { "accessKey", accessKey },
+                { "requestId", requestId },
+                { "amount", amount },
+                { "orderId", orderid },
+                { "orderInfo", orderInfo },
+                { "returnUrl", returnUrl },
+                { "notifyUrl", notifyurl },
+                { "extraData", extraData },
+                { "requestType", "captureMoMoWallet" },
+                { "signature", signature }
+
+            };
+
+            string responseFromMomo = PaymentRequest.sendPaymentRequest(endpoint, message.ToString());
+
+            JObject jmessage = JObject.Parse(responseFromMomo);
+
+            return Redirect(jmessage.GetValue("payUrl").ToString());
+        }
+        public List<Giohang> Laygiohang()
+        {
+            List<Giohang> lstGiohang = Session["Giohang"] as List<Giohang>;
+            if (lstGiohang == null)
+            {
+                lstGiohang = new List<Giohang>(); Session["Giohang"] = lstGiohang;
+            }
+            return lstGiohang;
+        }
+        public int TongSoLuong()
+        {
+            int iTongSoLuong = 0;
+            List<Giohang> lstGiohang = Session["Giohang"] as List<Giohang>;
+            if (lstGiohang != null)
+            {
+                iTongSoLuong = lstGiohang.Sum(n => n.iSoluong);
+            }
+            return iTongSoLuong;
+        }
+        public double TongTien()
+        {
+            double iTongTien = 0;
+            List<Giohang> lstGiohang = Session["Giohang"] as List<Giohang>;
+            if (lstGiohang != null)
+            {
+                iTongTien = lstGiohang.Sum(n => n.dThanhtien);
+            }
+            return iTongTien;
+        }
+
+
+        public ActionResult ConfirmPaymentClient()
+        {
+            return View();
+        }
+        [HttpGet]
+        public ActionResult SavePayment()
+        {
+            if (Session["TaiKhoan"] == null || Session["TaiKhoan"].ToString() == "")
+            {
+                return RedirectToAction("DangNhap", "NguoiDung");
+            }
+            if (Session["GioHang"] == null)
+            {
+                return RedirectToAction("Index", "HomeUser");
+            }
+            List<Giohang> lstGioHang = Laygiohang();
+            ViewBag.TongSoLuong = TongSoLuong();
+            ViewBag.TongTien = TongTien();
+
+            return View(lstGioHang);
+        }
+        [HttpPost]
+        public ActionResult SavePayment(FormCollection collection)
+        {
+            //hiển thị thông báo cho người dùng
+            DONDATHANG ddh = new DONDATHANG();
+            User us = (User)Session["TaiKhoan"];
+            List<Giohang> gh = Laygiohang();
+            ddh.MaKH = us.MaKH;
+            ddh.NgayDat = DateTime.Now;
+            var ngaygiao = String.Format("{0:MM/dd/yyyy}", collection["NgayGiao"]);
+            ddh.NgayGiao = DateTime.Parse(ngaygiao);
+            //ddh.Tinhtranggiaohang = false;
+            //ddh.Dathanhtoan = false;
+            data.DONDATHANGs.InsertOnSubmit(ddh);
+            data.SubmitChanges();
+            foreach (var item in gh)
+            {
+                CHITIETDONHANG ctdh = new CHITIETDONHANG();
+                ctdh.MaDonHang = ddh.MaDonHang;
+                ctdh.MaSanPham = item.iMasanpham;
+                ctdh.SoLuong = item.iSoluong;
+                ctdh.DonGia = (decimal)item.dDongia;
+                data.CHITIETDONHANGs.InsertOnSubmit(ctdh);
+            }
+            data.SubmitChanges();
+            Session["Giohang"] = null;
+            return RedirectToAction("ConfirmPaymentClient", "HomeUser");
         }
     }
 }
