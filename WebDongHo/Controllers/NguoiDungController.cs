@@ -7,6 +7,9 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebDongHo.Models;
+using Newtonsoft.Json;
+using System.Web.Security;
+
 namespace WebDongHo.Controllers
 {
     public class NguoiDungController : Controller
@@ -124,29 +127,53 @@ namespace WebDongHo.Controllers
         //    AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
         //    return RedirectToAction("Index", "Home");
         //}
-        //private Uri RedirectUri
-        //{
-        //    get
-        //    {
-        //        var uriBuilder = new UriBuilder(Request.Url);
-        //        uriBuilder.Query = null;
-        //        uriBuilder.Fragment = null;
-        //        uriBuilder.Path = Url.Action("FacebookCallback");
-        //        return uriBuilder.Uri;
-        //    }
-        //}
-        //public ActionResult LoginFB()
-        //{
-        //    var fb = new FacebookClient();
-        //    var loginUrl = fb.GetLoginUrl(new
-        //    {
-        //        client_id = ConfigurationManager.AppSettings["FbAppId"],
-        //        client_secret = ConfigurationManager.AppSettings["FbAppSecret"],
-        //        Redirect_uri= RedirectUri.AbsoluteUri,
-        //        response_type="code",
-        //        scope="email",
-        //    });
-        //    return Redirect(loginUrl.AbsoluteUri);
-        //}
+        private Uri RedirectUri
+        {
+            get
+            {
+                var uriBuilder = new UriBuilder(Request.Url);
+                uriBuilder.Query = null;
+                uriBuilder.Fragment = null;
+                uriBuilder.Path = Url.Action("FacebookCallback");
+                return uriBuilder.Uri;
+            }
+        }
+        [AllowAnonymous]
+        public ActionResult LoginFB()
+        {
+            var fb = new FacebookClient();
+            var loginUrl = fb.GetLoginUrl(new
+            {
+                client_id = "335800521360326",
+                client_secret = "75cd6945571df117172a0aa4c39eef39",
+                Redirect_uri = RedirectUri.AbsoluteUri,
+                response_type = "code",
+                scope = "email",
+            });
+            return Redirect(loginUrl.AbsoluteUri);
+        }
+
+        public ActionResult FacebookCallback(string code)
+        {
+            var fb = new FacebookClient();
+            dynamic result = fb.Post("oauth/access_token", new
+            {
+                client_id = "335800521360326",
+                client_secret = "75cd6945571df117172a0aa4c39eef39",
+                redirect_uri = RedirectUri.AbsoluteUri,
+                code = code
+            });
+            var accessToken = result.access_token;
+            Session["AccessToken"] = accessToken;
+            fb.AccessToken = accessToken;
+            dynamic me = fb.Get("me?fields=link,first_name,currency,last_name,email,gender,locale,timezone,verified,picture,age_range");
+            string email = me.email;
+            TempData["email"] = me.email;
+            TempData["first_name"] = me.first_name;
+            TempData["lastname"] = me.last_name;
+            TempData["picture"] = me.picture.data.url;
+            FormsAuthentication.SetAuthCookie(email, false);
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

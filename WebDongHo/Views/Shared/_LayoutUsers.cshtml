@@ -22,7 +22,12 @@
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0&appId=4348948228482677&autoLogAppEvents=1" nonce="NvF4cWFk">
 
     </script>
-    <script>
+    @*<script>
+        function getUserData() {
+            FB.api('/ me', { fields: 'name, email' }, (response) => {
+                document.getElementById('response').innerHTML = 'Hello' + response.name;
+            });
+        }
 
         window.fbAsyncInit = function () {
             FB.init({
@@ -48,7 +53,8 @@
                 if (response.status === ('connected')) {
                     alert('Bạn đã đăng nhập thành công');
                     window.location.href = "https://localhost:44324/";
-                    
+                    document.getElementById('loginBtn').style.display = 'none';
+                    getUserData();
                 }
                 else {
                     alert('Đăng nhập không thành công vui lòng kiểm tra lại thông tin')
@@ -59,7 +65,7 @@
         
 
        
-    </script>
+    </script>*@
     <!-- logo and menu -->
     <div class="header">
         <div class="container">

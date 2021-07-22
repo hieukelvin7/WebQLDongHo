@@ -38,12 +38,14 @@
                     <a href="@Url.Action("DangKy", "NguoiDung")" class="form-submit">Đăng Ký</a>
                     <br />
                     <p style="color:white"> Hoặc có thể đăn nhập bằng</p>
-
-        
-                    <fb:login-button scope="public_profile,email"
+                    <div>
+                        @Html.ActionLink("Facebook", "LoginFB", "NguoiDung");                       
+                    </div>            
+            
+                    @*<fb:login-button scope="public_profile,email"
                                      onlogin="checkLoginState();">
 
-                    </fb:login-button>
+                    </fb:login-button>*@
 
                 </form>
             </div>
