@@ -38,9 +38,9 @@
                     <a href="@Url.Action("DangKy", "NguoiDung")" class="form-submit">Đăng Ký</a>
                     <br />
                     <p style="color:white"> Hoặc có thể đăn nhập bằng</p>
-                    <div>
-                        @Html.ActionLink("Facebook", "LoginFB", "NguoiDung");                       
-                    </div>            
+                    <button class="form-submit" style="background: #0e8ef2">
+                        @Html.ActionLink("Facebook", "LoginFB", "NguoiDung")                       
+                    </button>            
             
                     @*<fb:login-button scope="public_profile,email"
                                      onlogin="checkLoginState();">

@@ -77,27 +77,32 @@
                 {
                     @Html.ValidationSummary(true)
                     <tr>
-                        <td>Ho tên khach:</td>
+                        <td>tên Khách Hàng</td>
                         <td><span>@kh.HoTen</span></td>
                     </tr>
                     <tr>
-                        <td>Dia chi: </td>
+                        <td>Địa Chỉ</td>
                         <td><span>@kh.DiaChi</span></td>
                     </tr>
                     <tr>
-                        <td> SDT:</td>
+                        <td> SDT</td>
                         <td><span> @kh.SDT</span></td>
                     </tr>
                     <tr>
-                        <td> Ngay dat: </td>
+                        <td> Ngày Đặt </td>
                         <td><span>@DateTime.Now.ToShortDateString()</span></td>
                     </tr>
                     <tr>
-                        <td> Ngày giao: </td>
+                        <td>Ngày Giao </td>
                         <td><input class="date-input" type="date" name="Ngaygiao" /></td>
                     </tr>
                     <tr>
-                        <td><a href="@Url.Action("Payment","HomeUser")">Thanh Toán Bằng MoMo</a></td>
+                        <td>
+                            
+                            <div style=" background: #ff9c27; text-transform: uppercase; margin-top: 30px; font-size:12px; font-weight:600; padding:0 5px;" >
+                                <img src="~/images/logo-momo.png" alt="" style="width: 25px; height:25px; margin: -8px 3px; cursor:pointer;" /><a style="text-decoration:none;  color:#111; " href="@Url.Action("Payment","HomeUser")">Thanh Toán Ví MoMo</a>
+                            </div>
+                        </td>
                         <td><input class="btn-submit" type="submit" value="Đồng Ý Đặt Hàng" /></td>
                     </tr>
                 }

@@ -151,7 +151,6 @@ E:\WebQLDongHo\WebDongHo\bin\System.Web.WebPages.Razor.xml
 E:\WebQLDongHo\WebDongHo\bin\Newtonsoft.Json.xml
 E:\WebQLDongHo\WebDongHo\bin\Antlr3.Runtime.pdb
 E:\WebQLDongHo\WebDongHo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\WebQLDongHo\WebDongHo\obj\Debug\WebDongHo.csprojAssemblyReference.cache
 E:\WebQLDongHo\WebDongHo\obj\Debug\WebDongHo.csproj.CoreCompileInputs.cache
 E:\WebQLDongHo\WebDongHo\obj\Debug\WebDongHo.csproj.CopyComplete
 E:\WebQLDongHo\WebDongHo\obj\Debug\WebDongHo.dll
@@ -343,3 +342,13 @@ C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\obj\Debug\WebDongHo.cspro
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\Microsoft.Owin.dll
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\Owin.dll
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\Microsoft.Owin.xml
+E:\WebQLDongHo\WebDongHo\bin\Facebook.dll
+E:\WebQLDongHo\WebDongHo\bin\Microsoft.Owin.dll
+E:\WebQLDongHo\WebDongHo\bin\Owin.dll
+E:\WebQLDongHo\WebDongHo\bin\WebMatrix.Data.dll
+E:\WebQLDongHo\WebDongHo\bin\WebMatrix.WebData.dll
+E:\WebQLDongHo\WebDongHo\bin\Facebook.xml
+E:\WebQLDongHo\WebDongHo\bin\Microsoft.Owin.xml
+E:\WebQLDongHo\WebDongHo\bin\WebMatrix.Data.xml
+E:\WebQLDongHo\WebDongHo\bin\WebMatrix.WebData.xml
+E:\WebQLDongHo\WebDongHo\obj\Debug\WebDongHo.csproj.AssemblyReference.cache

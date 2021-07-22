@@ -350,7 +350,7 @@ nav ul li:hover .subnav{
 
 .row .social__icon i{
     font-size: 24px;
-    padding: 8px 15px;
+    padding: 18px 15px;
     color: #333;
     opacity: 0.4;
 }
@@ -367,11 +367,18 @@ nav ul li:hover .subnav{
 }
 
 .footer-col-1{
+    margin-top:25px;
+    margin-bottom:10px;
     width: 30%;
 }
 
 .footer-col-1 a img{
     padding: 35px 0;
+}
+
+.footer-col-1 h8 {
+    font-size:30px;
+    color: #fff;
 }
 
 .footer-col-1 p,
@@ -406,7 +413,7 @@ nav ul li:hover .subnav{
 }
 
 .footer-col-3 h2{
-    padding-top: 65px;
+    padding-top: 25px;
 }
 
 
@@ -417,7 +424,6 @@ nav ul li:hover .subnav{
 .footer-col-4{
     width: 30%;
     text-align: center;
-    padding-top: 32px;
 }
 
 .col-3 h3,

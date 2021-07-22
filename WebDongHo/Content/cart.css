@@ -130,6 +130,7 @@ table button a {
 }
 
 .order table {
+    margin-left: 350px;
     padding: 20px 40px;
     background: #222;
 }

@@ -87,13 +87,13 @@
                         <label for="check" class="nav__overlay"></label>
                         <nav class="nav__mobile">
                             <ul class="nav__mobile-list">
-                                <li><a href="">Trang Chủ</a></li>
-                                <li><a href="">Tin Tức</a></li>
-                                <li><a href="">Liên Hệ</a></li>
+                                <li><a href="@Url.Action("Index", "HomeUser")">Trang Chủ</a></li>
+                                <li><a href="@Url.Action("TinTuc","HomeUser")">Tin Tức</a></li>
+                                <li><a href="@Url.Action("Contact", "HomeUser")">Liên Hệ</a></li>
                                 <li><a href="">Khuyến Mãi</a></li>
-                                <li><a href="">Giở Hàng</a></li>
-                                <li><a href="">Đăng Nhập</a></li>
-                                <li><a href="">Đăng Ký</a></li>
+                                <li>@Html.Action("GiohangPartial", "Giohang")</li>
+                                <li><a href="@Url.Action("DangNhap", "NguoiDung")">Đăng Nhập</a></li>
+                                <li><a href="@Url.Action("DangKy", "NguoiDung")">Đăng Ký</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -158,14 +158,14 @@
            @using (Html.BeginForm("Search", "HomeUser", FormMethod.Get))
             {
              <div class="header__search hide-on-tablet">
-                     <input style="background-color:#111"id="" type="text" name="SearchString" header__input" placeholder="Nhập để tìm kiếm">
+                    <input type="text" class="header__input" placeholder="Nhập để tìm kiếm">
                     <button class="search-icon">
                         <i class="search-icon-item fas fa-search"></i>
                     </button>
             </div>
             }  
         
-            </div>
+            
         </div>
     </div>
 
@@ -181,10 +181,10 @@
         <div class="row" style="background-color: #fff;">
             <h2 class="social__page">Social page:</h2>
             <div class="social__icon">
-                <a href=""><i class="fab fa-facebook-square"></i></a>
-                <a href=""><i class="fab fa-twitter-square"></i></a>
-                <a href=""><i class="fab fa-youtube-square"></i></a>
-                <a href=""><i class="fab fa-instagram-square"></i></a>
+                <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                <a href="https://twitter.com/?lang=vi" target="_blank"><i class="fab fa-twitter-square"></i></a>
+                <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube-square"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square"></i></a>
             </div>
         </div>
         <hr>
@@ -196,7 +196,7 @@
         <div class="container">
             <div class="row">
                 <div class="footer-col-1">
-                    <h1>Hotline 1900.1008</h1>
+                    <h8>Hotline 1900.1008</h8>
                     <div class="fb-like" data-href="http://dongho4aechinhhang.somee.com/" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
                     <p>Nhóm thực hiện: Nhóm bốn anh em </p>
                     <p> 475A Điện Biên Phủ, P.25, Q.Bình Thạnh, TP.HCM</p>
@@ -217,7 +217,7 @@
                     <p>Bài Viết Mới </p>
                     <p>Thông Tin Khuyến Mãi</p>
                     <!--<p>Ngưng Hiện Quảng Cáo</p>-->
-                    <img src="~/images/thong-bao-bo-cong-thuong.png" alt="" height="55x">
+                    <img src="~/images/thong-bao-bo-cong-thuong.png" alt="" height="55px">
                 </div>
                 <div class="footer-col-4">
                     <h2 class="footer__title">Chứng Nhận</h2>
