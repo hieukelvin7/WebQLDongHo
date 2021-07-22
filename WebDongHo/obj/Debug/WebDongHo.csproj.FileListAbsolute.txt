@@ -235,6 +235,22 @@ F:\Webdongho\WebQLDongHo\WebDongHo\obj\Debug\WebDongHo.csproj.CoreCompileInputs.
 F:\Webdongho\WebQLDongHo\WebDongHo\obj\Debug\WebDongHo.csproj.CopyComplete
 F:\Webdongho\WebQLDongHo\WebDongHo\obj\Debug\WebDongHo.dll
 F:\Webdongho\WebQLDongHo\WebDongHo\obj\Debug\WebDongHo.pdb
+F:\Webdongho\WebQLDongHo\WebDongHo\bin\PagedList.dll
+F:\Webdongho\WebQLDongHo\WebDongHo\bin\PagedList.Mvc.dll
+F:\Webdongho\WebQLDongHo\WebDongHo\bin\PagedList.xml
+F:\Webdongho\WebQLDongHo\WebDongHo\bin\PagedList.Mvc.xml
+E:\WebQLDongHo\WebDongHo\bin\PagedList.dll
+E:\WebQLDongHo\WebDongHo\bin\PagedList.Mvc.dll
+E:\WebQLDongHo\WebDongHo\bin\PagedList.xml
+E:\WebQLDongHo\WebDongHo\bin\PagedList.Mvc.xml
+D:\WebQLDongHo\WebDongHo\bin\PagedList.dll
+D:\WebQLDongHo\WebDongHo\bin\PagedList.Mvc.dll
+D:\WebQLDongHo\WebDongHo\bin\PagedList.xml
+D:\WebQLDongHo\WebDongHo\bin\PagedList.Mvc.xml
+D:\WebQLDongHo\WebDongHo\bin\Facebook.dll
+D:\WebQLDongHo\WebDongHo\bin\Facebook.xml
+F:\Webdongho\WebQLDongHo\WebDongHo\bin\Facebook.dll
+F:\Webdongho\WebQLDongHo\WebDongHo\bin\Facebook.xml
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\WebDongHo.dll.config
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\WebDongHo.dll
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\WebDongHo.pdb
@@ -288,6 +304,7 @@ C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\roslyn\vbc.rsp
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\roslyn\VBCSCompiler.exe
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\Antlr3.Runtime.dll
+C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\Facebook.dll
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\Newtonsoft.Json.dll
@@ -301,6 +318,7 @@ C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\System.Web.WebPages.D
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\System.Web.WebPages.dll
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\System.Web.WebPages.Razor.dll
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\WebGrease.dll
+C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\Facebook.xml
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\PagedList.xml
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\PagedList.Mvc.xml
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\System.Web.Helpers.xml
@@ -317,22 +335,11 @@ C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\obj\Debug\WebDongHo.cspro
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\obj\Debug\WebDongHo.csproj.CopyComplete
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\obj\Debug\WebDongHo.dll
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\obj\Debug\WebDongHo.pdb
+C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\WebMatrix.Data.dll
+C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\WebMatrix.WebData.dll
+C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\WebMatrix.Data.xml
+C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\WebMatrix.WebData.xml
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\obj\Debug\WebDongHo.csprojAssemblyReference.cache
-F:\Webdongho\WebQLDongHo\WebDongHo\bin\PagedList.dll
-F:\Webdongho\WebQLDongHo\WebDongHo\bin\PagedList.Mvc.dll
-F:\Webdongho\WebQLDongHo\WebDongHo\bin\PagedList.xml
-F:\Webdongho\WebQLDongHo\WebDongHo\bin\PagedList.Mvc.xml
-E:\WebQLDongHo\WebDongHo\bin\PagedList.dll
-E:\WebQLDongHo\WebDongHo\bin\PagedList.Mvc.dll
-E:\WebQLDongHo\WebDongHo\bin\PagedList.xml
-E:\WebQLDongHo\WebDongHo\bin\PagedList.Mvc.xml
-D:\WebQLDongHo\WebDongHo\bin\PagedList.dll
-D:\WebQLDongHo\WebDongHo\bin\PagedList.Mvc.dll
-D:\WebQLDongHo\WebDongHo\bin\PagedList.xml
-D:\WebQLDongHo\WebDongHo\bin\PagedList.Mvc.xml
-D:\WebQLDongHo\WebDongHo\bin\Facebook.dll
-D:\WebQLDongHo\WebDongHo\bin\Facebook.xml
-C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\Facebook.dll
-C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\Facebook.xml
-F:\Webdongho\WebQLDongHo\WebDongHo\bin\Facebook.dll
-F:\Webdongho\WebQLDongHo\WebDongHo\bin\Facebook.xml
+C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\Microsoft.Owin.dll
+C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\Owin.dll
+C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\Microsoft.Owin.xml

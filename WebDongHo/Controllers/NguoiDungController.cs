@@ -8,7 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using WebDongHo.Models;
 using Newtonsoft.Json;
-using System.Web.Security;
+
+
 
 namespace WebDongHo.Controllers
 {
@@ -106,10 +107,8 @@ namespace WebDongHo.Controllers
             {
                 User us = data.Users.SingleOrDefault(p => p.TaiKhoan == tendn && p.MatKhau == matkhau);
                 if (us!=null)
-                {
-                    //hình như chỗ này bị sai, cái session này em hiện tên người dùng. Em vẫn lấy được tên người dùng
+                {               
                     Session["TaiKhoan"] = us;
-                //    Session["TaiKhoan1"] = us.HoTen;
                     return RedirectToAction("Index", "HomeUser");
                 }
                 else
@@ -120,13 +119,14 @@ namespace WebDongHo.Controllers
             }
             return View();
         }
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult LogOff()
-        //{
-        //    AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-        //    return RedirectToAction("Index", "Home");
-        //}
+      
+        public ActionResult LogOff() 
+        {
+            Session["TaiKhoan"] = null;
+
+            return RedirectToAction("Index", "HomeUser");
+        }
+
         private Uri RedirectUri
         {
             get
@@ -172,7 +172,7 @@ namespace WebDongHo.Controllers
             TempData["first_name"] = me.first_name;
             TempData["lastname"] = me.last_name;
             TempData["picture"] = me.picture.data.url;
-            FormsAuthentication.SetAuthCookie(email, false);
+            //FormsAuthentication.SetAuthCookie(email, false);
             return RedirectToAction("Index", "Home");
         }
     }

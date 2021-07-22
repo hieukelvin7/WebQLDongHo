@@ -12,10 +12,7 @@
     <link rel="stylesheet" href="~/Content/style.css" />
     <link rel="stylesheet" href="~/Content/base.css" />
     <link rel="stylesheet" href="~/Content/responsive.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    
 </head>
 <body>
     <div id="fb-root"></div>
@@ -125,39 +122,25 @@
 
                             if (user != null)
                             {
-                                @*<li><a href="">Xin chào: @user.HoTen</a></li>*@
-                               
-                                    @*<ul class="nav navbar-nav navbar-right">
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                Xin chào:@user.HoTen
-                                                <span class="caret"></span>
-                                            </a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="@Url.Action("ThongTin","NguoiDung")">Thông tin tài khoản</a></li>
-                                                <li><a href="@Url.Action("ThongTin","NguoiDung")">Cài đặt</a></li>
-                                                <li><a href="@Url.Action("ThongTin","NguoiDung")">Help</a></li>
-                                                <li role="separator" class="divider"></li>
-                                                <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>*@
-                                    <div class="navbar-collapse collapse" id="menu">
-                                        <ul class="nav navbar-nav">
-                           
-                                            <li class="dropdown">
-                                                <a data-toggle="dropdown" href="">Xin chào: @user.HoTen<span class="caret"></span></a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="#">Thông tin</a></li>
-                                                    <li><a href="#">Đổi mật khẩu</a></li>
-                                                    <div class="divider"></div>
-                                                    <li><a href="#">Thoát</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                }
-                            
+                                <li><a href="">Xin chào: @user.HoTen</a></li>
+                                    <li><a href="@Url.Action("LogOff","NguoiDung")">Đăng xuất</a></li>
+
+                                @*<div class="navbar-collapse collapse" id="menu">
+                    <ul class="nav navbar-nav">
+
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" href="">Xin chào: @user.HoTen<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Thông tin</a></li>
+                                <li><a href="#">Đổi mật khẩu</a></li>
+                                <div class="divider"></div>
+                                <li><a href="#">Thoát</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>*@
+                            }
+
                             else
                             {
                                 <li><a href="@Url.Action("DangNhap", "NguoiDung")">Đăng Nhập</a></li>
@@ -172,15 +155,16 @@
                 <span class="header__cart-notice">0</span>
                 @Html.Action("GiohangPartial", "Giohang")
             </div>
-            @using (Html.BeginForm("ThuongHieu", "HomeUser", FormMethod.Get))
+           @using (Html.BeginForm("Search", "HomeUser", FormMethod.Get))
             {
              <div class="header__search hide-on-tablet">
-                     <input style="background-color:#111" type="text" name="SearchString" header__input" placeholder="Nhập để tìm kiếm">
+                     <input style="background-color:#111"id="" type="text" name="SearchString" header__input" placeholder="Nhập để tìm kiếm">
                     <button class="search-icon">
                         <i class="search-icon-item fas fa-search"></i>
                     </button>
             </div>
-            }            
+            }  
+        
             </div>
         </div>
     </div>

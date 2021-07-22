@@ -57,6 +57,9 @@ namespace WebDongHo.Controllers
             var sp = from s in data.SanPhams
                      where s.MaDanhMuc == id
                      select s;
+            ViewBag.TenTH = (from th in data.DanhMucSanPhams
+                             where th.MaDanhMuc == id
+                             select th);
             return View(sp);
 
         }
@@ -65,6 +68,10 @@ namespace WebDongHo.Controllers
             var sp = from s in data.SanPhams
                      where s.MaSanPham == id
                      select s;
+            
+            ViewBag.SP_Khac = (from c in data.SanPhams
+                               where c.MaDanhMuc != id                        
+                               select c).ToList().Take(4);
             return View(sp.Single());
         }
 
@@ -108,16 +115,27 @@ namespace WebDongHo.Controllers
             }
             return this.Contact();  
         }        
-        public ActionResult ThuongHieu(/*string searchString, int page = 1, int pageSize = 10,*/ int? page)
+        public ActionResult ThuongHieu(/*string searchString, int page = 1, int pageSize = 10*/ int? page)
         {
-            var sp = from s in data.SanPhams select s;       
-            //var model = ListAllPage(searchString, page, pageSize);
+            var sp = from s in data.SanPhams select s;
+
+
             int pageNumber = (page ?? 1);
             int pageSize = 8;
+
+            //ViewBag.TimKiem = ListAllPage(searchString, page, pageSize);
+
+            //return View(sp);
+            
             return View(data.SanPhams.ToList().OrderBy(n => n.MaSanPham).ToPagedList(pageNumber, pageSize));
+        }
+        public ActionResult Search(string id)
+        {
+            //Lấy ra danh sách sản phẩm từ chuỗi tìm kiếm truyền vào
+            var sp = from s in data.SanPhams select s;     
+            ViewBag.TuKhoa = id;
 
-            //return View(model);
-
+            return View(sp);
         }
         public ActionResult Nu()
         {

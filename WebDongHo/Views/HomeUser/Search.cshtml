@@ -1,15 +1,13 @@
-﻿
-@using WebDongHo.Models
-@using PagedList.Mvc;
-@model PagedList.PagedList<WebDongHo.Models.SanPham>
+﻿@model IEnumerable<WebDongHo.Models.SanPham>
 @{
-    ViewBag.Title = "ThuongHieu";
+    ViewBag.Title = "Search";
     Layout = "~/Views/Shared/_LayoutUsers.cshtml";
 }
 
 <table>
+    <li><a>Tìm kiếm sản phẩm mang tên @ViewBag.TuKhoa) </a></li>
     <div class="container">
-        <h2 class="title">Tất Cả Sản Phẩm</h2>
+
         <div class="row">
             @foreach (var item in Model)
             {
@@ -24,13 +22,4 @@
         </div>
     </div>
 </table>
-Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
-<div class="MenuTrang">
-    @Html.PagedListPager(Model, page => Url.Action("ThuongHieu", new { page = page }))
-</div>
-<style>
-    .MenuTrang li {
-        display: inline;
-        color: #fff
-    }
-</style>
+

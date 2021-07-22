@@ -5,8 +5,19 @@
 }
 
 <div class="container">
-    <h2 class="title"></h2>
+    <ul style="text-align:center; color:#FFF;font-size:30px;padding-bottom:20px">
+        <li>
+            <a class="current">
+                Hãng sản xuất @foreach (var item in ViewBag.TenTH)
+                {
+                    @item.TenDanhMuc
+                }
+            </a>
+        </li>
+    </ul>
     <div class="row">
+        
+        
         @foreach (var item in Model)
         {
             <div class="col-4">
