@@ -1,0 +1,39 @@
+
+
+
+.home-product__pagination {
+    margin-top: 48px;
+    margin-bottom: 32px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.pagination-item {
+    margin: 0 12px;
+}
+
+.pagination-item--active .pagination-item__link {
+    background: #222;
+    color: #ccc;
+}
+
+.pagination-item--active .pagination-item__link:hover {
+    background: #ed5c;
+}
+
+.pagination-item__link {
+    text-decoration: none;
+    color: #939393;
+    display: block;
+    min-width: 40px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 16px;
+    border-radius: 2px;
+}

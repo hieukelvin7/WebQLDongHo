@@ -24,7 +24,7 @@
         </div>
     </div>
 </table>
-Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+@*Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
 <div class="MenuTrang">
     @Html.PagedListPager(Model, page => Url.Action("ThuongHieu", new { page = page }))
 </div>
@@ -33,4 +33,37 @@ Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCo
         display: inline;
         color: #fff
     }
-</style>
+</style>*@
+
+
+
+<link rel="stylesheet" href="~/Content/pagination.css" />
+
+<!-- pagination -->
+<ul class="pagination home-product__pagination">
+    <li class="pagination-item">
+        <a href="#" class="pagination-item__link">
+            <i class="pagination-item__icon fas fa-angle-left"></i>
+        </a>
+    </li>
+
+    <li class="pagination-item">
+        <a href="https://localhost:44324/HomeUser/ThuongHieu?page=1" class="pagination-item__link">1</a>
+    </li>
+    <li class="pagination-item">
+        <a href="https://localhost:44324/HomeUser/ThuongHieu?page=2" class="pagination-item__link">2</a>
+    </li>
+    <li class="pagination-item">
+        <a href="https://localhost:44324/HomeUser/ThuongHieu?page=3" class="pagination-item__link">3</a>
+    </li>
+    <li class="pagination-item">
+        <a href="#" class="pagination-item__link">...</a>
+    </li>
+
+    <li class="pagination-item">
+        <a href="#" class="pagination-item__link">
+            <i class="pagination-item__icon fas fa-angle-right"></i>
+        </a>
+    </li>
+</ul>
+

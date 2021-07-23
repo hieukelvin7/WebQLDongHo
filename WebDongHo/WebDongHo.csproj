@@ -187,6 +187,7 @@
     <Content Include="Content\news.css" />
     <Content Include="Content\newspage.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\pagination.css" />
     <Content Include="Content\responsive.css" />
     <Content Include="Content\sale.css" />
     <Content Include="Content\style.css" />
