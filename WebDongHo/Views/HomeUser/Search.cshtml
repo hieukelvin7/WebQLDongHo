@@ -5,21 +5,22 @@
 }
 
 <table>
-    <li><a style="text-align:center; color:white; font-size:30px"> Tìm Kiếm: @ViewBag.TuKhoa </a></li>
-    <div class="container">
-
-        <div class="row">
-            @foreach (var item in Model)
-            {
-                <div class="col-4">
-                    <a href="@Url.Action("Detail","HomeUser",new{ id=item.MaSanPham  })">
-                        <img src="@item.ImgUrl" width="250" height="250" alt="@item.TenSanPham">
-                        <h4>@item.TenSanPham</h4>
-                        <p class="price">@String.Format("{0:0,0}", item.GiaGoc) VND</p>
-                    </a>
-                </div>
-            }
-        </div>
-    </div>
 </table>
 
+<div style="margin: 15px 88px; padding: 10px; background: #334; display: inline-block;">
+    <h3 style="text-align:center; color:#ccc; font-size:12px"> Hiện thị kết quả cho: " @ViewBag.TuKhoa " </h3>
+</div>
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-4">
+                <a href="@Url.Action("Detail","HomeUser",new{ id=item.MaSanPham  })">
+                    <img src="@item.ImgUrl" width="250" height="250" alt="@item.TenSanPham">
+                    <h4>@item.TenSanPham</h4>
+                    <p class="price">@String.Format("{0:0,0}", item.GiaGoc) VND</p>
+                </a>
+            </div>
+        }
+    </div>
+</div>
