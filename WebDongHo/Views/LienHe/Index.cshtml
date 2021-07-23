@@ -1,0 +1,65 @@
+﻿@model IEnumerable<WebDongHo.Models.LienHe>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@helper Truncate(string input, int length)
+{
+    if (input.Length < length)
+    {
+        @input
+    }
+    else
+    {
+        @input.Substring(0, length) <text>...</text>
+    }
+
+}
+
+<h2>Khách Hàng Liên Hệ</h2>
+
+<p>
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HoTen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChuDe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoiDung)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoTen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChuDe)
+            </td>
+            <td>
+                @Truncate(item.NoiDung, 20)
+            </td>
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", new { id=item.MaLienHe }) |*@
+                @Html.ActionLink("Details", "Details", new { id = item.MaLienHe }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaLienHe })
+            </td>
+        </tr>
+    }
+
+</table>

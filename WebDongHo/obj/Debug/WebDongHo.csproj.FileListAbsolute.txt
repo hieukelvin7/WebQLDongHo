@@ -352,3 +352,10 @@ E:\WebQLDongHo\WebDongHo\bin\Microsoft.Owin.xml
 E:\WebQLDongHo\WebDongHo\bin\WebMatrix.Data.xml
 E:\WebQLDongHo\WebDongHo\bin\WebMatrix.WebData.xml
 E:\WebQLDongHo\WebDongHo\obj\Debug\WebDongHo.csproj.AssemblyReference.cache
+D:\WebQLDongHo\WebDongHo\bin\Microsoft.Owin.dll
+D:\WebQLDongHo\WebDongHo\bin\Owin.dll
+D:\WebQLDongHo\WebDongHo\bin\WebMatrix.Data.dll
+D:\WebQLDongHo\WebDongHo\bin\WebMatrix.WebData.dll
+D:\WebQLDongHo\WebDongHo\bin\Microsoft.Owin.xml
+D:\WebQLDongHo\WebDongHo\bin\WebMatrix.Data.xml
+D:\WebQLDongHo\WebDongHo\bin\WebMatrix.WebData.xml
