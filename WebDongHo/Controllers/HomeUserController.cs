@@ -129,13 +129,13 @@ namespace WebDongHo.Controllers
             
             return View(data.SanPhams.ToList().OrderBy(n => n.MaSanPham).ToPagedList(pageNumber, pageSize));
         }
-        public ActionResult Search(string id)
+        public ActionResult Search(string searching)
         {
             //Lấy ra danh sách sản phẩm từ chuỗi tìm kiếm truyền vào
             var sp = from s in data.SanPhams select s;     
-            ViewBag.TuKhoa = id;
+            ViewBag.TuKhoa = searching;
 
-            return View(sp);
+            return View(data.SanPhams.Where(x=>x.TenSanPham.Contains(searching) ||  searching == null).ToList());
         }
         public ActionResult Nu()
         {

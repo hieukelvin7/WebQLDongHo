@@ -2214,7 +2214,6 @@
     <Content Include="Views\ThuongHieu\Create.cshtml" />
     <Content Include="Views\ThuongHieu\Delete.cshtml" />
     <Content Include="Views\HomeUser\ConfirmPaymentClient.cshtml" />
-    <Content Include="Views\NguoiDung\DangXuat.cshtml" />
     <Content Include="Views\HomeUser\Search.cshtml" />
     <Content Include="Views\LienHe\Index.cshtml" />
     <Content Include="Views\LienHe\Details.cshtml" />
