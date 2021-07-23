@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<WebDongHo.Models.SanPham>
 @{
     ViewBag.Title = "Sale";
     Layout = "~/Views/Shared/_LayoutUsers.cshtml";
@@ -74,14 +74,19 @@
 <div class="container">
     <h2 class="title">Đồng hồ khuyến mãi</h2>
     <div class="row">
+        @foreach (var item in Model)
+        {
         <div class="col-4">
-            <img src="~/images/spnam-1.jpg" alt="">
-            <a href="">Casio AE-1200WHD-1AVDF – Nam – Kính Nhựa – Quartz (Pin) – Dây Kim Loại</a>
-
-            <p class="price">1.308.000VND</p>
+            <a href="@Url.Action("Detail","HomeUser",new{ id=item.MaSanPham  })">
+                <img src="@item.ImgUrl" width="250" height="250" alt="@item.TenSanPham">
+                <h4>@item.TenSanPham</h4>
+                <p class="price">@String.Format("{0:0,0}", item.GiaGoc) VND</p>
+            </a>
         </div>
+        }
 
-        <div class="col-4">
+
+        @*<div class="col-4">
             <img src="~/images/spnam-2.jpg" alt="">
             <a href="">Citizen BI5006-81P – Nam – Quartz (Pin) – Dây Kim Loại</a>
 
@@ -124,7 +129,7 @@
             <a href="">Doxa D158RWH – Nữ – Kính Sapphire – Quartz (Pin) – Dây Da</a>
 
             <p class="price">15.800.000VND</p>
-        </div>
+        </div>*@
 
     </div>
 

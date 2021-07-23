@@ -324,7 +324,11 @@ namespace WebDongHo.Controllers
 
         public ActionResult Sale()
         {
-            return View();
+
+            var clients = from c in data.SanPhams
+                          where c.KhuyenMai != null
+                          select c;
+            return View(clients);
         }
     }
 }
