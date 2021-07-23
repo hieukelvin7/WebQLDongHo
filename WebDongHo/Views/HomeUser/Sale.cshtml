@@ -1,0 +1,133 @@
+﻿
+@{
+    ViewBag.Title = "Sale";
+    Layout = "~/Views/Shared/_LayoutUsers.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/Content/sale.css" />
+<!-- Quảng cáo khuyến mãi -->
+<div class="container">
+    <div class="slider-sale">
+        <div class="slides-sale">
+            <input type="radio" name="radio" id="radio4">
+            <input type="radio" name="radio" id="radio5">
+            <input type="radio" name="radio" id="radio6">
+            <input type="radio" name="radio" id="radio7">
+            <div class="slide first">
+                <a href=""><img src="~/images/slide-sale.jpg" alt="" class="logo__advertise"></a>
+            </div>
+            <div class="slide">
+                <a href=""><img src="~/images/slider-casino.jpg" alt="" class="logo__advertise"></a>
+            </div>
+            <div class="slide">
+                <a href=""><img src="~/images/slider-gsock.jpg" alt="" class="logo__advertise"></a>
+            </div>
+            <div class="slide">
+                <a href=""><img src="~/images/slide-sale1.jpg" alt="" class="logo__advertise"></a>
+            </div>
+            <div class="navigation-auto-sale">
+                <div class="auto-btn4"></div>
+                <div class="auto-btn5"></div>
+                <div class="auto-btn6"></div>
+                <div class="auto-btn7"></div>
+            </div>
+        </div>
+        <div class="navigation-manual-sale">
+            <label for="radio4" class="manual-btn-sale"></label>
+            <label for="radio5" class="manual-btn-sale"></label>
+            <label for="radio6" class="manual-btn-sale"></label>
+            <label for="radio7" class="manual-btn-sale"></label>
+        </div>
+    </div>
+</div>
+
+<!-- Khung giờ vàng -->
+<div class="container">
+    <div id="sales">
+        <h1>Khung Giờ Khuyến Mãi</h1>
+        <div id="sale" class="sale">
+            <div class="time">
+                <h2 class="days">00</h2>
+                <small>Days</small>
+            </div>
+
+            <div class="time">
+                <h2 class="hours">00</h2>
+                <small>Hours</small>
+            </div>
+
+            <div class="time">
+                <h2 class="minutes">00</h2>
+                <small>Minutes</small>
+            </div>
+
+            <div class="time">
+                <h2 class="seconds">00</h2>
+                <small>Seconds</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sản phẩm khuyến mãi -->
+<div class="container">
+    <h2 class="title">Đồng hồ khuyến mãi</h2>
+    <div class="row">
+        <div class="col-4">
+            <img src="~/images/spnam-1.jpg" alt="">
+            <a href="">Casio AE-1200WHD-1AVDF – Nam – Kính Nhựa – Quartz (Pin) – Dây Kim Loại</a>
+
+            <p class="price">1.308.000VND</p>
+        </div>
+
+        <div class="col-4">
+            <img src="~/images/spnam-2.jpg" alt="">
+            <a href="">Citizen BI5006-81P – Nam – Quartz (Pin) – Dây Kim Loại</a>
+
+            <p class="price">2.900.000VND</p>
+        </div>
+        <div class="col-4">
+            <img src="~/images/spnam-3.jpg" alt="">
+            <a href="">Citizen NH8350-59A – Nam – Automatic (Tự Động) – Dây Kim Loại</a>
+
+            <p class="price">5.250.000VND</p>
+        </div>
+
+        <div class="col-4">
+            <img src="~/images/spnam-4.jpg" alt="">
+            <a href="">Doxa 131.60.022.02 – Nam – Kính Sapphire – Quartz (Pin) – Dây Da</a>
+
+            <p class="price">19.480.000VND</p>
+        </div>
+
+        <div class="col-4">
+            <img src="~/images/spnu-1.jpg" alt="">
+            <a href="">Casio B640WC-5ADF – Nữ – Kính Nhựa – Quartz (Pin) – Dây Kim Loại</a>
+
+            <p class="price">1.826.000VND</p>
+        </div>
+        <div class="col-4">
+            <img src="~/images/spnu-2.jpg" alt="">
+            <a href="">Daniel Wellington DW00100163 – Nữ – Quartz (Pin) – Dây Kim Loại – Mặt Số 32MM</a>
+
+            <p class="price">4.100.000VND</p>
+        </div>
+        <div class="col-4">
+            <img src="~/images/spnu-3.jpg" alt="">
+            <a href="">Daniel Wellington DW00100220 – Nữ – Quartz (Pin) – Dây Kim Loại – Mặt Số 28MM</a>
+
+            <p class="price">3.700.000VND</p>
+        </div>
+        <div class="col-4">
+            <img src="~/images/spnu-4.jpg" alt="">
+            <a href="">Doxa D158RWH – Nữ – Kính Sapphire – Quartz (Pin) – Dây Da</a>
+
+            <p class="price">15.800.000VND</p>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="~/Scripts/slides-sale.js"></script>

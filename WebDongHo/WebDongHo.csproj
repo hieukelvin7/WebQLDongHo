@@ -188,6 +188,7 @@
     <Content Include="Content\newspage.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\responsive.css" />
+    <Content Include="Content\sale.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\user.css" />
     <Content Include="Content\vendor\animate\animate.css" />
@@ -2014,6 +2015,8 @@
     <Content Include="images\seiko-4.1.jpg" />
     <Content Include="images\seiko-4.2.jpg" />
     <Content Include="images\seiko-4.jpg" />
+    <Content Include="images\slide-sale.jpg" />
+    <Content Include="images\slide-sale1.jpg" />
     <Content Include="images\slider-casino.jpg" />
     <Content Include="images\slider-gsock.jpg" />
     <Content Include="images\slider-senko.jpg" />
@@ -2158,6 +2161,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\slides-sale.js" />
     <Content Include="Scripts\slides.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -2217,6 +2221,7 @@
     <Content Include="Views\LienHe\Delete.cshtml" />
     <Content Include="Views\TaiKhoan\Index.cshtml" />
     <Content Include="Views\TaiKhoan\Delete.cshtml" />
+    <Content Include="Views\HomeUser\Sale.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

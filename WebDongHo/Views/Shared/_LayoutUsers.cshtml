@@ -90,7 +90,7 @@
                                 <li><a href="@Url.Action("Index", "HomeUser")">Trang Chủ</a></li>
                                 <li><a href="@Url.Action("TinTuc","HomeUser")">Tin Tức</a></li>
                                 <li><a href="@Url.Action("Contact", "HomeUser")">Liên Hệ</a></li>
-                                <li><a href="">Khuyến Mãi</a></li>
+                                <li><a href="@Url.Action("Sale", "HomeUser")">Khuyến Mãi</a></li>
                                 <li>@Html.Action("GiohangPartial", "Giohang")</li>
                                 <li><a href="@Url.Action("DangNhap", "NguoiDung")">Đăng Nhập</a></li>
                                 <li><a href="@Url.Action("DangKy", "NguoiDung")">Đăng Ký</a></li>
@@ -115,7 +115,7 @@
                         <li><a href="@Url.Action("Nu","HomeUser")">Nữ</a></li>
                         <li><a href="@Url.Action("TinTuc","HomeUser")">Tin tức</a></li>
                         <li><a href="@Url.Action("Contact", "HomeUser")">Liên hệ</a></li>
-                        <li><a href="">Khuyến mãi</a></li>
+                        <li><a href="@Url.Action("Sale", "HomeUser")">Khuyến mãi</a></li>
 
                         @{
                             var user = (User)Session["TaiKhoan"];

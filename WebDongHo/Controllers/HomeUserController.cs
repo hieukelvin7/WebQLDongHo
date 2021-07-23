@@ -321,5 +321,10 @@ namespace WebDongHo.Controllers
             Session["Giohang"] = null;
             return RedirectToAction("ConfirmPaymentClient", "HomeUser");
         }
+
+        public ActionResult Sale()
+        {
+            return View();
+        }
     }
 }
