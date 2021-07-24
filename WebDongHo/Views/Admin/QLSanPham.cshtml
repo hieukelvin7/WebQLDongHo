@@ -19,14 +19,14 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2 style="text-align:center">Quản Lý Sản Phẩm</h2>
+<h2 style="text-align:center; color:#926dd3; text-transform: uppercase; font-size:30px; ">Quản Lý Sản Phẩm</h2>
 
 <p>
     @Html.ActionLink("Thêm Mới", "ThemSP")
 </p>
 <table class="table">
-    <tr>
-        <th style="width:50px">
+    <tr style="font-size: 14px; color:#fb404b">
+        <th style="width: 50px;">
             Tên Thương Hiệu
         </th>
         <th style="width:150px">
@@ -50,18 +50,18 @@
         <th style="width:150px">
             Ngày Cập Nhật
         </th>
-        <th style="width:250px">
+        <th style="width:200px">
             Mô Tả Ngắn
         </th>
-        <th style="width:250px">
+        <th style="width:200px">
             Mô Tả Chi Tiết
         </th>
-        <th style="width:150px"></th>
+        <th style="width:250px"></th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
+        <tr style="font-size: 13px; height:200px;">
             <td>
                 @Html.DisplayFor(modelItem => item.DanhMucSanPham.TenDanhMuc)
             </td>
@@ -75,13 +75,13 @@
                 @String.Format("{0:0,0}", item.KhuyenMai) VND
             </td>
             <td>
-                <img src="@item.ImgUrl" width="100" height="100" />
+                <img src="@item.ImgUrl" width="80" height="80" />
             </td>
             <td>
-                <img src="@item.ImgUrl1" width="100" height="100" />
+                <img src="@item.ImgUrl1" width="80" height="80" />
             </td>
             <td>
-                <img src="@item.ImgUrl2" width="100" height="100" />
+                <img src="@item.ImgUrl2" width="80" height="80" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.NgayCapNhap)
@@ -102,8 +102,8 @@
 
 </table>
 
-Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
-<div class="MenuTrang">
+
+<div  class="MenuTrang">
     @Html.PagedListPager(Model, page => Url.Action("QLSanPham", new { page = page }))
 </div>
 <style>

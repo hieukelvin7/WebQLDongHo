@@ -5,12 +5,12 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Chi Tiết Liên Hệ</h2>
+<h2 style="text-align:center; color:#926dd3; text-transform: uppercase; font-size:30px; ">Chi Tiết Liên Hệ</h2>
 
 <div>
 
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal" style="font-size: 14px;">
         <dt>
             @Html.DisplayNameFor(model => model.HoTen)
         </dt>
@@ -45,6 +45,6 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Back to List", "Index")
+<p style="margin-left:100px;">
+    @Html.ActionLink("Quay Lại", "Index")
 </p>

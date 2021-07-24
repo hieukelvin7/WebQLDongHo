@@ -5,11 +5,11 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2 style="text-align:center">Quản Lý Đơn Đặt Hàng</h2>
+<h2 style="text-align:center; color:#926dd3; text-transform: uppercase; font-size:30px;">Quản Lý Đơn Đặt Hàng</h2>
 
 
 <table class="table">
-    <tr>
+    <tr style="font-size: 14px; color:#fb404b">
         <th>
             Mã Đơn Hàng
         </th>
@@ -32,7 +32,7 @@
     </tr>
 
 @foreach (var item in Model) {
-<tr>
+<tr style="font-size: 13px; height:60px;">
     <td>
         @Html.DisplayFor(modelItem => item.MaDonHang)
     </td>
@@ -60,3 +60,5 @@
 }
 
 </table>
+
+

@@ -213,13 +213,15 @@ body,
 }
 
 a {
+    font-size: 16px;
     color: #1DC7EA;
 }
 
 a:hover,
 a:focus {
-    color: #42d0ed;
+    color:#fb404b;
     text-decoration: none;
+    opacity: 0.8;
 }
 
 a:focus,
@@ -875,11 +877,13 @@ body>.navbar-collapse[data-color="purple"]:after {
     opacity: 0.8;
     filter: alpha(opacity=80);
     padding: 8px 16px;
-    border-color: #888888;
-    color: #888888;
+    background: #fb404b;
+    border-color: #19f;
+    color: #fff;
+    font-size: 14px;
 }
 
-.btn:hover,
+
 .btn:focus,
 .btn:active,
 .btn.active,
@@ -1521,6 +1525,8 @@ fieldset[disabled] .btn-neutral.active {
 }
 
 .form-control {
+
+    font-size:14px;
     background-color: #FFFFFF;
     border: 1px solid #E3E3E3;
     border-radius: 4px;

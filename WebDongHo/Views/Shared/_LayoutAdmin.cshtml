@@ -92,41 +92,14 @@
             <!-- Navbar -->
             <nav class="navbar navbar-expand-lg " color-on-scroll="500">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href=""> Đồng Hồ 4 AE </a>
+                    <a class="navbar-brand" href="" style="text-align: center; text-transform: uppercase; color: #ff9c27; "> Đồng Hồ 4 AE </a>
                     <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar burger-lines"></span>
                         <span class="navbar-toggler-bar burger-lines"></span>
                         <span class="navbar-toggler-bar burger-lines"></span>
                     </button>
                     <div class="collapse navbar-collapse justify-content-end" id="navigation">
-                        <ul class="nav navbar-nav mr-auto">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link" data-toggle="dropdown">
-                                    <i class="nc-icon nc-palette"></i>
-                                    <span class="d-lg-none">Dashboard</span>
-                                </a>
-                            </li>
-                            <li class="dropdown nav-item">
-                                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                                    <i class="nc-icon nc-planet"></i>
-                                    <span class="notification">5</span>
-                                    <span class="d-lg-none">Notification</span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Notification 1</a>
-                                    <a class="dropdown-item" href="#">Notification 2</a>
-                                    <a class="dropdown-item" href="#">Notification 3</a>
-                                    <a class="dropdown-item" href="#">Notification 4</a>
-                                    <a class="dropdown-item" href="#">Another notification</a>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="nc-icon nc-zoom-split"></i>
-                                    <span class="d-lg-block">&nbsp;Search</span>
-                                </a>
-                            </li>
-                        </ul>
+                        
                         @using WebDongHo.Models
                         <ul class="navbar-nav ml-auto">
 
@@ -137,22 +110,10 @@
                                     <span class="no-icon">Xin chào: @Session["TaiKhoanAdmin"]</span>
                                 </a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="no-icon">Dropdown</span>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                    <div class="divider"></div>
-                                    <a class="dropdown-item" href="#">Separated link</a>
-                                </div>
-                            </li>
+                            
                             <li class="nav-item">
                                 <a class="nav-link" href="@Url.Action("LogOff","Admin")">
-                                    <span class="no-icon">Log out</span>
+                                    <span class="no-icon">Đăng Xuất</span>
                                 </a>
                             </li>
                         </ul>
@@ -164,21 +125,21 @@
             </div>
         </div>
 </body>
-<script src="~/assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
+<!--<script src="~/assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
 <script src="~/assets/js/core/popper.min.js" type="text/javascript"></script>
-<script src="~/assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+<script src="~/assets/js/core/bootstrap.min.js" type="text/javascript"></script>-->
 <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
-<script src="~/assets/js/plugins/bootstrap-switch.js"></script>
+<!--<script src="~/assets/js/plugins/bootstrap-switch.js"></script>-->
 <!--  Google Maps Plugin    -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>-->
 <!--  Chartist Plugin  -->
-<script src="~/assets/js/plugins/chartist.min.js"></script>
+<!--<script src="~/assets/js/plugins/chartist.min.js"></script>-->
 <!--  Notifications Plugin    -->
-<script src="~/assets/js/plugins/bootstrap-notify.js"></script>
+<!--<script src="~/assets/js/plugins/bootstrap-notify.js"></script>-->
 <!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
-<script src="~/assets/js/light-bootstrap-dashboard.js?v=2.0.0 " type="text/javascript"></script>
+<!--<script src="~/assets/js/light-bootstrap-dashboard.js?v=2.0.0 " type="text/javascript"></script>-->
 <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
-<script src="~/assets/js/demo.js"></script>
+<!--<script src="~/assets/js/demo.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         // Javascript method's body can be found in assets/js/demos.js
@@ -187,5 +148,5 @@
         demo.showNotification();
 
     });
-</script>
+</script>-->
 </html>

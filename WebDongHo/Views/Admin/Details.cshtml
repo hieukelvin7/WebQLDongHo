@@ -5,12 +5,12 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2 style="text-align:center">Chi Tiết Thông Tin Sản Phẩm</h2>
+<h2 style="text-align:center; color:#926dd3; text-transform: uppercase; font-size:30px;">Chi Tiết Thông Tin Sản Phẩm</h2>
 
 <div>
     
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal" style="font-size: 14px;">
         <dt>
             Tên Danh Mục
         </dt>
@@ -94,6 +94,8 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Sửa", "Edit", new { id = Model.MaSanPham }) |
-    @Html.ActionLink("Trở về", "QLSanPham")
+    <div style="margin-left:80px; padding:10px;">
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.MaSanPham }) 
+    @Html.ActionLink("Quay Lại", "QLSanPham")
+    </div>
 </p>

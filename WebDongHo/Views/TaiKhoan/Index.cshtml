@@ -5,41 +5,41 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Index</h2>
+<h2 style="text-align:center; color:#926dd3; text-transform: uppercase; font-size:30px;">TÀI KHOẢN ADMIN</h2>
 
 
 <table class="table">
-    <tr>
+    <tr style="font-size: 14px; color:#fb404b">
         <th>
-            @Html.DisplayNameFor(model => model.TaiKhoan)
+            Tài Khoản
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MatKhau)
+            Mật Khẩu
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.HoTen)
+            Họ Tên
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GioiTinh)
+            Giới Tính
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NgaySinh)
+            Ngày Sinh
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DiaChi)
+            Địa Chỉ
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Email)
+            Email
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SDT)
+            SDT
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
+    <tr style="font-size: 13px; height:100px;">
+        <td >
             @Html.DisplayFor(modelItem => item.TaiKhoan)
         </td>
         <td>

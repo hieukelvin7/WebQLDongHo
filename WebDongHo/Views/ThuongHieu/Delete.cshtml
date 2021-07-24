@@ -5,13 +5,13 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Xóa</h2>
+<h2 style="text-align:center; color:#926dd3; text-transform: uppercase; font-size:30px; ">Xóa</h2>
 
-<h3 style="color:red">Bạn có chắc chắn xóa không?</h3>
+<h3 style="text-align:center; color:#926dd3; text-transform: uppercase; font-size:24px;" >Bạn có chắc chắn xóa không?</h3>
 <div>
     <h4>DanhMucSanPham</h4>
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal" style="font-size: 14px;">
         <dt>
             @Html.DisplayNameFor(model => model.TenDanhMuc)
         </dt>
@@ -26,8 +26,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Xóa" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Xóa" class="btn" style="margin-right:30px;" /> 
+            @Html.ActionLink("Quay Lại", "Index")
         </div>
     }
 </div>
