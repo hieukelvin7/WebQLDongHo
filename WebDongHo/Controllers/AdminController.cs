@@ -16,8 +16,10 @@ namespace WebDongHo.Controllers
         // GET: Admin
         public ActionResult Index()
         {
+            
             if (Session["TaiKhoanAdmin"] == null)
             {
+                
                 return RedirectToAction("Login", "Admin");
             }
             return View();
@@ -31,7 +33,7 @@ namespace WebDongHo.Controllers
             }
             int pageNumber = (page ?? 1);
             int pageSize = 7;
-            return View(data.SanPhams.ToList().OrderBy(n => n.MaSanPham).ToPagedList(pageNumber, pageSize));
+            return PartialView(data.SanPhams.ToList().OrderBy(n => n.MaSanPham).ToPagedList(pageNumber, pageSize));
         }
 
         [HttpGet]
@@ -54,7 +56,7 @@ namespace WebDongHo.Controllers
             Admin ad = data.Admins.SingleOrDefault(n => n.TaiKhoan == tendn && n.MatKhau == matkhau);
             if (ad != null)
             {
-                Session["TaiKhoanAdmin"] = ad;
+                Session["TaiKhoanAdmin"] = ad.HoTen;
                 return RedirectToAction("Index", "Admin");
             }
             else
@@ -78,40 +80,7 @@ namespace WebDongHo.Controllers
         [ValidateInput(false)]
         public ActionResult ThemSP(SanPham sp, HttpPostedFileBase[] files)
         {
-            ViewBag.MaDanhMuc = new SelectList(data.DanhMucSanPhams.ToList().OrderBy(n => n.TenDanhMuc), "MaDanhMuc", "TenDanhMuc");
-            //if (fileupload == null)
-            //{
-            //    ViewBag.Thongbao = "Vui lòng chọn ảnh";
-            //    return View();
-            //}
-            ////them vào csdl
-            //else
-            //{
-            //    if (ModelState.IsValid)
-            //    {
-            //        //Luu ten file
-            //        var fileName = Path.GetFileName(fileupload.FileName);
-            //        //Luu duong dan cua file
-            //        var path = Path.Combine(Server.MapPath("~/images"), fileName);
-            //        // kiem tra hinh anh ton tai chua?
-            //        if (System.IO.File.Exists(path))
-            //        {
-            //            ViewBag.Thongbao = "Hình ảnh đã tồn tại";
-            //        }
-            //        else
-            //        {
-            //            fileupload.SaveAs(path);
-            //        }
-
-            //    }
-
-            //    sp.ImgUrl = "/images/" + fileName;
-            //    sp.ImgUrl1 = "/images/" + fileName;
-            //    sp.ImgUrl2 = "/images/" + fileName;
-            //    data.SanPhams.InsertOnSubmit(sp);
-            //    data.SubmitChanges();
-            //    return RedirectToAction("QLSanPham");
-            //}
+            ViewBag.MaDanhMuc = new SelectList(data.DanhMucSanPhams.ToList().OrderBy(n => n.TenDanhMuc), "MaDanhMuc", "TenDanhMuc");          
 
             if (files.Count() != 3)
             {
@@ -274,6 +243,10 @@ namespace WebDongHo.Controllers
             }
             return RedirectToAction("QLSanPham");
         }
-
+        public ActionResult LogOff()
+        {
+            Session["TaiKhoanAdmin"] = null;
+            return RedirectToAction("Login");
+        }
     }
 }

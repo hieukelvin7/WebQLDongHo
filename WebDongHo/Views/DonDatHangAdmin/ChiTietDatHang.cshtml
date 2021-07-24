@@ -1,0 +1,62 @@
+﻿@model IEnumerable<WebDongHo.Models.CHITIETDONHANG>
+
+@{
+    ViewBag.Title = "ChiTietDatHang";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center">Chi Tiết Đơn Đặt Hàng</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Mã đơn hàng
+        </th>
+        <th>
+            Tên sản phẩm
+        </th>
+        <th>
+            Số lượng
+        </th>
+        <th>
+            Đơn Giá
+        </th>
+        <th>
+            Tên Khách Hàng
+        </th>
+        <th>
+            Địa Chỉ
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaDonHang)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SanPham.TenSanPham)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SoLuong)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DonGia)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DONDATHANG.User.HoTen)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DONDATHANG.User.DiaChi)
+    </td>
+    @*<td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>*@
+</tr>
+}
+
+</table>
