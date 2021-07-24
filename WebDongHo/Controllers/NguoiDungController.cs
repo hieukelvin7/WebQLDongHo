@@ -8,8 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using WebDongHo.Models;
 using Newtonsoft.Json;
-
-
+using System.Web.Security;
 
 namespace WebDongHo.Controllers
 {
@@ -144,8 +143,8 @@ namespace WebDongHo.Controllers
             var fb = new FacebookClient();
             var loginUrl = fb.GetLoginUrl(new
             {
-                client_id = "335800521360326",
-                client_secret = "75cd6945571df117172a0aa4c39eef39",
+                client_id = ConfigurationManager.AppSettings["FbAppId"],
+                client_secret = ConfigurationManager.AppSettings["FbAppSecret"],
                 Redirect_uri = RedirectUri.AbsoluteUri,
                 response_type = "code",
                 scope = "email",
@@ -155,11 +154,16 @@ namespace WebDongHo.Controllers
 
         public ActionResult FacebookCallback(string code)
         {
+            if (code == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             var fb = new FacebookClient();
+
             dynamic result = fb.Post("oauth/access_token", new
             {
-                client_id = "335800521360326",
-                client_secret = "75cd6945571df117172a0aa4c39eef39",
+                client_id = ConfigurationManager.AppSettings["FbAppId"],
+                client_secret = ConfigurationManager.AppSettings["FbAppSecret"],
                 redirect_uri = RedirectUri.AbsoluteUri,
                 code = code
             });
@@ -172,8 +176,10 @@ namespace WebDongHo.Controllers
             TempData["first_name"] = me.first_name;
             TempData["lastname"] = me.last_name;
             TempData["picture"] = me.picture.data.url;
-            //FormsAuthentication.SetAuthCookie(email, false);
+            FormsAuthentication.SetAuthCookie(email, false);
             return RedirectToAction("Index", "Home");
         }
+
+
     }
 }

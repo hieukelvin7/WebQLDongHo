@@ -359,3 +359,10 @@ D:\WebQLDongHo\WebDongHo\bin\WebMatrix.WebData.dll
 D:\WebQLDongHo\WebDongHo\bin\Microsoft.Owin.xml
 D:\WebQLDongHo\WebDongHo\bin\WebMatrix.Data.xml
 D:\WebQLDongHo\WebDongHo\bin\WebMatrix.WebData.xml
+F:\Webdongho\WebQLDongHo\WebDongHo\bin\Microsoft.Owin.dll
+F:\Webdongho\WebQLDongHo\WebDongHo\bin\Owin.dll
+F:\Webdongho\WebQLDongHo\WebDongHo\bin\WebMatrix.Data.dll
+F:\Webdongho\WebQLDongHo\WebDongHo\bin\WebMatrix.WebData.dll
+F:\Webdongho\WebQLDongHo\WebDongHo\bin\Microsoft.Owin.xml
+F:\Webdongho\WebQLDongHo\WebDongHo\bin\WebMatrix.Data.xml
+F:\Webdongho\WebQLDongHo\WebDongHo\bin\WebMatrix.WebData.xml

@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link rel="shortcut icon" href="~/images/logo-icon.png">
@@ -19,50 +20,10 @@
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0&appId=4348948228482677&autoLogAppEvents=1" nonce="NvF4cWFk">
 
     </script>
-    @*<script>
-        function getUserData() {
-            FB.api('/ me', { fields: 'name, email' }, (response) => {
-                document.getElementById('response').innerHTML = 'Hello' + response.name;
-            });
-        }
 
-        window.fbAsyncInit = function () {
-            FB.init({
-                appId: '4348948228482677',
-                cookie: true,
-                xfbml: true,
-                version: 'v11.0'
-            });                      
-        };
 
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) { return; }
-            js = d.createElement(s); js.id = id;
-            js.src = "https://connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
 
-        function checkLoginState() {
 
-            FB.getLoginStatus(function (response) {
-
-                if (response.status === ('connected')) {
-                    alert('Bạn đã đăng nhập thành công');
-                    window.location.href = "https://localhost:44324/";
-                    document.getElementById('loginBtn').style.display = 'none';
-                    getUserData();
-                }
-                else {
-                    alert('Đăng nhập không thành công vui lòng kiểm tra lại thông tin')
-                }
-            });     
-        }
-
-        
-
-       
-    </script>*@
     <!-- logo and menu -->
     <div class="header">
         <div class="container">
@@ -123,22 +84,22 @@
                             if (user != null)
                             {
                                 <li><a href="">Xin chào: @user.HoTen</a></li>
-                                    <li><a href="@Url.Action("LogOff","NguoiDung")">Đăng xuất</a></li>
+                                <li><a href="@Url.Action("LogOff","NguoiDung")">Đăng xuất</a></li>
 
                                 @*<div class="navbar-collapse collapse" id="menu">
-                    <ul class="nav navbar-nav">
+                                        <ul class="nav navbar-nav">
 
-                        <li class="dropdown">
-                            <a data-toggle="dropdown" href="">Xin chào: @user.HoTen<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Thông tin</a></li>
-                                <li><a href="#">Đổi mật khẩu</a></li>
-                                <div class="divider"></div>
-                                <li><a href="#">Thoát</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>*@
+                                            <li class="dropdown">
+                                                <a data-toggle="dropdown" href="">Xin chào: @user.HoTen<span class="caret"></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#">Thông tin</a></li>
+                                                    <li><a href="#">Đổi mật khẩu</a></li>
+                                                    <div class="divider"></div>
+                                                    <li><a href="#">Thoát</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>*@
                             }
 
                             else
@@ -148,6 +109,7 @@
                         }
 
 
+
                     </ul>
                 </nav>
             </div>
@@ -155,17 +117,17 @@
                 <span class="header__cart-notice">0</span>
                 @Html.Action("GiohangPartial", "Giohang")
             </div>
-           @using (Html.BeginForm("Search", "HomeUser", FormMethod.Get))
+            @using (Html.BeginForm("Search", "HomeUser", FormMethod.Get))
             {
-             <div class="header__search hide-on-tablet">
+                <div class="header__search hide-on-tablet">
                     <input type="text" class="header__input" name="searching" placeholder="Nhập để tìm kiếm">
                     <button class="search-icon">
                         <i class="search-icon-item fas fa-search"></i>
                     </button>
-            </div>
-            }  
-        
-            
+                </div>
+            }
+
+
         </div>
     </div>
 
@@ -244,8 +206,30 @@
         </div>
     </div>
     <!-- messager -->
-    <a href="" class="icon__mess"><i class="fab fa-facebook-messenger"></i></a>
+    @*<a href="" class="icon__mess"><i class="fab fa-facebook-messenger"></i></a>*@
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
 
+    <script>
+        var chatbox = document.getElementById('fb-customer-chat');
+        chatbox.setAttribute("page_id", "112487611105548");
+        chatbox.setAttribute("attribution", "biz_inbox");
+
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v11.0'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 
     <script src="~/Scripts/slides.js"></script>
 </body>
