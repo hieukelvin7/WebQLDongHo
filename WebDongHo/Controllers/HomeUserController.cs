@@ -195,7 +195,7 @@ namespace WebDongHo.Controllers
             string serectkey = "bNjdi5w3IoG1fhVZbFPCDy5dUkfLZH0i";
             string orderInfo = "test";
             string returnUrl = "https://localhost:44324/HomeUser/ConfirmPaymentClient";
-            string notifyurl = "http://ba1adf48beba.ngrok.io/HomeUser/SavePayment"; //lưu ý: notifyurl không được sử dụng localhost, có thể sử dụng ngrok để public localhost trong quá trình test
+            string notifyurl = "https://localhost:44324/HomeUser/SavePayment"; 
 
             string amount = TongTien().ToString();
             string orderid = DateTime.Now.Ticks.ToString();
@@ -274,53 +274,38 @@ namespace WebDongHo.Controllers
 
         public ActionResult ConfirmPaymentClient()
         {
+            if (!Request.QueryString["errorCode"].Equals("0"))
+            {
+                Session["or"] = null;
+                Session["lst"] = null;
+                ViewBag.mess = "Thanh Toán thất bại";
+            }
+            else
+            {
+                ViewBag.mess = "Thanh toán thành công";
+                SavePayment();
+                Session["Giohang"] = null;
+            }
             return View();
         }
-        [HttpGet]
-        public ActionResult SavePayment()
-        {
-            if (Session["TaiKhoan"] == null || Session["TaiKhoan"].ToString() == "")
-            {
-                return RedirectToAction("DangNhap", "NguoiDung");
-            }
-            if (Session["GioHang"] == null)
-            {
-                return RedirectToAction("Index", "HomeUser");
-            }
-            List<Giohang> lstGioHang = Laygiohang();
-            ViewBag.TongSoLuong = TongSoLuong();
-            ViewBag.TongTien = TongTien();
-
-            return View(lstGioHang);
-        }
-        [HttpPost]
-        public ActionResult SavePayment(FormCollection collection)
-        {
-            //hiển thị thông báo cho người dùng
-            DONDATHANG ddh = new DONDATHANG();
-            User us = (User)Session["TaiKhoan"];
-            List<Giohang> gh = Laygiohang();
-            ddh.MaKH = us.MaKH;
-            ddh.NgayDat = DateTime.Now;
-            var ngaygiao = String.Format("{0:MM/dd/yyyy}", collection["NgayGiao"]);
-            ddh.NgayGiao = DateTime.Parse(ngaygiao);
-            //ddh.Tinhtranggiaohang = false;
-            //ddh.Dathanhtoan = false;
-            data.DONDATHANGs.InsertOnSubmit(ddh);
-            data.SubmitChanges();
-            foreach (var item in gh)
-            {
-                CHITIETDONHANG ctdh = new CHITIETDONHANG();
-                ctdh.MaDonHang = ddh.MaDonHang;
-                ctdh.MaSanPham = item.iMasanpham;
-                ctdh.SoLuong = item.iSoluong;
-                ctdh.DonGia = (decimal)item.dDongia;
-                data.CHITIETDONHANGs.InsertOnSubmit(ctdh);
-            }
-            data.SubmitChanges();
+     
+        public void SavePayment()
+        {         
+            //DONDATHANG order = (DONDATHANG)Session["or"];
+            //data.DONDATHANGs.InsertOnSubmit(order);
+            //data.SubmitChanges();
+            //List<CHITIETDONHANG> lst = (List<CHITIETDONHANG>)Session["lst"];
+            //foreach (var item in lst)
+            //{
+            //    item.MaDonHang = order.MaDonHang;
+            //    data.CHITIETDONHANGs.InsertOnSubmit(item);
+            //    data.SubmitChanges();
+            //}
+            Session["or"] = null;
+            Session["lst"] = null;
             Session["Giohang"] = null;
-            return RedirectToAction("ConfirmPaymentClient", "HomeUser");
         }
+        
 
         public ActionResult Sale()
         {

@@ -95,6 +95,7 @@ namespace WebDongHo.Controllers
             if (sp != null)
             {
                 sp.iSoluong = int.Parse(f["txtSoluong"].ToString());
+                
             }
            
             return RedirectToAction("Giohang");

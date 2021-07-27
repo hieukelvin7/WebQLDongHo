@@ -29,7 +29,7 @@
                         @using (Html.BeginForm("CapnhatGiohang", "Giohang", new { @iMasp = item.iMasanpham }))
                         {
                             <td>
-                                <input type="number" min="1" name="txtSoluong" value="@item.iSoluong" />
+                                <input type="number" min="1" max="100" name="txtSoluong" value="@item.iSoluong" />
                             </td>
                             <td>@String.Format("{0:0,0}", @item.dDongia)</td>
                             <td>@string.Format("{0:0,0}", @item.dThanhtien)</td>
@@ -94,7 +94,7 @@
                     </tr>
                     <tr>
                         <td>Ngày Giao </td>
-                        <td><input class="date-input" type="date" name="Ngaygiao" /></td>
+                        <td><input class="date-input" type="date" name="Ngaygiao" min="2021-07-27"/></td>
                     </tr>
                     <tr>
                         <td>

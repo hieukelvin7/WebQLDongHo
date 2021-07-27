@@ -2119,11 +2119,6 @@
     <Content Include="fonts\fontawesome-free-5.15.3-web\webfonts\fa-solid-900.ttf" />
     <Content Include="fonts\fontawesome-free-5.15.3-web\webfonts\fa-solid-900.woff" />
     <Content Include="fonts\fontawesome-free-5.15.3-web\webfonts\fa-solid-900.woff2" />
-    <Content Include="Models\DBDongHo.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DBDongHo.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Content\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
     <Content Include="Content\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
@@ -2222,6 +2217,11 @@
     <Content Include="assets\sass\lbd\_typography.scss" />
     <Content Include="assets\sass\lbd\_variables.scss" />
     <Content Include="assets\sass\light-bootstrap-dashboard.scss" />
+    <Content Include="Models\DBDongHo.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DBDongHo.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Models\DBDongHo.dbml.layout">
       <DependentUpon>DBDongHo.dbml</DependentUpon>
     </None>

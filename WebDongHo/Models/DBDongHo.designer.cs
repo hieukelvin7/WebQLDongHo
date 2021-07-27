@@ -1585,7 +1585,7 @@ namespace WebDongHo.Models
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _MaTinTic;
+		private int _MaTinTuc;
 		
 		private string _TieuDe;
 		
@@ -1595,8 +1595,8 @@ namespace WebDongHo.Models
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnMaTinTicChanging(int value);
-    partial void OnMaTinTicChanged();
+    partial void OnMaTinTucChanging(int value);
+    partial void OnMaTinTucChanged();
     partial void OnTieuDeChanging(string value);
     partial void OnTieuDeChanged();
     partial void OnNoiDungChanging(string value);
@@ -1608,22 +1608,22 @@ namespace WebDongHo.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTinTic", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MaTinTic
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTinTuc", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaTinTuc
 		{
 			get
 			{
-				return this._MaTinTic;
+				return this._MaTinTuc;
 			}
 			set
 			{
-				if ((this._MaTinTic != value))
+				if ((this._MaTinTuc != value))
 				{
-					this.OnMaTinTicChanging(value);
+					this.OnMaTinTucChanging(value);
 					this.SendPropertyChanging();
-					this._MaTinTic = value;
-					this.SendPropertyChanged("MaTinTic");
-					this.OnMaTinTicChanged();
+					this._MaTinTuc = value;
+					this.SendPropertyChanged("MaTinTuc");
+					this.OnMaTinTucChanged();
 				}
 			}
 		}

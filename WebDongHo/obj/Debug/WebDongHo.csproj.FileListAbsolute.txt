@@ -338,7 +338,6 @@ C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\WebMatrix.Data.dll
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\WebMatrix.WebData.dll
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\WebMatrix.Data.xml
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\WebMatrix.WebData.xml
-C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\obj\Debug\WebDongHo.csprojAssemblyReference.cache
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\Microsoft.Owin.dll
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\Owin.dll
 C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\bin\Microsoft.Owin.xml
@@ -366,3 +365,4 @@ F:\Webdongho\WebQLDongHo\WebDongHo\bin\WebMatrix.WebData.dll
 F:\Webdongho\WebQLDongHo\WebDongHo\bin\Microsoft.Owin.xml
 F:\Webdongho\WebQLDongHo\WebDongHo\bin\WebMatrix.Data.xml
 F:\Webdongho\WebQLDongHo\WebDongHo\bin\WebMatrix.WebData.xml
+C:\Users\ADMIN\OneDrive\Máy tính\WebDongHo\WebDongHo\obj\Debug\WebDongHo.csprojAssemblyReference.cache
